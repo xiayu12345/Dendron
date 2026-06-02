@@ -1,0 +1,350 @@
+<h1 id="bk7252n-上-lvgl-多语言界面开发指南">BK7252n 上 LVGL 多语言界面开发指南<a aria-hidden="true" class="anchor-heading icon-link" href="#bk7252n-上-lvgl-多语言界面开发指南"></a></h1>
+<h1 id="bk7252n-上-lvgl-多语言界面开发指南-1">BK7252n 上 LVGL 多语言界面开发指南<a aria-hidden="true" class="anchor-heading icon-link" href="#bk7252n-上-lvgl-多语言界面开发指南-1"></a></h1>
+<p>本文档说明本 SDK 工程中 <strong>21 种界面语言</strong>（语言 ID <code>0</code>～<code>20</code>）与 <strong>LVGL 字体、文案表、持久化与切换入口</strong> 的对接方式，便于后续维护与扩展。</p>
+<hr>
+<h2 id="1-总体架构">1. 总体架构<a aria-hidden="true" class="anchor-heading icon-link" href="#1-总体架构"></a></h2>
+<p>多语言由三层协作完成：</p>
+<ol>
+<li><strong>持久化语言 ID</strong>：<code>device_config</code> 将 <code>language_id</code> 写入 Flash，与 MQTT/串口配置共用同一套逻辑。</li>
+<li><strong>文案表</strong>：<code>applications/pages/ui_strings.c</code> 中的二维表 <code>s_tbl[语言][文案枚举]</code>，全部为 <strong>UTF-8</strong> 字符串。</li>
+<li><strong>字体选择</strong>：<code>ui_strings_font()</code> 根据当前语言返回不同的 <code>lv_font_t *</code>，避免拉丁子集字体显示中文、泰文、阿拉伯文等缺字。</li>
+</ol>
+<p>界面代码（如 <code>lv_example_meter.c</code>）通过 <code>ui_strings_get(id)</code> 取字符串，通过 <code>ui_strings_font()</code> 设置 <code>lv_label</code> 等控件的字体。</p>
+<div class="mermaid">
+  flowchart LR
+  subgraph persist [持久化]
+    Flash[(Flash / device_config)]
+  end
+  subgraph runtime [运行时]
+    Sync[ui_strings_sync_from_device_config]
+    Get[ui_strings_get]
+    Font[ui_strings_font]
+    LV[LVGL 控件]
+  end
+  Flash --> Sync
+  Sync --> Get
+  Sync --> Font
+  Get --> LV
+  Font --> LV
+</div>
+<hr>
+<h2 id="2-语言-id-与-iso-代码对照">2. 语言 ID 与 ISO 代码对照<a aria-hidden="true" class="anchor-heading icon-link" href="#2-语言-id-与-iso-代码对照"></a></h2>
+<p>语言顺序必须与 <code>applications/mqtt_backend/device_config.c</code> 中 <code>g_device_lang_table[]</code> <strong>完全一致</strong>（下标即语言 ID）：</p>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ID</th><th>代码</th></tr></thead><tbody><tr><td>0</td><td>zh-Hans</td></tr><tr><td>1</td><td>zh-Hant</td></tr><tr><td>2</td><td>en</td></tr><tr><td>3</td><td>ko</td></tr><tr><td>4</td><td>fr</td></tr><tr><td>5</td><td>es</td></tr><tr><td>6</td><td>th</td></tr><tr><td>7</td><td>ar</td></tr><tr><td>8</td><td>ru</td></tr><tr><td>9</td><td>de</td></tr><tr><td>10</td><td>it</td></tr><tr><td>11</td><td>pt</td></tr><tr><td>12</td><td>vi</td></tr><tr><td>13</td><td>el</td></tr><tr><td>14</td><td>ja</td></tr><tr><td>15</td><td>pl</td></tr><tr><td>16</td><td>tr</td></tr><tr><td>17</td><td>nl</td></tr><tr><td>18</td><td>cs</td></tr><tr><td>19</td><td>he</td></tr><tr><td>20</td><td>uk</td></tr></tbody></table></div>
+<p><code>applications/pages/ui_strings.h</code> 中的 <code>UI_LANG_COUNT</code>（21）与 <code>UI_STR_*</code> 枚举顺序需与产品文案一一对应；<strong>增删语言或调整顺序</strong>时，必须同时改 <code>g_device_lang_table</code>、<code>ui_strings.c</code> 中的 <code>s_tbl</code> 行顺序，以及 MQTT/Shell 校验范围（当前上限为 <code>20</code>）。</p>
+<hr>
+<h2 id="3-文案表ui_stringsc--ui_stringsh">3. 文案表：<code>ui_strings.c</code> / <code>ui_strings.h</code><a aria-hidden="true" class="anchor-heading icon-link" href="#3-文案表ui_stringsc--ui_stringsh"></a></h2>
+<h3 id="31-枚举与条数">3.1 枚举与条数<a aria-hidden="true" class="anchor-heading icon-link" href="#31-枚举与条数"></a></h3>
+<ul>
+<li><code>ui_str_id_t</code>：每条 UI 文案一个枚举值（录音标题、错误提示、模式名称、页脚格式串等）。</li>
+<li><code>UI_STR_COUNT</code>：每种语言的字符串个数；<code>s_tbl</code> 每一行必须有 <strong>恰好</strong> <code>UI_STR_COUNT</code> 个 <code>"..."</code> 字面量。</li>
+<li>含格式化占位符的字符串（如 <code>UI_STR_PRINT_FOOTER_FMT</code>）使用 <code>rt_snprintf</code> / <code>lv_label</code> 等与 LVGL 一致的写法，注意 <strong><code>%lu</code></strong> 等与类型匹配。</li>
+</ul>
+<h3 id="32-编码要求">3.2 编码要求<a aria-hidden="true" class="anchor-heading icon-link" href="#32-编码要求"></a></h3>
+<ul>
+<li>源文件必须使用 <strong>UTF-8（无 BOM）</strong>。</li>
+<li>省略号建议使用 Unicode 字符 <strong>U+2026（…）</strong>，不要使用会被破坏的多字节序列（历史上若把 UTF-8 尾字节替换成 <code>?</code>，会导致整文件解码失败）。</li>
+<li>修改后用编辑器或 <code>python3 -c "open('...').read().decode('utf-8')"</code> 做一次 strict 解码检查。</li>
+</ul>
+<h3 id="33-api">3.3 API<a aria-hidden="true" class="anchor-heading icon-link" href="#33-api"></a></h3>
+<ul>
+<li><code>ui_strings_sync_from_device_config()</code>：从 <code>device_config</code> 读取语言 ID，写入内部 <code>s_ui_lang</code>。</li>
+<li><code>ui_strings_get(ui_str_id_t id)</code>：返回当前语言下的 UTF-8 字符串指针。</li>
+<li><code>ui_strings_font(void)</code>：返回当前语言应使用的 <code>const lv_font_t *</code>。</li>
+</ul>
+<p>初始化 UI 时以及切换语言后，应先 <code>sync</code> 再刷新界面（见第 5 节）。</p>
+<hr>
+<h2 id="4-字体策略为何不止一种字体">4. 字体策略（为何不止一种字体）<a aria-hidden="true" class="anchor-heading icon-link" href="#4-字体策略为何不止一种字体"></a></h2>
+<p>嵌入式 LVGL 通常使用 <strong>位图字体（lv_font_fmt_txt）</strong>，每种字体只在编译期编入一部分字形。若只用 Montserrat 14 的默认子集（基本 ASCII + 少量符号），则 <strong>法语变音、德语变音、西里尔、希腊、越南语、泰语</strong> 等都会缺字或显示异常。</p>
+<p>本工程采用 <strong>按语言分支</strong> 的策略（<code>ui_strings_font()</code>）：</p>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>语言 ID</th><th>场景</th><th>字体</th></tr></thead><tbody><tr><td>7、19</td><td>阿拉伯语、希伯来语（RTL/Bidi）</td><td><code>lv_font_dejavu_16_persian_hebrew</code>（16px）</td></tr><tr><td>0、1、3、14</td><td>简中、繁中、韩、日</td><td><code>lv_font_simsun_16_cjk</code>（16px，实为按文案子集生成的合并字体）</td></tr><tr><td>其余</td><td>拉丁扩展、西里尔、希腊、越南语、泰语等</td><td><code>lv_font_ui_i18n_14</code>（14px，DejaVu Sans + 泰文 Loma 合并子集）</td></tr><tr><td>（回退）</td><td><code>LV_FONT_UI_I18N_14</code> 关闭时</td><td><code>lv_font_montserrat_14</code></td></tr></tbody></table></div>
+<p>说明：</p>
+<ul>
+<li><strong>阿/希</strong>：依赖 <code>lv_conf.h</code> 中 <code>LV_FONT_DEJAVU_16_PERSIAN_HEBREW</code>、<code>LV_USE_BIDI</code>、<code>LV_USE_ARABIC_PERSIAN_CHARS</code> 等配置。</li>
+<li><strong>CJK 四语</strong>：日韩与中文共用一条 CJK 字体路径时，字体文件必须覆盖 <strong>这几语言行中出现过的所有字符</strong>。</li>
+<li><strong>其余欧洲/东南亚等</strong>：由 <code>lv_font_ui_i18n_14</code> 覆盖；泰文在常见 TTF 里往往不在 DejaVu 正文中，故生成脚本用 <strong>Loma</strong> 补充泰文区段。</li>
+</ul>
+<p>全局默认字体仍为 <code>LV_FONT_DEFAULT &#x26;lv_font_montserrat_14</code>；仅 <strong>显式设置了 <code>ui_strings_font()</code> 的控件</strong> 会走多语言字体，其它界面元素若要国际化需自行设字体或改用默认。</p>
+<hr>
+<h2 id="5-运行时切换与-lvgl-线程">5. 运行时切换与 LVGL 线程<a aria-hidden="true" class="anchor-heading icon-link" href="#5-运行时切换与-lvgl-线程"></a></h2>
+<h3 id="51-同步语言索引">5.1 同步语言索引<a aria-hidden="true" class="anchor-heading icon-link" href="#51-同步语言索引"></a></h3>
+<p>任意时刻若 Flash 中的 <code>language_id</code> 可能已变，应调用：</p>
+<pre class="language-c"><code class="language-c"><span class="token function">ui_strings_sync_from_device_config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="52-刷新桌面-ui">5.2 刷新桌面 UI<a aria-hidden="true" class="anchor-heading icon-link" href="#52-刷新桌面-ui"></a></h3>
+<p>语言切换后必须 <strong>在 LVGL 语境下</strong> 重建依赖文案的控件，否则仅更新索引字符串指针不够。</p>
+<p>本工程实现：<code>applications/pages/lv_example_meter.c</code> 中的 <code>lv_desktop_refresh_language()</code> 通过 <code>lv_async_call</code> 调度 <code>language_refresh_async_cb</code>，在回调里：</p>
+<ol>
+<li><code>lv_vendor_disp_lock()</code></li>
+<li><code>ui_strings_sync_from_device_config()</code></li>
+<li>清空模式槽位、<code>voice_panel_rebuild()</code>、刷新桌面中心区域</li>
+<li><code>lv_vendor_disp_unlock()</code></li>
+</ol>
+<p>切换入口示例：</p>
+<ul>
+<li><strong>串口 MSH</strong>：<code>device_config.c</code> 中的 <code>cfglang</code>（无参数打印帮助与当前语言；带参数则 <code>device_config_set_language</code> + <code>lv_desktop_refresh_language()</code>）。</li>
+<li><strong>MQTT</strong>：<code>mqtt_backend_message.c</code> 中 <code>languageSwitch</code> 命令，校验 <code>language</code> 为 <code>0</code>～<code>20</code>，写入配置后调用 <code>lv_desktop_refresh_language()</code>。</li>
+</ul>
+<h3 id="53-lvgl-任务栈">5.3 LVGL 任务栈<a aria-hidden="true" class="anchor-heading icon-link" href="#53-lvgl-任务栈"></a></h3>
+<p>长文案 + 复杂布局可能在切换语言时增加栈消耗。若出现 <code>data abort</code> / 栈溢出，可适当增大 <code>beken378/app/lvgl/lv_vendor.c</code> 中与 LVGL 任务相关的栈配置（本工程曾将相关栈调至更大以规避此类问题）。</p>
+<hr>
+<h2 id="6-编译工程">6. 编译工程<a aria-hidden="true" class="anchor-heading icon-link" href="#6-编译工程"></a></h2>
+<p>本仓库推荐使用：</p>
+<pre class="language-bash"><code class="language-bash">scons --beken<span class="token operator">=</span>bk7252n -j8
+</code></pre>
+<p>字体 <code>.c</code> 较大时编译时间会增加；确保 <code>beken378/SConscript</code> 已包含新增的字体源文件（如 <code>lv_font_ui_i18n_14.c</code>、<code>lv_font_simsun_16_cjk.c</code>）。</p>
+<hr>
+<h2 id="7-字体生成与维护">7. 字体生成与维护<a aria-hidden="true" class="anchor-heading icon-link" href="#7-字体生成与维护"></a></h2>
+<h3 id="71-工具lv_font_conv">7.1 工具：lv_font_conv<a aria-hidden="true" class="anchor-heading icon-link" href="#71-工具lv_font_conv"></a></h3>
+<p>使用 LVGL 官方 Node 工具 <strong><a href="https://www.npmjs.com/package/lv_font_conv">lv_font_conv</a></strong>（仓库内通过脚本调用 <code>lv_font_conv.js</code>）。</p>
+<p>典型依赖：</p>
+<ul>
+<li><strong>Node.js</strong>（<code>node</code> 在 <code>PATH</code> 中，或通过环境变量 <code>NODE_BINARY</code> 指定）。</li>
+<li>解压后的包路径可通过环境变量 <strong><code>LV_FONT_CONV_JS</code></strong> 指向 <code>lv_font_conv.js</code>。</li>
+</ul>
+<p>说明：<strong><code>.ttc</code>（TrueType Collection）</strong> 常被 <code>lv_font_conv</code> 使用的 opentype 栈拒绝；优先使用 <strong><code>.ttf</code></strong>（如系统自带的 <code>DejaVuSans.ttf</code>、<code>tlwg</code> 的 <code>Loma.ttf</code>）。</p>
+<h3 id="72-lv_font_ui_i18n_14多数欧洲语言--希腊--西里尔--越南语--泰语等">7.2 <code>lv_font_ui_i18n_14</code>（多数欧洲语言 + 希腊 + 西里尔 + 越南语 + 泰语等）<a aria-hidden="true" class="anchor-heading icon-link" href="#72-lv_font_ui_i18n_14多数欧洲语言--希腊--西里尔--越南语--泰语等"></a></h3>
+<p>脚本路径：</p>
+<pre class="language-text"><code class="language-text">tools/scripts/gen_lv_font_ui_i18n_14.py
+</code></pre>
+<p>作用：从 <code>ui_strings.c</code> 中 <strong>指定语言行</strong>（与 <code>device_config</code> 中走「非 DejaVu、非 CJK」的语言 ID 一致）抽取全部字符，拆成：</p>
+<ul>
+<li><strong>非泰文</strong>：<code>DejaVuSans.ttf</code> + <code>-r 0x20-0x7f</code> + <code>--symbols …</code></li>
+<li><strong>泰文（U+0E00～U+0E7F）</strong>：<code>Loma.ttf</code> + <code>--symbols …</code></li>
+</ul>
+<p>两次 <code>--font</code> 合并生成 <code>beken378/app/lvgl/src/font/lv_font_ui_i18n_14.c</code>。</p>
+<p>在工程根目录执行：</p>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">LV_FONT_CONV_JS</span><span class="token operator">=</span>/path/to/package/lv_font_conv.js   <span class="token comment"># 若默认路径不存在</span>
+python3 tools/scripts/gen_lv_font_ui_i18n_14.py
+</code></pre>
+<p>可选环境变量：<code>DEJAVU_SANS_TTF</code>、<code>LOMA_TTF</code>。</p>
+<p><strong>何时必须重跑</strong>：修改了上述语言行文案，且引入了 <strong>新的 Unicode 字符</strong>（新词、新标点、另一种字母）。</p>
+<h3 id="73-lv_font_simsun_16_cjk简繁日韩">7.3 <code>lv_font_simsun_16_cjk</code>（简繁日韩）<a aria-hidden="true" class="anchor-heading icon-link" href="#73-lv_font_simsun_16_cjk简繁日韩"></a></h3>
+<p>当前文件名为历史沿用（<code>simsun</code>），内容为 <strong>按 UI 文案子集裁剪的 CJK 字体</strong>（来源可为 Noto/Droid 等 TTF，视生成命令而定）。</p>
+<p><strong>何时必须重跑</strong>：修改语言 <strong>0、1、3、14</strong> 任意一行文案并引入新汉字/假名/谚文音节等。</p>
+<p>操作建议：</p>
+<ol>
+<li>从 <code>ui_strings.c</code> 中提取这四行全部字符串中的 <strong>去重字符集合</strong>。</li>
+<li>使用 <code>lv_font_conv</code>：<code>--font &#x3C;某 CJK 覆盖充分的 .ttf></code>，<code>-r 0x20-0x7f</code>，<code>--symbols &#x3C;去重字符串></code>，生成 <code>.c</code> 后替换 <code>lv_font_simsun_16_cjk.c</code>（保持 <code>lv_font_simsun_16_cjk</code> 符号名与 <code>lv_conf</code> 开关一致）。</li>
+<li>通过 Python <code>subprocess</code> 传入 <code>--symbols</code>，避免 shell 破坏 UTF-8。</li>
+</ol>
+<h3 id="74-lv_font_dejavu_16_persian_hebrew">7.4 <code>lv_font_dejavu_16_persian_hebrew</code><a aria-hidden="true" class="anchor-heading icon-link" href="#74-lv_font_dejavu_16_persian_hebrew"></a></h3>
+<p>一般为范围编译（阿拉伯、希伯来区块 + ASCII）。若阿/希文案新增罕见字符，需检查现有范围是否覆盖，必要时扩展 <code>--range</code> 或 <code>--symbols</code> 并重新生成。</p>
+<hr>
+<h2 id="8-lv_confh-中与多语言相关的开关">8. <code>lv_conf.h</code> 中与多语言相关的开关<a aria-hidden="true" class="anchor-heading icon-link" href="#8-lv_confh-中与多语言相关的开关"></a></h2>
+<p>路径：<code>beken378/app/lvgl/lv_conf.h</code></p>
+<p>常用项：</p>
+<ul>
+<li><code>LV_FONT_MONTSERRAT_14</code>：默认 UI 字体（图标与其它未单独设字体的控件）。</li>
+<li><code>LV_FONT_DEJAVU_16_PERSIAN_HEBREW</code>：阿/希。</li>
+<li><code>LV_FONT_SIMSUN_16_CJK</code>：简繁日韩路径。</li>
+<li><code>LV_FONT_UI_I18N_14</code>：上述「合并 DejaVu + Loma」子集字体。</li>
+<li><code>LV_FONT_DEFAULT</code>：仍为 <code>&#x26;lv_font_montserrat_14</code>。</li>
+<li>阿语相关：<code>LV_USE_BIDI</code>、<code>LV_USE_ARABIC_PERSIAN_CHARS</code>（具体见当前 <code>lv_conf.h</code>）。</li>
+</ul>
+<p>字体需在 <code>beken378/app/lvgl/src/font/lv_font.h</code> 中 <code>LV_FONT_DECLARE</code>，并在 <code>beken378/SConscript</code> 中加入对应 <code>.c</code> 编译项。</p>
+<hr>
+<h2 id="9-mqtt-与串口约定摘要">9. MQTT 与串口约定摘要<a aria-hidden="true" class="anchor-heading icon-link" href="#9-mqtt-与串口约定摘要"></a></h2>
+<ul>
+<li><strong>MQTT</strong>：命令名 <code>languageSwitch</code>，payload 中含数字字段 <code>language</code>，范围 <code>0</code>～<code>20</code>；成功后持久化并 <code>lv_desktop_refresh_language()</code>。</li>
+<li><strong>串口</strong>：<code>cfglang</code> 查看或设置；设置成功后同样刷新 LVGL 桌面。</li>
+</ul>
+<hr>
+<h2 id="10-新建界面时的检查清单">10. 新建界面时的检查清单<a aria-hidden="true" class="anchor-heading icon-link" href="#10-新建界面时的检查清单"></a></h2>
+<ol>
+<li>文案是否放在 <code>ui_strings</code> 枚举 + <code>s_tbl</code> 每一行同步更新？</li>
+<li>新字符是否落在已有字体子集中？若否，按第 7 节重生成 <strong>CJK</strong> 或 <strong>ui_i18n_14</strong> 字体。</li>
+<li>控件是否设置了 <code>ui_strings_font()</code>（或与策略一致的字体）？</li>
+<li>RTL 语言是否在真机上验证布局（<code>lv_obj_set_style_base_dir</code> 等是否按需设置）？</li>
+<li>修改后执行 <code>scons --beken=bk7252n -j8</code> 全量编译。</li>
+</ol>
+<hr>
+<h2 id="11-常见问题">11. 常见问题<a aria-hidden="true" class="anchor-heading icon-link" href="#11-常见问题"></a></h2>
+<p><strong>Q：某语言出现方块或缺笔画？</strong><br>
+A：几乎都是 <strong>字体未编入该字符</strong>。确认该语言走哪条 <code>ui_strings_font()</code> 分支，并对对应字体按第 7 节扩容后重新编译。</p>
+<p><strong>Q：只有中文正常，其它拉丁语言正常，泰语仍异常？</strong><br>
+A：泰文需 <strong>单独字体面</strong>（本工程用 Loma 与 DejaVu 合并）；勿仅用不含泰文的 TTF 生成 <code>lv_font_ui_i18n_14</code>。</p>
+<p><strong>Q：切换语言后崩溃或 HardFault？</strong><br>
+A：排查 LVGL <strong>栈大小</strong>、是否在非 LVGL 线程直接操作 UI（应通过 <code>lv_async_call</code> 或统一锁封装）、以及刷新路径是否与其它定时器/异步回调重入。</p>
+<p><strong>Q：<code>gen_lv_font_ui_i18n_14.py</code> 抽到的字符数量异常？</strong><br>
+A：检查脚本内 <strong><code>_ROW_BASE</code></strong> 是否与 <code>ui_strings.c</code> 中 <strong><code>s_tbl</code> 第一行数据</strong> 在 <code>splitlines()</code> 后的下标一致（当前工程中第一行语言数据在 <strong><code>s_tbl</code> 声明的下一行</strong>，对应下标 <strong>19</strong>）。</p>
+<hr>
+<h2 id="12-关键文件索引">12. 关键文件索引<a aria-hidden="true" class="anchor-heading icon-link" href="#12-关键文件索引"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>文件</th><th>说明</th></tr></thead><tbody><tr><td><code>applications/pages/ui_strings.h</code></td><td>文案枚举、<code>UI_LANG_COUNT</code>、API 声明</td></tr><tr><td><code>applications/pages/ui_strings.c</code></td><td><code>s_tbl</code>、字体分支</td></tr><tr><td><code>applications/pages/lv_example_meter.c</code></td><td><code>lv_desktop_refresh_language</code>、控件绑定文案与字体</td></tr><tr><td><code>applications/mqtt_backend/device_config.c</code></td><td>语言表、<code>cfglang</code>、<code>device_config_set_language</code></td></tr><tr><td><code>applications/mqtt_backend/mqtt_backend_message.c</code></td><td><code>languageSwitch</code></td></tr><tr><td><code>beken378/app/lvgl/lv_conf.h</code></td><td>字体开关与默认字体</td></tr><tr><td><code>beken378/app/lvgl/src/font/lv_font_ui_i18n_14.c</code></td><td>脚本生成的合并子集字体</td></tr><tr><td><code>beken378/app/lvgl/src/font/lv_font_simsun_16_cjk.c</code></td><td>CJK 子集字体</td></tr><tr><td><code>tools/scripts/gen_lv_font_ui_i18n_14.py</code></td><td>再生 <code>lv_font_ui_i18n_14</code></td></tr></tbody></table></div>
+<hr>
+<p><em>文档版本与工程 SDK 目录：<code>bk7252n_sdk-SDK_3.0.76.1_witch_lcd</code>。若你升级 LVGL 大版本，请对照官方字体与 Bidi 文档复核 API 与配置项名称。</em></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/notes/f068cc85f553b7fa6f808b">多语言字库与稳定性开发纪要</a></li>
+<li><a href="/notes/6d428def14b8ffdc828f43">AI 打印机固件 — 项目交接资料</a></li>
+<li><a href="/notes/62ff4545e5f1373c5cfe01">AI 打印机固件 — 项目开发记录总纲</a></li>
+</ul>

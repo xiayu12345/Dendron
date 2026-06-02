@@ -1,0 +1,80 @@
+<h1 id="bug-002lvgl-内存重分配触发-data-abort-os_realloc-越界读取">BUG-002：LVGL 内存重分配触发 Data Abort (os_realloc 越界读取)<a aria-hidden="true" class="anchor-heading icon-link" href="#bug-002lvgl-内存重分配触发-data-abort-os_realloc-越界读取"></a></h1>
+<h1 id="bug-002lvgl-内存重分配触发-data-abort-os_realloc-越界读取-1">BUG-002：LVGL 内存重分配触发 Data Abort (os_realloc 越界读取)<a aria-hidden="true" class="anchor-heading icon-link" href="#bug-002lvgl-内存重分配触发-data-abort-os_realloc-越界读取-1"></a></h1>
+<p><strong>状态</strong>：已关闭<br>
+<strong>优先级</strong>：P0（系统崩溃 / 核心组件）<br>
+<strong>记录日期</strong>：2026-05-12<br>
+<strong>典型构建</strong>：<code>RT-Thread 3.1.0</code> / SDK 3.0.76</p>
+<hr>
+<h2 id="1-现象">1. 现象<a aria-hidden="true" class="anchor-heading icon-link" href="#1-现象"></a></h2>
+<ul>
+<li>设备在接收并处理 MQTT 下发的图片（<code>mqtt backend dispatch ws image to ui</code>），准备在 UI 上显示图片时，发生 <strong><code>data abort</code></strong>，随后系统 <code>shutdown</code>。</li>
+<li>崩溃时的寄存器信息显示 <code>pc</code> 落在 <code>memcpy</code>，且源地址（<code>r1</code>/<code>r3</code>）越过了 <code>0x02040000</code>（PSRAM 物理内存边界）。</li>
+<li>通过 <code>addr2line</code> 解析出的崩溃调用栈如下：
+<code>lv_timer_handler</code> -> <code>lv_draw_img</code> -> <code>decode_and_draw</code> -> <code>lv_mem_buf_get</code> -> <code>lv_mem_realloc</code> -> <strong><code>os_realloc</code></strong> -> <strong><code>memcpy</code></strong>。</li>
+</ul>
+<hr>
+<h2 id="2-原因分析">2. 原因分析<a aria-hidden="true" class="anchor-heading icon-link" href="#2-原因分析"></a></h2>
+<p>根本原因在于 <code>beken378/rttos/mem_arch.c</code> 中的 <code>os_realloc</code> 实现存在严重缺陷：</p>
+<pre class="language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token operator">*</span><span class="token function">os_realloc</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>ptr<span class="token punctuation">,</span> <span class="token class-name">size_t</span> size<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token operator">*</span>tmp<span class="token punctuation">;</span>
+    tmp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">rt_malloc</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">os_memcpy</span><span class="token punctuation">(</span>tmp<span class="token punctuation">,</span> ptr<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x3C;--- 致命错误：按照新分配的 size 拷贝旧数据</span>
+        <span class="token function">rt_free</span><span class="token punctuation">(</span>ptr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> tmp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ol>
+<li><strong>越界读取 (Out-of-bounds Read)</strong>：当 LVGL 需要扩大内存块时（例如从较小的 buffer 扩大到 960 字节），传入的 <code>size</code> 参数是<strong>新的更大尺寸</strong>。</li>
+<li><code>os_memcpy</code> 错误地按照新尺寸 <code>size</code> 从旧指针 <code>ptr</code> 处拷贝数据，导致读取了超出旧内存块实际大小的数据。</li>
+<li><strong>触发 Data Abort</strong>：在本次崩溃中，旧内存块恰好分配在 PSRAM（<code>0x02000000</code> - <code>0x02040000</code>）的末尾附近。越界读取直接跨越了物理内存的最高边界 <code>0x02040000</code>，访问了未映射的非法地址，从而触发了硬件级别的 Data Abort。</li>
+</ol>
+<hr>
+<h2 id="3-修复方法">3. 修复方法<a aria-hidden="true" class="anchor-heading icon-link" href="#3-修复方法"></a></h2>
+<p>RT-Thread 内核本身已经提供了完善的 <code>rt_realloc</code> 函数，它能够正确处理新旧内存块的大小，并在可能的情况下原地扩容，避免不必要的拷贝和越界问题。</p>
+<p>将 <code>os_realloc</code> 的实现修改为直接调用 <code>rt_realloc</code>：</p>
+<pre class="language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token operator">*</span><span class="token function">os_realloc</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>ptr<span class="token punctuation">,</span> <span class="token class-name">size_t</span> size<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">rt_realloc</span><span class="token punctuation">(</span>ptr<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>这不仅解决了内存越界读取导致的 Data Abort 问题，还能提高 LVGL 图像解码时内存重新分配的运行效率。</p>
+<hr>
+<h2 id="4-涉及模块与文件">4. 涉及模块与文件<a aria-hidden="true" class="anchor-heading icon-link" href="#4-涉及模块与文件"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>模块</th><th>路径</th></tr></thead><tbody><tr><td>OS 内存适配层</td><td><code>beken378/rttos/mem_arch.c</code></td></tr><tr><td>LVGL 内存管理</td><td><code>beken378/app/lvgl/src/misc/lv_mem.c</code></td></tr></tbody></table></div>
+<hr>
+<h2 id="5-变更记录">5. 变更记录<a aria-hidden="true" class="anchor-heading icon-link" href="#5-变更记录"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>日期</th><th>说明</th></tr></thead><tbody><tr><td>2026-05-12</td><td>分析并修复 <code>os_realloc</code> 越界读取导致的 Data Abort 问题，状态置为已关闭。</td></tr></tbody></table></div>

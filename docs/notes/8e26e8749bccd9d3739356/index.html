@@ -1,0 +1,498 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="icon" href="/favicon.ico"/><title>蜂鸣/旋律 MQTT 协同与 TCM 内存优化开发记录</title><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="description" content="Personal Knowledge Space"/><meta property="og:title" content="蜂鸣/旋律 MQTT 协同与 TCM 内存优化开发记录"/><meta property="og:description" content="Personal Knowledge Space"/><meta property="og:url" content="https://xiayu12345.github.io/Dendron/notes/8e26e8749bccd9d3739356/"/><meta property="og:type" content="article"/><meta property="article:published_time" content="6/2/2026"/><meta property="article:modified_time" content="6/2/2026"/><link rel="canonical" href="https://xiayu12345.github.io/Dendron/notes/8e26e8749bccd9d3739356/"/><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/8e7b7e4bce421c0a.css" as="style"/><link rel="stylesheet" href="/_next/static/css/8e7b7e4bce421c0a.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-3d209faeb64f2f97.js" defer=""></script><script src="/_next/static/chunks/framework-28c999baf2863c3d.js" defer=""></script><script src="/_next/static/chunks/main-104451f3d1a5c4bc.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6b338472289fe290.js" defer=""></script><script src="/_next/static/chunks/935-4dee79e80b8641c6.js" defer=""></script><script src="/_next/static/chunks/6-50972def09142ee2.js" defer=""></script><script src="/_next/static/chunks/pages/notes/%5Bid%5D-78d472fa3b924116.js" defer=""></script><script src="/_next/static/9V-Pp4vApoolPva_kAKde/_buildManifest.js" defer=""></script><script src="/_next/static/9V-Pp4vApoolPva_kAKde/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><section class="ant-layout" style="width:100%;min-height:100%"><header class="ant-layout-header" style="position:fixed;isolation:isolate;z-index:1;width:100%;border-bottom:1px solid #d4dadf;height:64px;padding:0 24px 0 2px"><div class="ant-row ant-row-center" style="max-width:992px;justify-content:space-between;margin:0 auto"><div style="display:flex" class="ant-col ant-col-xs-20 ant-col-sm-4"></div><div class="ant-col gutter-row ant-col-xs-0 ant-col-sm-20 ant-col-md-20 ant-col-lg-19"><div class="ant-select ant-select-lg ant-select-auto-complete ant-select-single ant-select-allow-clear ant-select-show-search" style="width:100%"><div class="ant-select-selector"><span class="ant-select-selection-search"><input type="search" autoComplete="off" class="ant-select-selection-search-input" role="combobox" aria-haspopup="listbox" aria-owns="undefined_list" aria-autocomplete="list" aria-controls="undefined_list" aria-activedescendant="undefined_list_0" value=""/></span><span class="ant-select-selection-placeholder">For full text search please use the &#x27;?&#x27; prefix. e.g. ? Onboarding</span></div></div></div><div style="display:none;align-items:center;justify-content:center" class="ant-col ant-col-xs-4 ant-col-sm-4 ant-col-md-0 ant-col-lg-0"><span role="img" aria-label="menu" style="font-size:24px" tabindex="-1" class="anticon anticon-menu"><svg viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg></span></div></div></header><section class="ant-layout" style="margin-top:64px;display:flex;flex-direction:row"><div class="site-layout-sidebar" style="flex:0 0 auto;width:calc(max((100% - 992px) / 2, 0px) + 200px);min-width:200px;padding-left:calc((100% - 992px) / 2)"><aside class="ant-layout-sider ant-layout-sider-dark" style="position:fixed;overflow:auto;height:calc(100vh - 64px);background-color:transparent;flex:0 0 200px;max-width:200px;min-width:200px;width:200px"><div class="ant-layout-sider-children"></div></aside></div><main class="ant-layout-content side-layout-main" style="max-width:1200px;min-width:0;display:block"><div style="padding:0 24px"><div class="main-content" role="main"><div class="ant-row"><div class="ant-col ant-col-24"><div class="ant-row" style="margin-left:-10px;margin-right:-10px"><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-24 ant-col-md-18"><div><h1 id="蜂鸣旋律-mqtt-协同与-tcm-内存优化开发记录">蜂鸣/旋律 MQTT 协同与 TCM 内存优化开发记录<a aria-hidden="true" class="anchor-heading icon-link" href="#蜂鸣旋律-mqtt-协同与-tcm-内存优化开发记录"></a></h1>
+<h1 id="蜂鸣旋律-mqtt-协同与-tcm-内存优化开发记录-1">蜂鸣/旋律 MQTT 协同与 TCM 内存优化开发记录<a aria-hidden="true" class="anchor-heading icon-link" href="#蜂鸣旋律-mqtt-协同与-tcm-内存优化开发记录-1"></a></h1>
+<p><strong>日期</strong>：2026-05-27<br>
+<strong>工程</strong>：<code>bk7252n_sdk-SDK_3.0.76.1_witch_lcd_bz</code><br>
+<strong>编译命令</strong>：<code>scons --beken=bk7252n -j8</code><br>
+<strong>前置文档</strong>：<a href="/notes/238cee9d6e5d3351d1562b">按键发声蜂鸣与等待旋律开发记录</a>（初版 beep 模块与旋律架构）</p>
+<hr>
+<h2 id="1-背景">1. 背景<a aria-hidden="true" class="anchor-heading icon-link" href="#1-背景"></a></h2>
+<p>在初版「按键蜂鸣 + 生图等待旋律」落地后，联调 MQTT 语音生图链路时出现一系列问题：</p>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>现象</th><th>影响</th></tr></thead><tbody><tr><td>云端 <code>volumeSet</code> 后按键「滴滴」音量不变</td><td>用户误以为音量设置无效</td></tr><tr><td>旋律音量调节后出现沙沙声、卡顿</td><td>体验差，疑似音频链路异常</td></tr><tr><td>MQTT 同步收 <code>audioChunk</code> 时旋律断续</td><td>生图等待 BGM 不稳定</td></tr><tr><td>日志 <code>rx dispatch failed</code></td><td>误导排障（实际收包成功）</td></tr><tr><td><strong><code>create print thread failed</code></strong></td><td>收图完成后无法启动 <code>mqtt_prn</code> 打印线程，业务中断</td></tr></tbody></table></div>
+<p>根因集中在：<strong>音量策略未分离</strong>、<strong>DAC DMA 异步复用同一块缓冲</strong>、<strong>大数组常驻 BSS 挤占 TCM 堆</strong>、<strong>MQTT 收包线程长时间占用 CPU</strong>。</p>
+<hr>
+<h2 id="2-改动文件清单">2. 改动文件清单<a aria-hidden="true" class="anchor-heading icon-link" href="#2-改动文件清单"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>文件</th><th>改动类型</th><th>说明</th></tr></thead><tbody><tr><td><code>applications/button_control/beep.c</code></td><td>修改</td><td>按键/旋律音量分离；DMA 乒乓 + <code>tx_complete</code> 背压；旋律缓冲改为运行时分配；缩小 chunk/缓冲深度</td></tr><tr><td><code>applications/button_control/beep.h</code></td><td>修改</td><td><code>beep_set_volume()</code> 文档：仅影响等待旋律</td></tr><tr><td><code>applications/mqtt_backend/mqtt_backend_message.c</code></td><td>已有</td><td><code>volumeSet</code> → <code>beep_set_volume()</code></td></tr><tr><td><code>applications/mqtt_backend/device_config.c</code></td><td>已有</td><td>配置加载时同步 <code>beep_set_volume()</code></td></tr><tr><td><code>applications/main.c</code></td><td>已有</td><td>启动时从 <code>device_config_get_volume()</code> 初始化旋律音量</td></tr><tr><td><code>applications/audio/audio_result_wait.c</code></td><td>已有</td><td>等待生图时 <code>beep_melody_start/stop</code></td></tr><tr><td><code>applications/mqtt_backend/binary_rx/mqtt_backend_binary_audio_chunk.c</code></td><td>修改</td><td>收包/写 Flash 路径 <code>rt_thread_yield()</code>；收图完成前 <code>beep_melody_stop()</code> + 延时；修正返回值</td></tr><tr><td><code>applications/mqtt_backend/mqtt_backend_async_rx.c</code></td><td>修改</td><td>同步收包模式 dispatch 前后 <code>yield</code>；<code>audioChunk</code> 成功路径不再误报失败</td></tr><tr><td><code>applications/mqtt_backend/mqtt_backend_config.h</code></td><td>配置</td><td><code>CFG_MQTT_BACKEND_ASYNC_RX=0</code>（大图不能异步队列，防 OOM）</td></tr><tr><td><code>applications/mqtt_backend/mqtt_backend_client.c</code></td><td>修改</td><td>Paho 线程优先级下调，为 <code>audio_th</code> 让出 CPU</td></tr><tr><td><code>applications/mqtt_backend/binary_rx/mqtt_backend_binary_rx.c</code></td><td>相关</td><td><code>mqtt_prn</code> 线程创建（栈 6144）</td></tr></tbody></table></div>
+<hr>
+<h2 id="3-问题与根因">3. 问题与根因<a aria-hidden="true" class="anchor-heading icon-link" href="#3-问题与根因"></a></h2>
+<h3 id="31-音量volumeset-对按键无效">3.1 音量：<code>volumeSet</code> 对按键无效<a aria-hidden="true" class="anchor-heading icon-link" href="#31-音量volumeset-对按键无效"></a></h3>
+<ul>
+<li><code>beep_set_volume()</code> 原先同时影响按键蜂鸣与旋律，或仅改软件变量未区分通路。</li>
+<li><strong>产品要求</strong>：按键固定 <strong>65</strong>；旋律跟随配置文件 / <code>volumeSet</code>（0~100）。</li>
+</ul>
+<h3 id="32-旋律失真卡顿dma-指针复用">3.2 旋律失真、卡顿（DMA 指针复用）<a aria-hidden="true" class="anchor-heading icon-link" href="#32-旋律失真卡顿dma-指针复用"></a></h3>
+<ul>
+<li><code>rt_device_write()</code> 在 DAC 驱动中<strong>只保存缓冲区指针</strong>，由 GDMA 异步读取（<code>GDMA_X_SRC_DTCM_RD_REQ</code>）。</li>
+<li>早期单块 <code>s_stereo_chunk</code> 在循环中被覆盖 → 杂音、断续。</li>
+<li>曾用 <code>s_stereo_chunks[8][1024]</code> 做乒乓，但 <strong>16KB 常驻 BSS</strong>。</li>
+</ul>
+<h3 id="33-tcm-堆耗尽--打印线程创建失败">3.3 TCM 堆耗尽 → 打印线程创建失败<a aria-hidden="true" class="anchor-heading icon-link" href="#33-tcm-堆耗尽--打印线程创建失败"></a></h3>
+<p>BK7252N 内存模型（<code>drivers/board.h</code> + <code>link.lds</code>）：</p>
+<pre><code>[ RAM: .data + .bss ... ] → _empty_ram → [ TCM 堆 → 256KB 末端 ]
+</code></pre>
+<ul>
+<li><code>rt_malloc</code> / <code>rt_thread_create</code> 栈均走 <strong>TCM 堆</strong>（<code>RT_KERNEL_MALLOC</code> → <code>tcm_malloc</code>）。</li>
+<li><code>s_stereo_chunks</code> 占 <strong>0x4000（16KB）BSS</strong>，直接压缩 <code>_empty_ram</code> 之后的可用堆。</li>
+<li>收图峰值：MQTT 缓冲 + LVGL + <code>mqtt_prn</code> 栈（6144）+ 其它线程 → <strong><code>rt_thread_create("mqtt_prn", ...)</code> 失败</strong>。</li>
+</ul>
+<p><code>out/rtthread.map</code> 摘录（优化前）：</p>
+<pre><code>.bss.s_stereo_chunks    0x00408488    0x4000    beep.o
+_empty_ram              0x004292b8
+</code></pre>
+<h3 id="34-mqtt-同步收包与旋律争抢-cpu">3.4 MQTT 同步收包与旋律争抢 CPU<a aria-hidden="true" class="anchor-heading icon-link" href="#34-mqtt-同步收包与旋律争抢-cpu"></a></h3>
+<ul>
+<li><code>CFG_MQTT_BACKEND_ASYNC_RX=0</code>：Paho 回调内同步处理 <code>audioChunk</code>，单次处理可达数百毫秒。</li>
+<li>若 <code>audio_th</code> 优先级过低，无法及时 <code>write</code> / 响应 <code>tx_complete</code>，旋律 underflow。</li>
+</ul>
+<h3 id="35-日志误报-rx-dispatch-failed">3.5 日志误报 <code>rx dispatch failed</code><a aria-hidden="true" class="anchor-heading icon-link" href="#35-日志误报-rx-dispatch-failed"></a></h3>
+<ul>
+<li><code>audioChunk</code> 处理函数在「无需 JSON 应答」场景曾返回 <code>-1</code>。</li>
+<li><code>mqtt_backend_async_rx_push()</code> 在同步模式下将 <code>dispatch != 0</code> 视为失败并打印错误，<strong>实际收包与 Flash 写入已成功</strong>。</li>
+</ul>
+<hr>
+<h2 id="4-技术方案">4. 技术方案<a aria-hidden="true" class="anchor-heading icon-link" href="#4-技术方案"></a></h2>
+<h3 id="41-按键与旋律音量分离">4.1 按键与旋律音量分离<a aria-hidden="true" class="anchor-heading icon-link" href="#41-按键与旋律音量分离"></a></h3>
+<pre class="language-c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">BEEP_FIXED_VOLUME</span>   <span class="token expression"><span class="token number">65</span>   </span><span class="token comment">/* 按键蜂鸣，不随 volumeSet 变化 */</span></span>
+
+<span class="token keyword">static</span> <span class="token keyword">int</span> s_melody_volume <span class="token operator">=</span> <span class="token number">65</span><span class="token punctuation">;</span> <span class="token comment">/* 旋律，beep_set_volume / 配置文件 */</span>
+
+<span class="token keyword">void</span> <span class="token function">beep_play</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">beep_apply_fixed_codec_volume</span><span class="token punctuation">(</span>dac<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">/* CODEC_CMD_SET_VOLUME = 65 */</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">beep_melody_start</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">melody_apply_codec_volume</span><span class="token punctuation">(</span>dac<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">/* volume * 99 / 100，钳位 0~99 */</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><strong>不再</strong>在旋律循环内对每块 PCM 做软件缩放（曾引入沙沙声）。</li>
+<li>音量仅通过 Codec 硬件 <code>CODEC_CMD_SET_VOLUME</code> 设置。</li>
+</ul>
+<h3 id="42-旋律-dma-乒乓与背压">4.2 旋律 DMA 乒乓与背压<a aria-hidden="true" class="anchor-heading icon-link" href="#42-旋律-dma-乒乓与背压"></a></h3>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>参数</th><th>初版（问题版）</th><th>当前值</th></tr></thead><tbody><tr><td><code>CHUNK_MONO</code></td><td>512（32ms×2 立体声点）</td><td><strong>256</strong></td></tr><tr><td><code>MELODY_BUF_COUNT</code></td><td>8</td><td><strong>4</strong></td></tr><tr><td>缓冲存放</td><td><code>static int16_t s_stereo_chunks[8][1024]</code></td><td><strong><code>rt_malloc</code> 池，停止后 <code>rt_free</code></strong></td></tr><tr><td>常驻 RAM</td><td>16KB BSS</td><td><strong>0</strong>（空闲时）</td></tr><tr><td>播放中 RAM</td><td>16KB</td><td><strong>4KB</strong>（4×256×2×sizeof(int16_t)）</td></tr></tbody></table></div>
+<p>流程要点：</p>
+<ol>
+<li><code>melody_tx_done</code>：<code>tx_complete</code> 时 <code>rt_sem_release(&#x26;s_tx_done_sem)</code>。</li>
+<li><code>melody_write_one_chunk</code>：当 <code>pipeline >= MELODY_BUF_COUNT - 1</code> 时 <code>rt_sem_take</code> 等待 DMA 消费，避免覆盖在途缓冲。</li>
+<li>启动时预填 <code>MELODY_BUF_COUNT - 2</code> 块，降低起播间隙。</li>
+<li>mono → stereo 展开：<code>chunk[j*2] = chunk[j*2+1] = MELODY_PCM[...]</code>。</li>
+</ol>
+<h3 id="43-tcm-内存优化本次核心">4.3 TCM 内存优化（本次核心）<a aria-hidden="true" class="anchor-heading icon-link" href="#43-tcm-内存优化本次核心"></a></h3>
+<p><strong>策略</strong>：旋律缓冲<strong>仅在播放期间</strong>从 TCM 堆分配，停止后释放，避免 16KB 永久占用 BSS。</p>
+<pre class="language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token class-name">int16_t</span> <span class="token operator">*</span>s_stereo_chunk_pool <span class="token operator">=</span> RT_NULL<span class="token punctuation">;</span>
+
+<span class="token keyword">static</span> <span class="token class-name">rt_bool_t</span> <span class="token function">melody_chunks_alloc</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    s_stereo_chunk_pool <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">int16_t</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">rt_malloc</span><span class="token punctuation">(</span>MELODY_POOL_BYTES<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">/* 4096 */</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">melody_chunks_free</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">rt_free</span><span class="token punctuation">(</span>s_stereo_chunk_pool<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s_stereo_chunk_pool <span class="token operator">=</span> RT_NULL<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><code>BEEP_CMD_MELODY_START</code> 路径：<code>alloc</code> → 循环写 DAC → <code>close</code> → <code>free</code>。</li>
+<li>收图完成路径（<code>mqtt_backend_binary_audio_chunk.c</code>）在创建打印线程前调用 <code>beep_melody_stop()</code> + <code>rt_thread_mdelay(100)</code>，确保音频线程退出循环并 <strong>释放 4KB 池</strong>，再 <code>rt_thread_create("mqtt_prn", 6144, ...)</code>。</li>
+</ul>
+<p><strong>效果</strong>：永久释放约 <strong>16KB TCM 堆</strong>；播放中峰值从 16KB 降至 <strong>4KB</strong>。</p>
+<h3 id="44-线程优先级与-mqtt-协同">4.4 线程优先级与 MQTT 协同<a aria-hidden="true" class="anchor-heading icon-link" href="#44-线程优先级与-mqtt-协同"></a></h3>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>线程</th><th>优先级（数值越小越高）</th><th>说明</th></tr></thead><tbody><tr><td><code>audio_th</code></td><td><strong>14</strong></td><td>须高于 Paho / 收包路径，及时喂 DMA</td></tr><tr><td>Paho MQTT</td><td><strong>20</strong>（下调）</td><td>避免长时间霸占 CPU</td></tr><tr><td><code>mqproc</code></td><td>20</td><td>仅 <code>CFG_MQTT_BACKEND_ASYNC_RX=1</code> 时存在</td></tr></tbody></table></div>
+<p>同步收包优化（<code>mqtt_backend_async_rx.c</code>）：</p>
+<ul>
+<li><code>mqtt_backend_rx_dispatch_payload()</code> 入口、出口各 <code>rt_thread_yield()</code>。</li>
+<li><code>mqtt_backend_binary_audio_chunk.c</code> 写 Flash 循环内 <code>rt_thread_yield()</code>。</li>
+</ul>
+<p><strong>异步 RX 保持关闭</strong>：<code>CFG_MQTT_BACKEND_ASYNC_RX=0</code>。大图分片若入队会额外 malloc，易 OOM。</p>
+<h3 id="45-收图--打印衔接">4.5 收图 → 打印衔接<a aria-hidden="true" class="anchor-heading icon-link" href="#45-收图--打印衔接"></a></h3>
+<pre class="language-c"><code class="language-c"><span class="token comment">/* mqtt_backend_binary_audio_chunk.c — result 帧处理末尾 */</span>
+<span class="token function">beep_melody_stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">rt_thread_mdelay</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">mqtt_backend_binary_spawn_print_thread</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">rt_kprintf</span><span class="token punctuation">(</span><span class="token string">"mqtt backend create print thread failed\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="46-日志与返回值">4.6 日志与返回值<a aria-hidden="true" class="anchor-heading icon-link" href="#46-日志与返回值"></a></h3>
+<ul>
+<li><code>mqtt_backend_binary_audio_chunk</code> 正常结束 <strong><code>return 0</code></strong>，避免同步 push 误报 <code>rx dispatch failed</code>。</li>
+<li><code>audioChunk</code> 无 MQTT JSON 应答属正常，不应返回失败码给 dispatch 层。</li>
+</ul>
+<hr>
+<h2 id="5-内存与资源一览">5. 内存与资源一览<a aria-hidden="true" class="anchor-heading icon-link" href="#5-内存与资源一览"></a></h2>
+<h3 id="51-旋律相关">5.1 旋律相关<a aria-hidden="true" class="anchor-heading icon-link" href="#51-旋律相关"></a></h3>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>资源</th><th>位置</th><th>大小</th><th>说明</th></tr></thead><tbody><tr><td><code>MELODY_PCM[]</code></td><td>Flash（<code>melody_pcm_data.h</code>）</td><td>~68KB</td><td>34400×int16，不占用 RAM</td></tr><tr><td><code>beep_buf</code></td><td>TCM 堆（<code>audio_th</code> 内 <code>rt_malloc</code>）</td><td>~2.4KB</td><td>按键 PCM，线程生命周期常驻</td></tr><tr><td><code>s_stereo_chunk_pool</code></td><td>TCM 堆（旋律播放时）</td><td><strong>4KB</strong></td><td>停止后释放</td></tr><tr><td><code>audio_th</code> 栈</td><td>TCM 堆</td><td>4096</td><td>创建时分配</td></tr></tbody></table></div>
+<h3 id="52-典型峰值收图打印时">5.2 典型峰值（收图打印时）<a aria-hidden="true" class="anchor-heading icon-link" href="#52-典型峰值收图打印时"></a></h3>
+<ul>
+<li>旋律已停、缓冲已释放 → TCM 可用于 <code>mqtt_prn</code>（栈 6144）及运行时 MQTT/LVGL 缓冲。</li>
+<li>若仍 OOM：用 <code>list_memheap</code> / map 继续排查其它大块分配（如 <code>print_buf</code>、LVGL draw_buf）。</li>
+</ul>
+<hr>
+<h2 id="6-业务集成关系">6. 业务集成关系<a aria-hidden="true" class="anchor-heading icon-link" href="#6-业务集成关系"></a></h2>
+<pre><code>语音上传完成 → audio_result_wait_start()
+              → beep_melody_start()     // 循环 C 大调琶音
+
+MQTT audioChunk 分片收包（同步，yield）
+              → Flash 落盘
+
+result 帧 OK  → beep_melody_stop()
+              → mdelay(100)
+              → mqtt_prn 打印线程
+
+超时/失败     → audio_result_wait_clear() → beep_melody_stop()
+</code></pre>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>API / 配置</th><th>作用</th></tr></thead><tbody><tr><td><code>beep_play()</code></td><td>按键「叮咚」，Codec 音量 <strong>65</strong></td></tr><tr><td><code>beep_set_volume(v)</code></td><td>仅旋律；<code>volumeSet</code> / <code>device_config</code> / <code>main</code> 初始化</td></tr><tr><td><code>beep_set_muted()</code></td><td>P37 录音期间静音按键与旋律</td></tr><tr><td><code>beep_melody_start/stop()</code></td><td>生图等待 BGM</td></tr><tr><td><code>CFG_BEEP_MELODY_ENABLE</code></td><td>编译期裁剪旋律（默认 1）</td></tr></tbody></table></div>
+<hr>
+<h2 id="7-注意事项与已知约束">7. 注意事项与已知约束<a aria-hidden="true" class="anchor-heading icon-link" href="#7-注意事项与已知约束"></a></h2>
+<ol>
+<li>
+<p><strong>DMA 源地址须在 DTCM/TCM 可达范围</strong>：旋律池使用 <code>rt_malloc</code>（TCM 堆），满足 <code>GDMA_X_SRC_DTCM_RD_REQ</code>；不宜改为 SDRAM 除非驱动支持且实测通过。</p>
+</li>
+<li>
+<p><strong>缓冲变浅</strong>：<code>CHUNK_MONO=256</code>、<code>MELODY_BUF_COUNT=4</code> 后，MQTT 同步大包收图时旋律抗抖动余量小于旧版 8×512。若现场仍卡顿，可仅将 <code>MELODY_BUF_COUNT</code> 提到 6（播放时约 6KB），<strong>不要</strong>恢复 16KB 静态 BSS。</p>
+</li>
+<li>
+<p><strong>DAC 独占</strong>：蜂鸣与旋律仍共用 <code>"sound"</code> 设备，由 <code>audio_th</code> 命令互斥。</p>
+</li>
+<li>
+<p><strong>打印线程</strong>：<code>mqtt_prn</code> 栈 6144；创建失败优先查 TCM 剩余空间，而非误认为 MQTT 协议错误。</p>
+</li>
+<li>
+<p><strong>重复源文件</strong>：曾存在 <code>applications/mqtt_backend/mqtt_backend_binary_rx.c</code> 与 <code>binary_rx/</code> 下重复实现，已删除父目录副本，以 <code>binary_rx/mqtt_backend_binary_rx.c</code> 为准。</p>
+</li>
+</ol>
+<hr>
+<h2 id="8-验证建议">8. 验证建议<a aria-hidden="true" class="anchor-heading icon-link" href="#8-验证建议"></a></h2>
+<ol>
+<li><strong>音量</strong>：<code>volumeSet</code> 只改变等待旋律；按键声保持 65。  </li>
+<li><strong>旋律质量</strong>：生图等待全程无规律杂音；停止后无残留 DAC 占用。  </li>
+<li><strong>收图打印</strong>：日志出现 <code>binary result ok</code> 后应能 <code>print thread dispatched</code>，无 <code>create print thread failed</code>。  </li>
+<li><strong>误报</strong>：不应再因 <code>audioChunk</code> 成功而出现 <code>rx dispatch failed</code>（除非真正 dispatch 返回非 0）。  </li>
+<li><strong>内存</strong>：对比烧录前后 <code>list_memheap</code> 或 map 中 <code>_empty_ram</code> 偏移，确认 BSS 减少约 16KB。</li>
+</ol>
+<hr>
+<h2 id="9-相关源码路径">9. 相关源码路径<a aria-hidden="true" class="anchor-heading icon-link" href="#9-相关源码路径"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>用途</th><th>路径</th></tr></thead><tbody><tr><td>蜂鸣/旋律实现</td><td><code>applications/button_control/beep.c</code></td></tr><tr><td>头文件</td><td><code>applications/button_control/beep.h</code></td></tr><tr><td>旋律 PCM</td><td><code>applications/button_control/melody_pcm_data.h</code></td></tr><tr><td>生图等待启停旋律</td><td><code>applications/audio/audio_result_wait.c</code></td></tr><tr><td>收图停旋律 + 起打印</td><td><code>applications/mqtt_backend/binary_rx/mqtt_backend_binary_audio_chunk.c</code></td></tr><tr><td>打印线程创建</td><td><code>applications/mqtt_backend/binary_rx/mqtt_backend_binary_rx.c</code></td></tr><tr><td>同步收包 yield</td><td><code>applications/mqtt_backend/mqtt_backend_async_rx.c</code></td></tr><tr><td>下行模式配置</td><td><code>applications/mqtt_backend/mqtt_backend_config.h</code></td></tr><tr><td>TCM 堆定义</td><td><code>drivers/board.h</code>、<code>drivers/board.c</code></td></tr><tr><td>链接布局</td><td><code>link.lds</code>（<code>_empty_ram</code>、<code>.bss</code> > ram）</td></tr><tr><td>内存 map</td><td><code>out/rtthread.map</code></td></tr></tbody></table></div>
+<hr>
+<h2 id="10-变更摘要相对-2026-05-18">10. 变更摘要（相对 2026-05-18）<a aria-hidden="true" class="anchor-heading icon-link" href="#10-变更摘要相对-2026-05-18"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>项目</th><th>2026-05-18</th><th>2026-05-27</th></tr></thead><tbody><tr><td>旋律播放</td><td>定时 sem 补块</td><td>DMA 乒乓 + <code>tx_complete</code> 背压</td></tr><tr><td>音量</td><td>占位 / 统一 70%</td><td>按键固定 65，旋律 Codec 硬件音量</td></tr><tr><td>旋律缓冲</td><td>未涉及大块 BSS</td><td>8×512 静态 → <strong>4×256 动态池</strong></td></tr><tr><td>TCM</td><td>未分析</td><td>释放 <strong>16KB</strong> 常驻，修复打印线程 OOM</td></tr><tr><td>MQTT</td><td>—</td><td>同步 yield、关闭 async RX、修正误报日志</td></tr><tr><td><code>audio_th</code> 优先级</td><td>27</td><td><strong>14</strong></td></tr></tbody></table></div>
+<hr>
+<p><em>文档整理日期：2026-05-27；对应工程：<code>bk7252n_sdk-SDK_3.0.76.1_witch_lcd_bz</code>。</em></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/notes/62ff4545e5f1373c5cfe01">AI 打印机固件 — 项目开发记录总纲</a></li>
+</ul></div></div><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-0 ant-col-md-6"><div><div class=""><div class="ant-anchor-wrapper dendron-toc" style="max-height:calc(100vh - 64px);z-index:1"><div class="ant-anchor"><div class="ant-anchor-ink"><span class="ant-anchor-ink-ball"></span></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#蜂鸣旋律-mqtt-协同与-tcm-内存优化开发记录" title="蜂鸣/旋律 MQTT 协同与 TCM 内存优化开发记录">蜂鸣/旋律 MQTT 协同与 TCM 内存优化开发记录</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#1-背景" title="1. 背景">1. 背景</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#2-改动文件清单" title="2. 改动文件清单">2. 改动文件清单</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#3-问题与根因" title="3. 问题与根因">3. 问题与根因</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#31-音量volumeset-对按键无效" title="3.1 音量：volumeSet 对按键无效">3.1 音量：volumeSet 对按键无效</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#32-旋律失真卡顿dma-指针复用" title="3.2 旋律失真、卡顿（DMA 指针复用）">3.2 旋律失真、卡顿（DMA 指针复用）</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#33-tcm-堆耗尽--打印线程创建失败" title="3.3 TCM 堆耗尽 → 打印线程创建失败">3.3 TCM 堆耗尽 → 打印线程创建失败</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#34-mqtt-同步收包与旋律争抢-cpu" title="3.4 MQTT 同步收包与旋律争抢 CPU">3.4 MQTT 同步收包与旋律争抢 CPU</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#35-日志误报-rx-dispatch-failed" title="3.5 日志误报 rx dispatch failed">3.5 日志误报 rx dispatch failed</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#4-技术方案" title="4. 技术方案">4. 技术方案</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#41-按键与旋律音量分离" title="4.1 按键与旋律音量分离">4.1 按键与旋律音量分离</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#42-旋律-dma-乒乓与背压" title="4.2 旋律 DMA 乒乓与背压">4.2 旋律 DMA 乒乓与背压</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#43-tcm-内存优化本次核心" title="4.3 TCM 内存优化（本次核心）">4.3 TCM 内存优化（本次核心）</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#44-线程优先级与-mqtt-协同" title="4.4 线程优先级与 MQTT 协同">4.4 线程优先级与 MQTT 协同</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#45-收图--打印衔接" title="4.5 收图 → 打印衔接">4.5 收图 → 打印衔接</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#46-日志与返回值" title="4.6 日志与返回值">4.6 日志与返回值</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#5-内存与资源一览" title="5. 内存与资源一览">5. 内存与资源一览</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#51-旋律相关" title="5.1 旋律相关">5.1 旋律相关</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#52-典型峰值收图打印时" title="5.2 典型峰值（收图打印时）">5.2 典型峰值（收图打印时）</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#6-业务集成关系" title="6. 业务集成关系">6. 业务集成关系</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#7-注意事项与已知约束" title="7. 注意事项与已知约束">7. 注意事项与已知约束</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#8-验证建议" title="8. 验证建议">8. 验证建议</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#9-相关源码路径" title="9. 相关源码路径">9. 相关源码路径</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#10-变更摘要相对-2026-05-18" title="10. 变更摘要（相对 2026-05-18）">10. 变更摘要（相对 2026-05-18）</a></div></div></div></div></div></div></div></div></div></div></div><div class="ant-divider ant-divider-horizontal" role="separator"></div><footer class="ant-layout-footer" style="padding:0 24px 24px"></footer></main></section></section></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"note":{"id":"8e26e8749bccd9d3739356","title":"蜂鸣/旋律 MQTT 协同与 TCM 内存优化开发记录","desc":"","updated":1780371367060,"created":1780371330026,"custom":{},"fname":"开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录","type":"note","vault":{"fsPath":"notes","name":"Dendron"},"contentHash":"a4a0e353526652354f95ededd4058460","links":[{"type":"wiki","from":{"fname":"开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录","id":"8e26e8749bccd9d3739356","vaultName":"Dendron"},"value":"开发记录.2026-05-18_按键发声蜂鸣与等待旋律开发记录","position":{"start":{"line":7,"column":10,"offset":149},"end":{"line":7,"column":45,"offset":184},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"开发记录.2026-05-18_按键发声蜂鸣与等待旋律开发记录"}},{"from":{"fname":"开发记录.项目开发记录总纲","id":"62ff4545e5f1373c5cfe01","vaultName":"Dendron"},"type":"backlink","position":{"start":{"line":31,"column":39,"offset":3788},"end":{"line":31,"column":81,"offset":3830},"indent":[]},"value":"开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录"},{"from":{"fname":"开发记录.项目开发记录总纲","id":"62ff4545e5f1373c5cfe01","vaultName":"Dendron"},"type":"backlink","position":{"start":{"line":46,"column":90,"offset":4725},"end":{"line":46,"column":132,"offset":4767},"indent":[]},"value":"开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录"}],"anchors":{"蜂鸣旋律-mqtt-协同与-tcm-内存优化开发记录":{"type":"header","text":"蜂鸣/旋律 MQTT 协同与 TCM 内存优化开发记录","value":"蜂鸣旋律-mqtt-协同与-tcm-内存优化开发记录","line":8,"column":0,"depth":1},"1-背景":{"type":"header","text":"1. 背景","value":"1-背景","line":17,"column":0,"depth":2},"2-改动文件清单":{"type":"header","text":"2. 改动文件清单","value":"2-改动文件清单","line":33,"column":0,"depth":2},"3-问题与根因":{"type":"header","text":"3. 问题与根因","value":"3-问题与根因","line":51,"column":0,"depth":2},"31-音量volumeset-对按键无效":{"type":"header","text":"3.1 音量：volumeSet 对按键无效","value":"31-音量volumeset-对按键无效","line":53,"column":0,"depth":3},"32-旋律失真卡顿dma-指针复用":{"type":"header","text":"3.2 旋律失真、卡顿（DMA 指针复用）","value":"32-旋律失真卡顿dma-指针复用","line":58,"column":0,"depth":3},"33-tcm-堆耗尽--打印线程创建失败":{"type":"header","text":"3.3 TCM 堆耗尽 → 打印线程创建失败","value":"33-tcm-堆耗尽--打印线程创建失败","line":64,"column":0,"depth":3},"34-mqtt-同步收包与旋律争抢-cpu":{"type":"header","text":"3.4 MQTT 同步收包与旋律争抢 CPU","value":"34-mqtt-同步收包与旋律争抢-cpu","line":83,"column":0,"depth":3},"35-日志误报-rx-dispatch-failed":{"type":"header","text":"3.5 日志误报 rx dispatch failed","value":"35-日志误报-rx-dispatch-failed","line":88,"column":0,"depth":3},"4-技术方案":{"type":"header","text":"4. 技术方案","value":"4-技术方案","line":95,"column":0,"depth":2},"41-按键与旋律音量分离":{"type":"header","text":"4.1 按键与旋律音量分离","value":"41-按键与旋律音量分离","line":97,"column":0,"depth":3},"42-旋律-dma-乒乓与背压":{"type":"header","text":"4.2 旋律 DMA 乒乓与背压","value":"42-旋律-dma-乒乓与背压","line":118,"column":0,"depth":3},"43-tcm-内存优化本次核心":{"type":"header","text":"4.3 TCM 内存优化（本次核心）","value":"43-tcm-内存优化本次核心","line":135,"column":0,"depth":3},"44-线程优先级与-mqtt-协同":{"type":"header","text":"4.4 线程优先级与 MQTT 协同","value":"44-线程优先级与-mqtt-协同","line":158,"column":0,"depth":3},"45-收图--打印衔接":{"type":"header","text":"4.5 收图 → 打印衔接","value":"45-收图--打印衔接","line":173,"column":0,"depth":3},"46-日志与返回值":{"type":"header","text":"4.6 日志与返回值","value":"46-日志与返回值","line":186,"column":0,"depth":3},"5-内存与资源一览":{"type":"header","text":"5. 内存与资源一览","value":"5-内存与资源一览","line":193,"column":0,"depth":2},"51-旋律相关":{"type":"header","text":"5.1 旋律相关","value":"51-旋律相关","line":195,"column":0,"depth":3},"52-典型峰值收图打印时":{"type":"header","text":"5.2 典型峰值（收图打印时）","value":"52-典型峰值收图打印时","line":204,"column":0,"depth":3},"6-业务集成关系":{"type":"header","text":"6. 业务集成关系","value":"6-业务集成关系","line":211,"column":0,"depth":2},"7-注意事项与已知约束":{"type":"header","text":"7. 注意事项与已知约束","value":"7-注意事项与已知约束","line":237,"column":0,"depth":2},"8-验证建议":{"type":"header","text":"8. 验证建议","value":"8-验证建议","line":251,"column":0,"depth":2},"9-相关源码路径":{"type":"header","text":"9. 相关源码路径","value":"9-相关源码路径","line":261,"column":0,"depth":2},"10-变更摘要相对-2026-05-18":{"type":"header","text":"10. 变更摘要（相对 2026-05-18）","value":"10-变更摘要相对-2026-05-18","line":279,"column":0,"depth":2}},"children":[],"parent":"jxzspjsfkjpyzxdrn5ntdy7","data":{}},"body":"\u003ch1 id=\"蜂鸣旋律-mqtt-协同与-tcm-内存优化开发记录\"\u003e蜂鸣/旋律 MQTT 协同与 TCM 内存优化开发记录\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#蜂鸣旋律-mqtt-协同与-tcm-内存优化开发记录\"\u003e\u003c/a\u003e\u003c/h1\u003e\n\u003ch1 id=\"蜂鸣旋律-mqtt-协同与-tcm-内存优化开发记录-1\"\u003e蜂鸣/旋律 MQTT 协同与 TCM 内存优化开发记录\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#蜂鸣旋律-mqtt-协同与-tcm-内存优化开发记录-1\"\u003e\u003c/a\u003e\u003c/h1\u003e\n\u003cp\u003e\u003cstrong\u003e日期\u003c/strong\u003e：2026-05-27\u003cbr\u003e\n\u003cstrong\u003e工程\u003c/strong\u003e：\u003ccode\u003ebk7252n_sdk-SDK_3.0.76.1_witch_lcd_bz\u003c/code\u003e\u003cbr\u003e\n\u003cstrong\u003e编译命令\u003c/strong\u003e：\u003ccode\u003escons --beken=bk7252n -j8\u003c/code\u003e\u003cbr\u003e\n\u003cstrong\u003e前置文档\u003c/strong\u003e：\u003ca href=\"/notes/238cee9d6e5d3351d1562b\"\u003e按键发声蜂鸣与等待旋律开发记录\u003c/a\u003e（初版 beep 模块与旋律架构）\u003c/p\u003e\n\u003chr\u003e\n\u003ch2 id=\"1-背景\"\u003e1. 背景\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#1-背景\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e在初版「按键蜂鸣 + 生图等待旋律」落地后，联调 MQTT 语音生图链路时出现一系列问题：\u003c/p\u003e\n\u003cdiv class=\"table-responsive\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003e现象\u003c/th\u003e\u003cth\u003e影响\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e云端 \u003ccode\u003evolumeSet\u003c/code\u003e 后按键「滴滴」音量不变\u003c/td\u003e\u003ctd\u003e用户误以为音量设置无效\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e旋律音量调节后出现沙沙声、卡顿\u003c/td\u003e\u003ctd\u003e体验差，疑似音频链路异常\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eMQTT 同步收 \u003ccode\u003eaudioChunk\u003c/code\u003e 时旋律断续\u003c/td\u003e\u003ctd\u003e生图等待 BGM 不稳定\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e日志 \u003ccode\u003erx dispatch failed\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e误导排障（实际收包成功）\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003e\u003ccode\u003ecreate print thread failed\u003c/code\u003e\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003e收图完成后无法启动 \u003ccode\u003emqtt_prn\u003c/code\u003e 打印线程，业务中断\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e\n\u003cp\u003e根因集中在：\u003cstrong\u003e音量策略未分离\u003c/strong\u003e、\u003cstrong\u003eDAC DMA 异步复用同一块缓冲\u003c/strong\u003e、\u003cstrong\u003e大数组常驻 BSS 挤占 TCM 堆\u003c/strong\u003e、\u003cstrong\u003eMQTT 收包线程长时间占用 CPU\u003c/strong\u003e。\u003c/p\u003e\n\u003chr\u003e\n\u003ch2 id=\"2-改动文件清单\"\u003e2. 改动文件清单\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#2-改动文件清单\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003cdiv class=\"table-responsive\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003e文件\u003c/th\u003e\u003cth\u003e改动类型\u003c/th\u003e\u003cth\u003e说明\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eapplications/button_control/beep.c\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e修改\u003c/td\u003e\u003ctd\u003e按键/旋律音量分离；DMA 乒乓 + \u003ccode\u003etx_complete\u003c/code\u003e 背压；旋律缓冲改为运行时分配；缩小 chunk/缓冲深度\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eapplications/button_control/beep.h\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e修改\u003c/td\u003e\u003ctd\u003e\u003ccode\u003ebeep_set_volume()\u003c/code\u003e 文档：仅影响等待旋律\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eapplications/mqtt_backend/mqtt_backend_message.c\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e已有\u003c/td\u003e\u003ctd\u003e\u003ccode\u003evolumeSet\u003c/code\u003e → \u003ccode\u003ebeep_set_volume()\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eapplications/mqtt_backend/device_config.c\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e已有\u003c/td\u003e\u003ctd\u003e配置加载时同步 \u003ccode\u003ebeep_set_volume()\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eapplications/main.c\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e已有\u003c/td\u003e\u003ctd\u003e启动时从 \u003ccode\u003edevice_config_get_volume()\u003c/code\u003e 初始化旋律音量\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eapplications/audio/audio_result_wait.c\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e已有\u003c/td\u003e\u003ctd\u003e等待生图时 \u003ccode\u003ebeep_melody_start/stop\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eapplications/mqtt_backend/binary_rx/mqtt_backend_binary_audio_chunk.c\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e修改\u003c/td\u003e\u003ctd\u003e收包/写 Flash 路径 \u003ccode\u003ert_thread_yield()\u003c/code\u003e；收图完成前 \u003ccode\u003ebeep_melody_stop()\u003c/code\u003e + 延时；修正返回值\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eapplications/mqtt_backend/mqtt_backend_async_rx.c\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e修改\u003c/td\u003e\u003ctd\u003e同步收包模式 dispatch 前后 \u003ccode\u003eyield\u003c/code\u003e；\u003ccode\u003eaudioChunk\u003c/code\u003e 成功路径不再误报失败\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eapplications/mqtt_backend/mqtt_backend_config.h\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e配置\u003c/td\u003e\u003ctd\u003e\u003ccode\u003eCFG_MQTT_BACKEND_ASYNC_RX=0\u003c/code\u003e（大图不能异步队列，防 OOM）\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eapplications/mqtt_backend/mqtt_backend_client.c\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e修改\u003c/td\u003e\u003ctd\u003ePaho 线程优先级下调，为 \u003ccode\u003eaudio_th\u003c/code\u003e 让出 CPU\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eapplications/mqtt_backend/binary_rx/mqtt_backend_binary_rx.c\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e相关\u003c/td\u003e\u003ctd\u003e\u003ccode\u003emqtt_prn\u003c/code\u003e 线程创建（栈 6144）\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e\n\u003chr\u003e\n\u003ch2 id=\"3-问题与根因\"\u003e3. 问题与根因\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#3-问题与根因\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003ch3 id=\"31-音量volumeset-对按键无效\"\u003e3.1 音量：\u003ccode\u003evolumeSet\u003c/code\u003e 对按键无效\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#31-音量volumeset-对按键无效\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003ebeep_set_volume()\u003c/code\u003e 原先同时影响按键蜂鸣与旋律，或仅改软件变量未区分通路。\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e产品要求\u003c/strong\u003e：按键固定 \u003cstrong\u003e65\u003c/strong\u003e；旋律跟随配置文件 / \u003ccode\u003evolumeSet\u003c/code\u003e（0~100）。\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"32-旋律失真卡顿dma-指针复用\"\u003e3.2 旋律失真、卡顿（DMA 指针复用）\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#32-旋律失真卡顿dma-指针复用\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003ert_device_write()\u003c/code\u003e 在 DAC 驱动中\u003cstrong\u003e只保存缓冲区指针\u003c/strong\u003e，由 GDMA 异步读取（\u003ccode\u003eGDMA_X_SRC_DTCM_RD_REQ\u003c/code\u003e）。\u003c/li\u003e\n\u003cli\u003e早期单块 \u003ccode\u003es_stereo_chunk\u003c/code\u003e 在循环中被覆盖 → 杂音、断续。\u003c/li\u003e\n\u003cli\u003e曾用 \u003ccode\u003es_stereo_chunks[8][1024]\u003c/code\u003e 做乒乓，但 \u003cstrong\u003e16KB 常驻 BSS\u003c/strong\u003e。\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"33-tcm-堆耗尽--打印线程创建失败\"\u003e3.3 TCM 堆耗尽 → 打印线程创建失败\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#33-tcm-堆耗尽--打印线程创建失败\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eBK7252N 内存模型（\u003ccode\u003edrivers/board.h\u003c/code\u003e + \u003ccode\u003elink.lds\u003c/code\u003e）：\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e[ RAM: .data + .bss ... ] → _empty_ram → [ TCM 堆 → 256KB 末端 ]\n\u003c/code\u003e\u003c/pre\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003ert_malloc\u003c/code\u003e / \u003ccode\u003ert_thread_create\u003c/code\u003e 栈均走 \u003cstrong\u003eTCM 堆\u003c/strong\u003e（\u003ccode\u003eRT_KERNEL_MALLOC\u003c/code\u003e → \u003ccode\u003etcm_malloc\u003c/code\u003e）。\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003es_stereo_chunks\u003c/code\u003e 占 \u003cstrong\u003e0x4000（16KB）BSS\u003c/strong\u003e，直接压缩 \u003ccode\u003e_empty_ram\u003c/code\u003e 之后的可用堆。\u003c/li\u003e\n\u003cli\u003e收图峰值：MQTT 缓冲 + LVGL + \u003ccode\u003emqtt_prn\u003c/code\u003e 栈（6144）+ 其它线程 → \u003cstrong\u003e\u003ccode\u003ert_thread_create(\"mqtt_prn\", ...)\u003c/code\u003e 失败\u003c/strong\u003e。\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003eout/rtthread.map\u003c/code\u003e 摘录（优化前）：\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e.bss.s_stereo_chunks    0x00408488    0x4000    beep.o\n_empty_ram              0x004292b8\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"34-mqtt-同步收包与旋律争抢-cpu\"\u003e3.4 MQTT 同步收包与旋律争抢 CPU\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#34-mqtt-同步收包与旋律争抢-cpu\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eCFG_MQTT_BACKEND_ASYNC_RX=0\u003c/code\u003e：Paho 回调内同步处理 \u003ccode\u003eaudioChunk\u003c/code\u003e，单次处理可达数百毫秒。\u003c/li\u003e\n\u003cli\u003e若 \u003ccode\u003eaudio_th\u003c/code\u003e 优先级过低，无法及时 \u003ccode\u003ewrite\u003c/code\u003e / 响应 \u003ccode\u003etx_complete\u003c/code\u003e，旋律 underflow。\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"35-日志误报-rx-dispatch-failed\"\u003e3.5 日志误报 \u003ccode\u003erx dispatch failed\u003c/code\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#35-日志误报-rx-dispatch-failed\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eaudioChunk\u003c/code\u003e 处理函数在「无需 JSON 应答」场景曾返回 \u003ccode\u003e-1\u003c/code\u003e。\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003emqtt_backend_async_rx_push()\u003c/code\u003e 在同步模式下将 \u003ccode\u003edispatch != 0\u003c/code\u003e 视为失败并打印错误，\u003cstrong\u003e实际收包与 Flash 写入已成功\u003c/strong\u003e。\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2 id=\"4-技术方案\"\u003e4. 技术方案\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#4-技术方案\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003ch3 id=\"41-按键与旋律音量分离\"\u003e4.1 按键与旋律音量分离\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#41-按键与旋律音量分离\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cpre class=\"language-c\"\u003e\u003ccode class=\"language-c\"\u003e\u003cspan class=\"token macro property\"\u003e\u003cspan class=\"token directive-hash\"\u003e#\u003c/span\u003e\u003cspan class=\"token directive keyword\"\u003edefine\u003c/span\u003e \u003cspan class=\"token macro-name\"\u003eBEEP_FIXED_VOLUME\u003c/span\u003e   \u003cspan class=\"token expression\"\u003e\u003cspan class=\"token number\"\u003e65\u003c/span\u003e   \u003c/span\u003e\u003cspan class=\"token comment\"\u003e/* 按键蜂鸣，不随 volumeSet 变化 */\u003c/span\u003e\u003c/span\u003e\n\n\u003cspan class=\"token keyword\"\u003estatic\u003c/span\u003e \u003cspan class=\"token keyword\"\u003eint\u003c/span\u003e s_melody_volume \u003cspan class=\"token operator\"\u003e=\u003c/span\u003e \u003cspan class=\"token number\"\u003e65\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e \u003cspan class=\"token comment\"\u003e/* 旋律，beep_set_volume / 配置文件 */\u003c/span\u003e\n\n\u003cspan class=\"token keyword\"\u003evoid\u003c/span\u003e \u003cspan class=\"token function\"\u003ebeep_play\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token keyword\"\u003evoid\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e \u003cspan class=\"token punctuation\"\u003e{\u003c/span\u003e\n    \u003cspan class=\"token function\"\u003ebeep_apply_fixed_codec_volume\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003edac\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e  \u003cspan class=\"token comment\"\u003e/* CODEC_CMD_SET_VOLUME = 65 */\u003c/span\u003e\n    \u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\n\u003cspan class=\"token punctuation\"\u003e}\u003c/span\u003e\n\n\u003cspan class=\"token keyword\"\u003evoid\u003c/span\u003e \u003cspan class=\"token function\"\u003ebeep_melody_start\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token keyword\"\u003evoid\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e \u003cspan class=\"token punctuation\"\u003e{\u003c/span\u003e\n    \u003cspan class=\"token function\"\u003emelody_apply_codec_volume\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003edac\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e      \u003cspan class=\"token comment\"\u003e/* volume * 99 / 100，钳位 0~99 */\u003c/span\u003e\n    \u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\n\u003cspan class=\"token punctuation\"\u003e}\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e不再\u003c/strong\u003e在旋律循环内对每块 PCM 做软件缩放（曾引入沙沙声）。\u003c/li\u003e\n\u003cli\u003e音量仅通过 Codec 硬件 \u003ccode\u003eCODEC_CMD_SET_VOLUME\u003c/code\u003e 设置。\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"42-旋律-dma-乒乓与背压\"\u003e4.2 旋律 DMA 乒乓与背压\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#42-旋律-dma-乒乓与背压\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cdiv class=\"table-responsive\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003e参数\u003c/th\u003e\u003cth\u003e初版（问题版）\u003c/th\u003e\u003cth\u003e当前值\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eCHUNK_MONO\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e512（32ms×2 立体声点）\u003c/td\u003e\u003ctd\u003e\u003cstrong\u003e256\u003c/strong\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eMELODY_BUF_COUNT\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e8\u003c/td\u003e\u003ctd\u003e\u003cstrong\u003e4\u003c/strong\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e缓冲存放\u003c/td\u003e\u003ctd\u003e\u003ccode\u003estatic int16_t s_stereo_chunks[8][1024]\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e\u003cstrong\u003e\u003ccode\u003ert_malloc\u003c/code\u003e 池，停止后 \u003ccode\u003ert_free\u003c/code\u003e\u003c/strong\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e常驻 RAM\u003c/td\u003e\u003ctd\u003e16KB BSS\u003c/td\u003e\u003ctd\u003e\u003cstrong\u003e0\u003c/strong\u003e（空闲时）\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e播放中 RAM\u003c/td\u003e\u003ctd\u003e16KB\u003c/td\u003e\u003ctd\u003e\u003cstrong\u003e4KB\u003c/strong\u003e（4×256×2×sizeof(int16_t)）\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e\n\u003cp\u003e流程要点：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\u003ccode\u003emelody_tx_done\u003c/code\u003e：\u003ccode\u003etx_complete\u003c/code\u003e 时 \u003ccode\u003ert_sem_release(\u0026#x26;s_tx_done_sem)\u003c/code\u003e。\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003emelody_write_one_chunk\u003c/code\u003e：当 \u003ccode\u003epipeline \u003e= MELODY_BUF_COUNT - 1\u003c/code\u003e 时 \u003ccode\u003ert_sem_take\u003c/code\u003e 等待 DMA 消费，避免覆盖在途缓冲。\u003c/li\u003e\n\u003cli\u003e启动时预填 \u003ccode\u003eMELODY_BUF_COUNT - 2\u003c/code\u003e 块，降低起播间隙。\u003c/li\u003e\n\u003cli\u003emono → stereo 展开：\u003ccode\u003echunk[j*2] = chunk[j*2+1] = MELODY_PCM[...]\u003c/code\u003e。\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"43-tcm-内存优化本次核心\"\u003e4.3 TCM 内存优化（本次核心）\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#43-tcm-内存优化本次核心\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003e策略\u003c/strong\u003e：旋律缓冲\u003cstrong\u003e仅在播放期间\u003c/strong\u003e从 TCM 堆分配，停止后释放，避免 16KB 永久占用 BSS。\u003c/p\u003e\n\u003cpre class=\"language-c\"\u003e\u003ccode class=\"language-c\"\u003e\u003cspan class=\"token keyword\"\u003estatic\u003c/span\u003e \u003cspan class=\"token class-name\"\u003eint16_t\u003c/span\u003e \u003cspan class=\"token operator\"\u003e*\u003c/span\u003es_stereo_chunk_pool \u003cspan class=\"token operator\"\u003e=\u003c/span\u003e RT_NULL\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n\n\u003cspan class=\"token keyword\"\u003estatic\u003c/span\u003e \u003cspan class=\"token class-name\"\u003ert_bool_t\u003c/span\u003e \u003cspan class=\"token function\"\u003emelody_chunks_alloc\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token keyword\"\u003evoid\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e \u003cspan class=\"token punctuation\"\u003e{\u003c/span\u003e\n    s_stereo_chunk_pool \u003cspan class=\"token operator\"\u003e=\u003c/span\u003e \u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eint16_t\u003c/span\u003e \u003cspan class=\"token operator\"\u003e*\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token function\"\u003ert_malloc\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003eMELODY_POOL_BYTES\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e  \u003cspan class=\"token comment\"\u003e/* 4096 */\u003c/span\u003e\n    \u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\n\u003cspan class=\"token punctuation\"\u003e}\u003c/span\u003e\n\n\u003cspan class=\"token keyword\"\u003estatic\u003c/span\u003e \u003cspan class=\"token keyword\"\u003evoid\u003c/span\u003e \u003cspan class=\"token function\"\u003emelody_chunks_free\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token keyword\"\u003evoid\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e \u003cspan class=\"token punctuation\"\u003e{\u003c/span\u003e\n    \u003cspan class=\"token function\"\u003ert_free\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003es_stereo_chunk_pool\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n    s_stereo_chunk_pool \u003cspan class=\"token operator\"\u003e=\u003c/span\u003e RT_NULL\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n\u003cspan class=\"token punctuation\"\u003e}\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eBEEP_CMD_MELODY_START\u003c/code\u003e 路径：\u003ccode\u003ealloc\u003c/code\u003e → 循环写 DAC → \u003ccode\u003eclose\u003c/code\u003e → \u003ccode\u003efree\u003c/code\u003e。\u003c/li\u003e\n\u003cli\u003e收图完成路径（\u003ccode\u003emqtt_backend_binary_audio_chunk.c\u003c/code\u003e）在创建打印线程前调用 \u003ccode\u003ebeep_melody_stop()\u003c/code\u003e + \u003ccode\u003ert_thread_mdelay(100)\u003c/code\u003e，确保音频线程退出循环并 \u003cstrong\u003e释放 4KB 池\u003c/strong\u003e，再 \u003ccode\u003ert_thread_create(\"mqtt_prn\", 6144, ...)\u003c/code\u003e。\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003e效果\u003c/strong\u003e：永久释放约 \u003cstrong\u003e16KB TCM 堆\u003c/strong\u003e；播放中峰值从 16KB 降至 \u003cstrong\u003e4KB\u003c/strong\u003e。\u003c/p\u003e\n\u003ch3 id=\"44-线程优先级与-mqtt-协同\"\u003e4.4 线程优先级与 MQTT 协同\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#44-线程优先级与-mqtt-协同\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cdiv class=\"table-responsive\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003e线程\u003c/th\u003e\u003cth\u003e优先级（数值越小越高）\u003c/th\u003e\u003cth\u003e说明\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eaudio_th\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e\u003cstrong\u003e14\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003e须高于 Paho / 收包路径，及时喂 DMA\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003ePaho MQTT\u003c/td\u003e\u003ctd\u003e\u003cstrong\u003e20\u003c/strong\u003e（下调）\u003c/td\u003e\u003ctd\u003e避免长时间霸占 CPU\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003emqproc\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e20\u003c/td\u003e\u003ctd\u003e仅 \u003ccode\u003eCFG_MQTT_BACKEND_ASYNC_RX=1\u003c/code\u003e 时存在\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e\n\u003cp\u003e同步收包优化（\u003ccode\u003emqtt_backend_async_rx.c\u003c/code\u003e）：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003emqtt_backend_rx_dispatch_payload()\u003c/code\u003e 入口、出口各 \u003ccode\u003ert_thread_yield()\u003c/code\u003e。\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003emqtt_backend_binary_audio_chunk.c\u003c/code\u003e 写 Flash 循环内 \u003ccode\u003ert_thread_yield()\u003c/code\u003e。\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003e异步 RX 保持关闭\u003c/strong\u003e：\u003ccode\u003eCFG_MQTT_BACKEND_ASYNC_RX=0\u003c/code\u003e。大图分片若入队会额外 malloc，易 OOM。\u003c/p\u003e\n\u003ch3 id=\"45-收图--打印衔接\"\u003e4.5 收图 → 打印衔接\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#45-收图--打印衔接\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cpre class=\"language-c\"\u003e\u003ccode class=\"language-c\"\u003e\u003cspan class=\"token comment\"\u003e/* mqtt_backend_binary_audio_chunk.c — result 帧处理末尾 */\u003c/span\u003e\n\u003cspan class=\"token function\"\u003ebeep_melody_stop\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n\u003cspan class=\"token function\"\u003ert_thread_mdelay\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token number\"\u003e100\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n\n\u003cspan class=\"token keyword\"\u003eif\u003c/span\u003e \u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token function\"\u003emqtt_backend_binary_spawn_print_thread\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e \u003cspan class=\"token operator\"\u003e!=\u003c/span\u003e \u003cspan class=\"token number\"\u003e0\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e \u003cspan class=\"token punctuation\"\u003e{\u003c/span\u003e\n    \u003cspan class=\"token function\"\u003ert_kprintf\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token string\"\u003e\"mqtt backend create print thread failed\\r\\n\"\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n    \u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\n\u003cspan class=\"token punctuation\"\u003e}\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"46-日志与返回值\"\u003e4.6 日志与返回值\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#46-日志与返回值\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003emqtt_backend_binary_audio_chunk\u003c/code\u003e 正常结束 \u003cstrong\u003e\u003ccode\u003ereturn 0\u003c/code\u003e\u003c/strong\u003e，避免同步 push 误报 \u003ccode\u003erx dispatch failed\u003c/code\u003e。\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eaudioChunk\u003c/code\u003e 无 MQTT JSON 应答属正常，不应返回失败码给 dispatch 层。\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2 id=\"5-内存与资源一览\"\u003e5. 内存与资源一览\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#5-内存与资源一览\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003ch3 id=\"51-旋律相关\"\u003e5.1 旋律相关\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#51-旋律相关\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cdiv class=\"table-responsive\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003e资源\u003c/th\u003e\u003cth\u003e位置\u003c/th\u003e\u003cth\u003e大小\u003c/th\u003e\u003cth\u003e说明\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eMELODY_PCM[]\u003c/code\u003e\u003c/td\u003e\u003ctd\u003eFlash（\u003ccode\u003emelody_pcm_data.h\u003c/code\u003e）\u003c/td\u003e\u003ctd\u003e~68KB\u003c/td\u003e\u003ctd\u003e34400×int16，不占用 RAM\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003ebeep_buf\u003c/code\u003e\u003c/td\u003e\u003ctd\u003eTCM 堆（\u003ccode\u003eaudio_th\u003c/code\u003e 内 \u003ccode\u003ert_malloc\u003c/code\u003e）\u003c/td\u003e\u003ctd\u003e~2.4KB\u003c/td\u003e\u003ctd\u003e按键 PCM，线程生命周期常驻\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003es_stereo_chunk_pool\u003c/code\u003e\u003c/td\u003e\u003ctd\u003eTCM 堆（旋律播放时）\u003c/td\u003e\u003ctd\u003e\u003cstrong\u003e4KB\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003e停止后释放\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eaudio_th\u003c/code\u003e 栈\u003c/td\u003e\u003ctd\u003eTCM 堆\u003c/td\u003e\u003ctd\u003e4096\u003c/td\u003e\u003ctd\u003e创建时分配\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e\n\u003ch3 id=\"52-典型峰值收图打印时\"\u003e5.2 典型峰值（收图打印时）\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#52-典型峰值收图打印时\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e旋律已停、缓冲已释放 → TCM 可用于 \u003ccode\u003emqtt_prn\u003c/code\u003e（栈 6144）及运行时 MQTT/LVGL 缓冲。\u003c/li\u003e\n\u003cli\u003e若仍 OOM：用 \u003ccode\u003elist_memheap\u003c/code\u003e / map 继续排查其它大块分配（如 \u003ccode\u003eprint_buf\u003c/code\u003e、LVGL draw_buf）。\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2 id=\"6-业务集成关系\"\u003e6. 业务集成关系\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#6-业务集成关系\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003cpre\u003e\u003ccode\u003e语音上传完成 → audio_result_wait_start()\n              → beep_melody_start()     // 循环 C 大调琶音\n\nMQTT audioChunk 分片收包（同步，yield）\n              → Flash 落盘\n\nresult 帧 OK  → beep_melody_stop()\n              → mdelay(100)\n              → mqtt_prn 打印线程\n\n超时/失败     → audio_result_wait_clear() → beep_melody_stop()\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdiv class=\"table-responsive\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003eAPI / 配置\u003c/th\u003e\u003cth\u003e作用\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003ebeep_play()\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e按键「叮咚」，Codec 音量 \u003cstrong\u003e65\u003c/strong\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003ebeep_set_volume(v)\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e仅旋律；\u003ccode\u003evolumeSet\u003c/code\u003e / \u003ccode\u003edevice_config\u003c/code\u003e / \u003ccode\u003emain\u003c/code\u003e 初始化\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003ebeep_set_muted()\u003c/code\u003e\u003c/td\u003e\u003ctd\u003eP37 录音期间静音按键与旋律\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003ebeep_melody_start/stop()\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e生图等待 BGM\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eCFG_BEEP_MELODY_ENABLE\u003c/code\u003e\u003c/td\u003e\u003ctd\u003e编译期裁剪旋律（默认 1）\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e\n\u003chr\u003e\n\u003ch2 id=\"7-注意事项与已知约束\"\u003e7. 注意事项与已知约束\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#7-注意事项与已知约束\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eDMA 源地址须在 DTCM/TCM 可达范围\u003c/strong\u003e：旋律池使用 \u003ccode\u003ert_malloc\u003c/code\u003e（TCM 堆），满足 \u003ccode\u003eGDMA_X_SRC_DTCM_RD_REQ\u003c/code\u003e；不宜改为 SDRAM 除非驱动支持且实测通过。\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e缓冲变浅\u003c/strong\u003e：\u003ccode\u003eCHUNK_MONO=256\u003c/code\u003e、\u003ccode\u003eMELODY_BUF_COUNT=4\u003c/code\u003e 后，MQTT 同步大包收图时旋律抗抖动余量小于旧版 8×512。若现场仍卡顿，可仅将 \u003ccode\u003eMELODY_BUF_COUNT\u003c/code\u003e 提到 6（播放时约 6KB），\u003cstrong\u003e不要\u003c/strong\u003e恢复 16KB 静态 BSS。\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eDAC 独占\u003c/strong\u003e：蜂鸣与旋律仍共用 \u003ccode\u003e\"sound\"\u003c/code\u003e 设备，由 \u003ccode\u003eaudio_th\u003c/code\u003e 命令互斥。\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e打印线程\u003c/strong\u003e：\u003ccode\u003emqtt_prn\u003c/code\u003e 栈 6144；创建失败优先查 TCM 剩余空间，而非误认为 MQTT 协议错误。\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e重复源文件\u003c/strong\u003e：曾存在 \u003ccode\u003eapplications/mqtt_backend/mqtt_backend_binary_rx.c\u003c/code\u003e 与 \u003ccode\u003ebinary_rx/\u003c/code\u003e 下重复实现，已删除父目录副本，以 \u003ccode\u003ebinary_rx/mqtt_backend_binary_rx.c\u003c/code\u003e 为准。\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003chr\u003e\n\u003ch2 id=\"8-验证建议\"\u003e8. 验证建议\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#8-验证建议\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003e音量\u003c/strong\u003e：\u003ccode\u003evolumeSet\u003c/code\u003e 只改变等待旋律；按键声保持 65。  \u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e旋律质量\u003c/strong\u003e：生图等待全程无规律杂音；停止后无残留 DAC 占用。  \u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e收图打印\u003c/strong\u003e：日志出现 \u003ccode\u003ebinary result ok\u003c/code\u003e 后应能 \u003ccode\u003eprint thread dispatched\u003c/code\u003e，无 \u003ccode\u003ecreate print thread failed\u003c/code\u003e。  \u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e误报\u003c/strong\u003e：不应再因 \u003ccode\u003eaudioChunk\u003c/code\u003e 成功而出现 \u003ccode\u003erx dispatch failed\u003c/code\u003e（除非真正 dispatch 返回非 0）。  \u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e内存\u003c/strong\u003e：对比烧录前后 \u003ccode\u003elist_memheap\u003c/code\u003e 或 map 中 \u003ccode\u003e_empty_ram\u003c/code\u003e 偏移，确认 BSS 减少约 16KB。\u003c/li\u003e\n\u003c/ol\u003e\n\u003chr\u003e\n\u003ch2 id=\"9-相关源码路径\"\u003e9. 相关源码路径\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#9-相关源码路径\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003cdiv class=\"table-responsive\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003e用途\u003c/th\u003e\u003cth\u003e路径\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e蜂鸣/旋律实现\u003c/td\u003e\u003ctd\u003e\u003ccode\u003eapplications/button_control/beep.c\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e头文件\u003c/td\u003e\u003ctd\u003e\u003ccode\u003eapplications/button_control/beep.h\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e旋律 PCM\u003c/td\u003e\u003ctd\u003e\u003ccode\u003eapplications/button_control/melody_pcm_data.h\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e生图等待启停旋律\u003c/td\u003e\u003ctd\u003e\u003ccode\u003eapplications/audio/audio_result_wait.c\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e收图停旋律 + 起打印\u003c/td\u003e\u003ctd\u003e\u003ccode\u003eapplications/mqtt_backend/binary_rx/mqtt_backend_binary_audio_chunk.c\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e打印线程创建\u003c/td\u003e\u003ctd\u003e\u003ccode\u003eapplications/mqtt_backend/binary_rx/mqtt_backend_binary_rx.c\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e同步收包 yield\u003c/td\u003e\u003ctd\u003e\u003ccode\u003eapplications/mqtt_backend/mqtt_backend_async_rx.c\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e下行模式配置\u003c/td\u003e\u003ctd\u003e\u003ccode\u003eapplications/mqtt_backend/mqtt_backend_config.h\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eTCM 堆定义\u003c/td\u003e\u003ctd\u003e\u003ccode\u003edrivers/board.h\u003c/code\u003e、\u003ccode\u003edrivers/board.c\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e链接布局\u003c/td\u003e\u003ctd\u003e\u003ccode\u003elink.lds\u003c/code\u003e（\u003ccode\u003e_empty_ram\u003c/code\u003e、\u003ccode\u003e.bss\u003c/code\u003e \u003e ram）\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e内存 map\u003c/td\u003e\u003ctd\u003e\u003ccode\u003eout/rtthread.map\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e\n\u003chr\u003e\n\u003ch2 id=\"10-变更摘要相对-2026-05-18\"\u003e10. 变更摘要（相对 2026-05-18）\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#10-变更摘要相对-2026-05-18\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003cdiv class=\"table-responsive\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003e项目\u003c/th\u003e\u003cth\u003e2026-05-18\u003c/th\u003e\u003cth\u003e2026-05-27\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e旋律播放\u003c/td\u003e\u003ctd\u003e定时 sem 补块\u003c/td\u003e\u003ctd\u003eDMA 乒乓 + \u003ccode\u003etx_complete\u003c/code\u003e 背压\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e音量\u003c/td\u003e\u003ctd\u003e占位 / 统一 70%\u003c/td\u003e\u003ctd\u003e按键固定 65，旋律 Codec 硬件音量\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e旋律缓冲\u003c/td\u003e\u003ctd\u003e未涉及大块 BSS\u003c/td\u003e\u003ctd\u003e8×512 静态 → \u003cstrong\u003e4×256 动态池\u003c/strong\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eTCM\u003c/td\u003e\u003ctd\u003e未分析\u003c/td\u003e\u003ctd\u003e释放 \u003cstrong\u003e16KB\u003c/strong\u003e 常驻，修复打印线程 OOM\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eMQTT\u003c/td\u003e\u003ctd\u003e—\u003c/td\u003e\u003ctd\u003e同步 yield、关闭 async RX、修正误报日志\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eaudio_th\u003c/code\u003e 优先级\u003c/td\u003e\u003ctd\u003e27\u003c/td\u003e\u003ctd\u003e\u003cstrong\u003e14\u003c/strong\u003e\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e\n\u003chr\u003e\n\u003cp\u003e\u003cem\u003e文档整理日期：2026-05-27；对应工程：\u003ccode\u003ebk7252n_sdk-SDK_3.0.76.1_witch_lcd_bz\u003c/code\u003e。\u003c/em\u003e\u003c/p\u003e\n\u003chr\u003e\n\u003cstrong\u003eBacklinks\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"/notes/62ff4545e5f1373c5cfe01\"\u003eAI 打印机固件 — 项目开发记录总纲\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e","noteIndex":{"id":"root","title":"root","desc":"BK7252N AI ��ӡ���̼��ĵ���","updated":1780371367067,"created":1595961348801,"custom":{"nav_order":0,"permalink":"/"},"fname":"root","type":"note","vault":{"fsPath":"notes","name":"Dendron"},"contentHash":"01a79b7e7f0264a5734e0abe50acd9de","links":[{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"������¼.��Ŀ������¼�ܸ�","position":{"start":{"line":8,"column":3,"offset":96},"end":{"line":8,"column":28,"offset":121},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"������¼.��Ŀ������¼�ܸ�"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"������¼.��Ŀ��������","position":{"start":{"line":9,"column":3,"offset":143},"end":{"line":9,"column":26,"offset":166},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"������¼.��Ŀ��������"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"�׶��Կ����ܽ�","position":{"start":{"line":10,"column":3,"offset":187},"end":{"line":10,"column":18,"offset":202},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"�׶��Կ����ܽ�"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"tutorial","position":{"start":{"line":11,"column":3,"offset":219},"end":{"line":11,"column":15,"offset":231},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"tutorial"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-01_0234-AI��ӡ���̼�������¼","alias":"������¼.2026-05-01_0234-AI��ӡ���̼�������¼","position":{"start":{"line":17,"column":3,"offset":276},"end":{"line":17,"column":82,"offset":355},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-01_0234-AI��ӡ���̼�������¼"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-03_������ӡ��MQTT������¼","alias":"������¼.2026-05-03_������ӡ��MQTT������¼","position":{"start":{"line":18,"column":3,"offset":358},"end":{"line":18,"column":78,"offset":433},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-03_������ӡ��MQTT������¼"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-06_LVGL��������ģʽ��������ƬUI��ֲ�ܽ�","alias":"������¼.2026-05-06_LVGL��������ģʽ��������ƬUI��ֲ�ܽ�","position":{"start":{"line":19,"column":3,"offset":436},"end":{"line":19,"column":100,"offset":533},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-06_LVGL��������ģʽ��������ƬUI��ֲ�ܽ�"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-06_��������MP3¼���ϴ���ASR�Ų��ܽ�","alias":"������¼.2026-05-06_��������MP3¼���ϴ���ASR�Ų��ܽ�","position":{"start":{"line":20,"column":3,"offset":536},"end":{"line":20,"column":94,"offset":627},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-06_��������MP3¼���ϴ���ASR�Ų��ܽ�"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-07-�������ֿ����ȶ��Կ�����Ҫ","alias":"������¼.2026-05-07-�������ֿ����ȶ��Կ�����Ҫ","position":{"start":{"line":21,"column":3,"offset":630},"end":{"line":21,"column":82,"offset":709},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-07-�������ֿ����ȶ��Կ�����Ҫ"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-07_LVGL�����ά����WSԤ��UI�����ܽ�","alias":"������¼.2026-05-07_LVGL�����ά����WSԤ��UI�����ܽ�","position":{"start":{"line":22,"column":3,"offset":712},"end":{"line":22,"column":94,"offset":803},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-07_LVGL�����ά����WSԤ��UI�����ܽ�"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-07_LVGLģʽ��Ƭ��Դ�붯Ч�����ܽ�","alias":"������¼.2026-05-07_LVGLģʽ��Ƭ��Դ�붯Ч�����ܽ�","position":{"start":{"line":23,"column":3,"offset":806},"end":{"line":23,"column":82,"offset":885},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-07_LVGLģʽ��Ƭ��Դ�붯Ч�����ܽ�"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-07_������ӡ�������㷨�����빤����¼","alias":"������¼.2026-05-07_������ӡ�������㷨�����빤����¼","position":{"start":{"line":24,"column":3,"offset":888},"end":{"line":24,"column":90,"offset":975},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-07_������ӡ�������㷨�����빤����¼"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-14_P36��ά��ҳ�̼��汾����ʾ������¼","alias":"������¼.2026-05-14_P36��ά��ҳ�̼��汾����ʾ������¼","position":{"start":{"line":25,"column":3,"offset":978},"end":{"line":25,"column":90,"offset":1065},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-14_P36��ά��ҳ�̼��汾����ʾ������¼"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-15_��������ҳ��������֡����������¼","alias":"������¼.2026-05-15_��������ҳ��������֡����������¼","position":{"start":{"line":26,"column":3,"offset":1068},"end":{"line":26,"column":96,"offset":1161},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-15_��������ҳ��������֡����������¼"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-15_��ҳ��ģʽ���ع��ܿ�����¼","alias":"������¼.2026-05-15_��ҳ��ģʽ���ع��ܿ�����¼","position":{"start":{"line":27,"column":3,"offset":1164},"end":{"line":27,"column":78,"offset":1239},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-15_��ҳ��ģʽ���ع��ܿ�����¼"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-18_��������������ȴ����ɿ�����¼","alias":"������¼.2026-05-18_��������������ȴ����ɿ�����¼","position":{"start":{"line":28,"column":3,"offset":1242},"end":{"line":28,"column":90,"offset":1329},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-18_��������������ȴ����ɿ�����¼"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-18_ģʽͼ��BMP24תRGB565ѹ���Ż�������¼","alias":"������¼.2026-05-18_ģʽͼ��BMP24תRGB565ѹ���Ż�������¼","position":{"start":{"line":29,"column":3,"offset":1332},"end":{"line":29,"column":98,"offset":1427},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-18_ģʽͼ��BMP24תRGB565ѹ���Ż�������¼"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-19_Flash���ѻ���ͼ��ӡ������¼","alias":"������¼.2026-05-19_Flash���ѻ���ͼ��ӡ������¼","position":{"start":{"line":30,"column":3,"offset":1430},"end":{"line":30,"column":84,"offset":1511},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-19_Flash���ѻ���ͼ��ӡ������¼"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-19_WS����ͼԤ��ѹ�������Ż�������¼","alias":"������¼.2026-05-19_WS����ͼԤ��ѹ�������Ż�������¼","position":{"start":{"line":31,"column":3,"offset":1514},"end":{"line":31,"column":92,"offset":1603},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-19_WS����ͼԤ��ѹ�������Ż�������¼"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"2026-05-27_��������MQTTЭͬ��TCM�ڴ��Ż�������¼","alias":"������¼.2026-05-27_��������MQTTЭͬ��TCM�ڴ��Ż�������¼","position":{"start":{"line":32,"column":3,"offset":1606},"end":{"line":32,"column":102,"offset":1705},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"2026-05-27_��������MQTTЭͬ��TCM�ڴ��Ż�������¼"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"AI��ӡ��Ӧ�üܹ��������Ż�����","alias":"������¼.AI��ӡ��Ӧ�üܹ��������Ż�����","position":{"start":{"line":33,"column":3,"offset":1708},"end":{"line":33,"column":66,"offset":1771},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"AI��ӡ��Ӧ�üܹ��������Ż�����"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"BK7252n-LVGL�����Կ���ָ��","alias":"������¼.BK7252n-LVGL�����Կ���ָ��","position":{"start":{"line":34,"column":3,"offset":1774},"end":{"line":34,"column":64,"offset":1835},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"BK7252n-LVGL�����Կ���ָ��"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"BUG-001-����_Data_Abort_�������徺̬","alias":"������¼.BUG-001-����_Data_Abort_�������徺̬","position":{"start":{"line":35,"column":3,"offset":1838},"end":{"line":35,"column":82,"offset":1917},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"BUG-001-����_Data_Abort_�������徺̬"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"BUG-002-LVGL_�ڴ��ط���_Data_Abort","alias":"������¼.BUG-002-LVGL_�ڴ��ط���_Data_Abort","position":{"start":{"line":36,"column":3,"offset":1920},"end":{"line":36,"column":80,"offset":1997},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"BUG-002-LVGL_�ڴ��ط���_Data_Abort"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"bk7252n-��¼�̳�","alias":"������¼.bk7252n-��¼�̳�","position":{"start":{"line":37,"column":3,"offset":2000},"end":{"line":37,"column":44,"offset":2041},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"bk7252n-��¼�̳�"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"prn_tune���ڵ�������","alias":"������¼.prn_tune���ڵ�������","position":{"start":{"line":38,"column":3,"offset":2044},"end":{"line":38,"column":54,"offset":2095},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"prn_tune���ڵ�������"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"��ӡ������������ϼ�¼","alias":"������¼.��ӡ������������ϼ�¼","position":{"start":{"line":39,"column":3,"offset":2098},"end":{"line":39,"column":52,"offset":2147},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"��ӡ������������ϼ�¼"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"��Ŀ��������","alias":"������¼.��Ŀ��������","position":{"start":{"line":40,"column":3,"offset":2150},"end":{"line":40,"column":38,"offset":2185},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"��Ŀ��������"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"��Ŀ������¼�ܸ�","alias":"������¼.��Ŀ������¼�ܸ�","position":{"start":{"line":41,"column":3,"offset":2188},"end":{"line":41,"column":42,"offset":2227},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"��Ŀ������¼�ܸ�"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"bug-collector","position":{"start":{"line":45,"column":3,"offset":2250},"end":{"line":45,"column":20,"offset":2267},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"bug-collector"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"BK7252N-����˵��","alias":"оƬSDK���.BK7252N-����˵��","position":{"start":{"line":49,"column":3,"offset":2293},"end":{"line":49,"column":47,"offset":2337},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"BK7252N-����˵��"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"��ӡ����","position":{"start":{"line":53,"column":3,"offset":2354},"end":{"line":53,"column":14,"offset":2365},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"��ӡ����"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"01-��һ��-����ʼ����ʱ��","alias":"��ӡ����.01-��һ��-����ʼ����ʱ��","position":{"start":{"line":54,"column":3,"offset":2376},"end":{"line":54,"column":58,"offset":2431},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"01-��һ��-����ʼ����ʱ��"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"02-����-��ģʽ״̬","alias":"��ӡ����.02-����-��ģʽ״̬","position":{"start":{"line":55,"column":3,"offset":2434},"end":{"line":55,"column":44,"offset":2475},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"02-����-��ģʽ״̬"}},{"type":"wiki","from":{"fname":"root","id":"root","vaultName":"Dendron"},"value":"�׶��Կ����ܽ�","position":{"start":{"line":57,"column":3,"offset":2479},"end":{"line":57,"column":18,"offset":2494},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"�׶��Կ����ܽ�"}}],"anchors":{"bk7252n-ai-ӡ̼ĵ":{"type":"header","text":"BK7252N AI ��ӡ���̼��ĵ�","value":"bk7252n-ai-ӡ̼ĵ","line":8,"column":0,"depth":1},"":{"type":"header","text":"���","value":"","line":12,"column":0,"depth":2},"㼶":{"type":"header","text":"�㼶����","value":"㼶","line":19,"column":0,"depth":2},"-1":{"type":"header","text":"������¼","value":"-1","line":21,"column":0,"depth":3},"bug-collector":{"type":"header","text":"bug-collector","value":"bug-collector","line":49,"column":0,"depth":3},"оƭsdk":{"type":"header","text":"оƬSDK���","value":"оƭsdk","line":53,"column":0,"depth":3},"ӡ":{"type":"header","text":"��ӡ����","value":"ӡ","line":57,"column":0,"depth":3}},"children":["29688af9637cf23baf5a53","c1bs7wsjfbhb0zipaywqv1","b214abeb9f8f17aa994522","9fd53d681f5e8043762252","jxzspjsfkjpyzxdrn5ntdy7","rtsqnfwe8ois3qtk7ktu5i6"],"parent":null,"data":{},"body":"\n# BK7252N AI ��ӡ���̼��ĵ�\n\nBK7252N + RT-Thread + LVGL AI ��ӡ���̼���Ŀ�ĵ���Dendron����\n\n## ���\n\n- [[������¼.��Ŀ������¼�ܸ�]] �� �ĵ����������ӳ��\n- [[������¼.��Ŀ��������]] �� �����嵥��ģ���ٲ�\n- [[�׶��Կ����ܽ�]] �� �׶��Թ�ʶ��Ҫ\n- [[tutorial]] �� Dendron ʹ�ý̳�\n\n## �㼶����\n\n### ������¼\n\n- [[������¼.2026-05-01_0234-AI��ӡ���̼�������¼|2026-05-01_0234-AI��ӡ���̼�������¼]]\n- [[������¼.2026-05-03_������ӡ��MQTT������¼|2026-05-03_������ӡ��MQTT������¼]]\n- [[������¼.2026-05-06_LVGL��������ģʽ��������ƬUI��ֲ�ܽ�|2026-05-06_LVGL��������ģʽ��������ƬUI��ֲ�ܽ�]]\n- [[������¼.2026-05-06_��������MP3¼���ϴ���ASR�Ų��ܽ�|2026-05-06_��������MP3¼���ϴ���ASR�Ų��ܽ�]]\n- [[������¼.2026-05-07-�������ֿ����ȶ��Կ�����Ҫ|2026-05-07-�������ֿ����ȶ��Կ�����Ҫ]]\n- [[������¼.2026-05-07_LVGL�����ά����WSԤ��UI�����ܽ�|2026-05-07_LVGL�����ά����WSԤ��UI�����ܽ�]]\n- [[������¼.2026-05-07_LVGLģʽ��Ƭ��Դ�붯Ч�����ܽ�|2026-05-07_LVGLģʽ��Ƭ��Դ�붯Ч�����ܽ�]]\n- [[������¼.2026-05-07_������ӡ�������㷨�����빤����¼|2026-05-07_������ӡ�������㷨�����빤����¼]]\n- [[������¼.2026-05-14_P36��ά��ҳ�̼��汾����ʾ������¼|2026-05-14_P36��ά��ҳ�̼��汾����ʾ������¼]]\n- [[������¼.2026-05-15_��������ҳ��������֡����������¼|2026-05-15_��������ҳ��������֡����������¼]]\n- [[������¼.2026-05-15_��ҳ��ģʽ���ع��ܿ�����¼|2026-05-15_��ҳ��ģʽ���ع��ܿ�����¼]]\n- [[������¼.2026-05-18_��������������ȴ����ɿ�����¼|2026-05-18_��������������ȴ����ɿ�����¼]]\n- [[������¼.2026-05-18_ģʽͼ��BMP24תRGB565ѹ���Ż�������¼|2026-05-18_ģʽͼ��BMP24תRGB565ѹ���Ż�������¼]]\n- [[������¼.2026-05-19_Flash���ѻ���ͼ��ӡ������¼|2026-05-19_Flash���ѻ���ͼ��ӡ������¼]]\n- [[������¼.2026-05-19_WS����ͼԤ��ѹ�������Ż�������¼|2026-05-19_WS����ͼԤ��ѹ�������Ż�������¼]]\n- [[������¼.2026-05-27_��������MQTTЭͬ��TCM�ڴ��Ż�������¼|2026-05-27_��������MQTTЭͬ��TCM�ڴ��Ż�������¼]]\n- [[������¼.AI��ӡ��Ӧ�üܹ��������Ż�����|AI��ӡ��Ӧ�üܹ��������Ż�����]]\n- [[������¼.BK7252n-LVGL�����Կ���ָ��|BK7252n-LVGL�����Կ���ָ��]]\n- [[������¼.BUG-001-����_Data_Abort_�������徺̬|BUG-001-����_Data_Abort_�������徺̬]]\n- [[������¼.BUG-002-LVGL_�ڴ��ط���_Data_Abort|BUG-002-LVGL_�ڴ��ط���_Data_Abort]]\n- [[������¼.bk7252n-��¼�̳�|bk7252n-��¼�̳�]]\n- [[������¼.prn_tune���ڵ�������|prn_tune���ڵ�������]]\n- [[������¼.��ӡ������������ϼ�¼|��ӡ������������ϼ�¼]]\n- [[������¼.��Ŀ��������|��Ŀ��������]]\n- [[������¼.��Ŀ������¼�ܸ�|��Ŀ������¼�ܸ�]]\n\n### bug-collector\n\n- [[bug-collector]]��������\n\n### оƬSDK���\n\n- [[оƬSDK���.BK7252N-����˵��|BK7252N-����˵��]]\n\n### ��ӡ����\n\n- [[��ӡ����]]��������\n- [[��ӡ����.01-��һ��-����ʼ����ʱ��|01-��һ��-����ʼ����ʱ��]]\n- [[��ӡ����.02-����-��ģʽ״̬|02-����-��ģʽ״̬]]\n\n- [[�׶��Կ����ܽ�]]\n"},"collectionChildren":null,"customHeadContent":null,"config":{"version":5,"dev":{"enablePreviewV2":true,"enableSelfContainedVaults":true},"commands":{"lookup":{"note":{"selectionMode":"extract","confirmVaultOnCreate":true,"vaultSelectionModeOnCreate":"smart","leaveTrace":false,"bubbleUpCreateNew":true,"fuzzThreshold":0.2}},"randomNote":{},"insertNoteLink":{"aliasMode":"none","enableMultiSelect":false},"insertNoteIndex":{"enableMarker":false},"copyNoteLink":{"aliasMode":"title"},"templateHierarchy":"template"},"workspace":{"vaults":[{"fsPath":"notes","name":"Dendron"}],"enableXVaultWikiLink":true,"journal":{"dailyDomain":"daily","name":"journal","dateFormat":"y.MM.dd","addBehavior":"childOfDomain"},"scratch":{"name":"scratch","dateFormat":"y.MM.dd.HHmmss","addBehavior":"asOwnDomain"},"task":{"name":"task","dateFormat":"y.MM.dd","addBehavior":"asOwnDomain","statusSymbols":{"":" ","wip":"w","done":"x","assigned":"a","moved":"m","blocked":"b","delegated":"l","dropped":"d","pending":"y"},"taskCompleteStatus":["done","x"],"prioritySymbols":{"H":"high","M":"medium","L":"low"},"todoIntegration":false,"createTaskSelectionType":"selection2link"},"graph":{"zoomSpeed":1,"createStub":false},"enableAutoCreateOnDefinition":false,"enableRemoteVaultInit":true,"enableUserTags":true,"enableHashTags":true,"workspaceVaultSyncMode":"noCommit","enableAutoFoldFrontmatter":false,"enableEditorDecorations":true,"maxPreviewsCached":10,"maxNoteLength":204800,"enableFullHierarchyNoteTitle":false,"enablePersistentHistory":false},"preview":{"enableFMTitle":true,"enableNoteTitleForLink":true,"enableFrontmatterTags":true,"enableHashesForFMTags":false,"enablePrettyRefs":true,"enableKatex":true,"automaticallyShowPreview":false},"publishing":{"enableFMTitle":true,"enableNoteTitleForLink":true,"enablePrettyRefs":true,"enableKatex":true,"copyAssets":true,"siteHierarchies":["root"],"writeStubs":false,"siteRootDir":"docs","seo":{"title":"Dendron","description":"Personal Knowledge Space"},"github":{"enableEditLink":true,"editLinkText":"Edit this page on GitHub","editBranch":"main","editViewMode":"tree"},"enableSiteLastModified":true,"enableFrontmatterTags":true,"enableHashesForFMTags":false,"enableRandomlyColoredTags":true,"enableTaskNotes":true,"enablePrettyLinks":true,"searchMode":"search","siteUrl":"https://xiayu12345.github.io/Dendron","siteFaviconPath":"favicon.ico","siteIndex":"root"}}},"__N_SSG":true},"page":"/notes/[id]","query":{"id":"8e26e8749bccd9d3739356"},"buildId":"9V-Pp4vApoolPva_kAKde","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

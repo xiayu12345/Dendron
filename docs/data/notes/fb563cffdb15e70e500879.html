@@ -1,0 +1,67 @@
+<h1 id="组一仅打印开始--结束时间上一版全局参数">组一：仅打印开始 / 结束时间（上一版全局参数）<a aria-hidden="true" class="anchor-heading icon-link" href="#组一仅打印开始--结束时间上一版全局参数"></a></h1>
+<h1 id="组一仅打印开始--结束时间上一版全局参数-1">组一：仅打印开始 / 结束时间（上一版全局参数）<a aria-hidden="true" class="anchor-heading icon-link" href="#组一仅打印开始--结束时间上一版全局参数-1"></a></h1>
+<h2 id="纸上应出现的内容">纸上应出现的内容<a aria-hidden="true" class="anchor-heading icon-link" href="#纸上应出现的内容"></a></h2>
+<p>仅三行测速信息，例如：</p>
+<pre class="language-text"><code class="language-text">S:12345
+E:14123
+C:1778ms
+</code></pre>
+<p><strong>不应出现</strong> <code>Modes:</code> 及六种模式名列表。</p>
+<h2 id="用途">用途<a aria-hidden="true" class="anchor-heading icon-link" href="#用途"></a></h2>
+<ul>
+<li>与「本版」样张对比时，可排除「模式列表占用少量走纸/文字时间」的差异，主要看<strong>同一套图像</strong>在旧全局参数下的 <code>C</code> 值。</li>
+</ul>
+<h2 id="上一版无-modes-页脚时speed5-全局参数纪要">上一版（无 Modes 页脚时）speed=5 全局参数纪要<a aria-hidden="true" class="anchor-heading icon-link" href="#上一版无-modes-页脚时speed5-全局参数纪要"></a></h2>
+<blockquote>
+<p>以下为与当前仓库对比的「上一版」快照，对应 <code>thermal_printer_print_bitmap</code> 内仍只有 <code>S/E/C</code> 三行、尚未调用 <code>lv_desktop_format_print_footer</code> 时的参数量级。</p>
+</blockquote>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>项</th><th>数值</th></tr></thead><tbody><tr><td><code>inter_group_us</code></td><td>1</td></tr><tr><td><code>line_cooling_us</code></td><td>12</td></tr><tr><td><code>heat_us_at_5c / 25c / 40c</code></td><td>1120 / 980 / 860</td></tr><tr><td><code>motor_step_us</code></td><td>680</td></tr><tr><td><code>status_check_period_lines</code></td><td>80</td></tr><tr><td>连续白行批量上限</td><td>64</td></tr><tr><td>周期性 <code>rt_thread_mdelay(1)</code></td><td>约每 128 行</td></tr><tr><td>位图结束后 <code>thermal_printer_feed</code></td><td>2</td></tr><tr><td>高密度行额外加热（黑点档）</td><td>+170 / +115 / +70 / +38 / +14（分档）</td></tr></tbody></table></div>
+<h2 id="归档建议">归档建议<a aria-hidden="true" class="anchor-heading icon-link" href="#归档建议"></a></h2>
+<ul>
+<li>文件名建议：<code>YYYYMMDD_模式名_仅SEC_备注.jpg</code>（模式名仅作你当时 UI 记录，该版纸上不打印模式）。</li>
+</ul>

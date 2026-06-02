@@ -1,0 +1,130 @@
+<h1 id="热敏打印机驱动算法分析与工作记录">热敏打印机驱动算法分析与工作记录<a aria-hidden="true" class="anchor-heading icon-link" href="#热敏打印机驱动算法分析与工作记录"></a></h1>
+<h1 id="热敏打印机驱动算法分析与工作记录-1">热敏打印机驱动算法分析与工作记录<a aria-hidden="true" class="anchor-heading icon-link" href="#热敏打印机驱动算法分析与工作记录-1"></a></h1>
+<p><strong>日期</strong>：2026-05-07<br>
+<strong>范围</strong>：基于仓库实现的热敏打印控制算法梳理、问题归纳与改进建议（不含固件代码修改记录）。</p>
+<hr>
+<h2 id="1-文档目的">1. 文档目的<a aria-hidden="true" class="anchor-heading icon-link" href="#1-文档目的"></a></h2>
+<p>汇总针对 BK7252 工程中热敏打印机路径的<strong>算法与控制策略</strong>层面的分析结论，以及本次梳理活动的<strong>工作记录</strong>，便于后续联调、<code>prn_tune</code> 标定与重构时对照。</p>
+<hr>
+<h2 id="2-相关代码与文档">2. 相关代码与文档<a aria-hidden="true" class="anchor-heading icon-link" href="#2-相关代码与文档"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>类型</th><th>路径</th></tr></thead><tbody><tr><td>主实现</td><td><code>applications/Printer/thermal_printer.c</code></td></tr><tr><td>接口</td><td><code>applications/Printer/thermal_printer.h</code></td></tr><tr><td>调参命令说明</td><td><a href="/notes/e219878f58bd997c455ca8">prn_tune 串口调参命令说明</a></td></tr><tr><td>参数组合试验记录</td><td><a href="/notes/69fab073dcdd31f425755e">打印机参数排列组合记录</a></td></tr></tbody></table></div>
+<hr>
+<h2 id="3-算法流程简述">3. 算法流程简述<a aria-hidden="true" class="anchor-heading icon-link" href="#3-算法流程简述"></a></h2>
+<h3 id="31-打印一行有墨">3.1 打印一行（有墨）<a aria-hidden="true" class="anchor-heading icon-link" href="#31-打印一行有墨"></a></h3>
+<p><code>print_line</code> 将一行按 <strong>4 组（group）</strong> 扫描：</p>
+<ul>
+<li>某组有黑点：构造仅该组非零的缓存 → <code>shift_line</code> → <code>strobe</code> 加热（脉宽经 gshape / clamp）→ 组间延时。</li>
+<li>每组末尾调用 <code>motor_step_progressive</code>，按 <code>motor_steps_per_line</code> 在 4 组间分配步进。</li>
+<li>行尾根据<strong>整行黑点数</strong>调整 <code>line_gap_us</code>（稀疏行可能缩短冷却，密集行加长）。</li>
+</ul>
+<h3 id="32-整页位图">3.2 整页位图<a aria-hidden="true" class="anchor-heading icon-link" href="#32-整页位图"></a></h3>
+<p><code>thermal_printer_print_bitmap</code> 主循环：</p>
+<ul>
+<li>按 <code>status_check_period_lines</code> 周期读 ADC、高温等待、<code>select_heat_us</code> 更新 <code>heat_us_cached</code>。</li>
+<li><strong>无墨连续行</strong>：合并为一段，走 <code>fast_feed_lines_no_release</code> 快进。</li>
+<li><strong>有墨行</strong>：按整行 <code>black_dots</code> 阶梯增加 <code>dense_boost</code>，再 <code>clamp_heat_us</code> 后调用 <code>print_line</code>。</li>
+<li>可选按 <code>yield_period_lines</code> 插入 <code>rt_thread_mdelay(1)</code>。</li>
+</ul>
+<h3 id="33-其它要点">3.3 其它要点<a aria-hidden="true" class="anchor-heading icon-link" href="#33-其它要点"></a></h3>
+<ul>
+<li>微秒延时：<code>delay_us</code> 为 NOP 循环，<code>us * 180</code> 与 CPU 主频强相关，未做硬件校准。</li>
+<li>温度：<code>temp_from_adc</code> 线性近似；<code>paper_present()</code> 当前实现恒为“有纸”。</li>
+</ul>
+<hr>
+<h2 id="4-算法层面主要问题">4. 算法层面主要问题<a aria-hidden="true" class="anchor-heading icon-link" href="#4-算法层面主要问题"></a></h2>
+<h3 id="41-时间基准未锚定物理时间">4.1 时间基准未锚定物理时间<a aria-hidden="true" class="anchor-heading icon-link" href="#41-时间基准未锚定物理时间"></a></h3>
+<p>全部 STROBE 脉宽、移位时钟半周期、电机步间隔、组间/行间间隙均依赖同一套 <code>delay_us</code>。若实际 CPU 频率或编译优化导致比例漂移，会出现<strong>系统性偏浅/偏黑、条纹、高档位最先失效</strong>，与仅靠 <code>prn_tune</code> 反复试参难以收敛的现象一致。</p>
+<h3 id="42-能量补偿多重叠加易过补偿或冲突">4.2 能量补偿多重叠加（易过补偿或冲突）<a aria-hidden="true" class="anchor-heading icon-link" href="#42-能量补偿多重叠加易过补偿或冲突"></a></h3>
+<ul>
+<li><strong>整行</strong> <code>dense_boost</code>（按 <code>black_dots</code> 阶梯）。</li>
+<li><strong>每组</strong> <code>prn_apply_group_gshape</code>（按 <code>group_black_dots</code> 减/加脉宽）。</li>
+</ul>
+<p>二者都在按“密度”调节加热，缺乏统一<strong>能量预算</strong>约束，高密度可能出现整行加长 + 高密度段再加长 → 局部过黑、渗墨；低密度段又与缩短 <code>line_gap</code> 耦合，行为难预测。</p>
+<h3 id="43-行间冷却仅依赖当前行点数">4.3 行间冷却仅依赖当前行点数<a aria-hidden="true" class="anchor-heading icon-link" href="#43-行间冷却仅依赖当前行点数"></a></h3>
+<p>稀疏行会缩短 <code>line_gap</code>，但<strong>紧跟大块实心区之后的稀疏行</strong>往往更需要冷却头部。当前无<strong>前一行或滑动窗口能量</strong>估计，易在图案边界出现深浅突变或条纹。</p>
+<h3 id="44-空白快进与有墨行时序不一致">4.4 空白快进与有墨行时序不一致<a aria-hidden="true" class="anchor-heading icon-link" href="#44-空白快进与有墨行时序不一致"></a></h3>
+<p><code>fast_feed_lines_no_release</code> 将行间延时限制为<strong>最多约 4?s</strong>（与完整 <code>line_gap_us</code> 相比极短）。同一页内空白区与图像区的<strong>“一行”时间结构</strong>不一致，可能造成行距、有效 DPI、走纸打滑与噪声表现与预期不符。</p>
+<h3 id="45-无墨段不调-shift_line">4.5 无墨段不调 <code>shift_line</code><a aria-hidden="true" class="anchor-heading icon-link" href="#45-无墨段不调-shift_line"></a></h3>
+<p>无黑点组跳过移位，仅步进电机。是否安全取决于头片/latch 时序；存在<strong>段边界鬼影、串扰</strong>类风险的验证缺口。</p>
+<h3 id="46-温度与保护链路薄弱">4.6 温度与保护链路薄弱<a aria-hidden="true" class="anchor-heading icon-link" href="#46-温度与保护链路薄弱"></a></h3>
+<p>ADC→温度映射粗糙；加热基准更新间隔为按行周期采样，快扫大图时可能滞后；缺纸检测未参与策略。</p>
+<h3 id="47-高档位对误差敏感">4.7 高档位对误差敏感<a aria-hidden="true" class="anchor-heading icon-link" href="#47-高档位对误差敏感"></a></h3>
+<p>L4/L5 将 <code>inter_group_us</code>、<code>line_cooling_us</code> 等压得很低，且 <code>clk_half_us</code>/<code>latch_us</code> 可为 0，对延时误差最敏感。</p>
+<hr>
+<h2 id="5-改进建议优先级">5. 改进建议（优先级）<a aria-hidden="true" class="anchor-heading icon-link" href="#5-改进建议优先级"></a></h2>
+<ol>
+<li><strong>时间标定或硬件定时</strong>：定时器/PWM/示波器标定 <code>delay_us</code>，或 STROBE/STEP/SHIFT 用硬件定时产生。</li>
+<li><strong>单一能量模型</strong>：以段有效点数、纸移速度、头温或滑动窗口沉积能量为输入，统一输出脉宽并设硬限幅；合并或分层 <code>dense_boost</code> 与 <code>gshape</code>，避免 double counting。</li>
+<li><strong>行间冷却</strong>：引入历史能量（如最近 K 行点数和）或提高头温采样率/闭环。</li>
+<li><strong>统一空白与有墨的“一行”语义</strong>：空白快进若保留，需单独标定等效 <code>line_gap</code> 或最小冷却，避免两套 DPI。</li>
+<li><strong>A/B 验证</strong>：无墨段是否必须 <code>shift_line(全零)</code>。</li>
+<li><strong>速度档</strong>：在标定曲线上比例缩放，而非多套孤立魔法数。</li>
+</ol>
+<hr>
+<h2 id="6-本次工作记录梳理活动">6. 本次工作记录（梳理活动）<a aria-hidden="true" class="anchor-heading icon-link" href="#6-本次工作记录梳理活动"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>项目</th><th>说明</th></tr></thead><tbody><tr><td><strong>输入</strong></td><td>确认驱动/算法存在问题，要求算法层分析与建议</td></tr><tr><td><strong>方法</strong></td><td>阅读 <code>thermal_printer.c</code> 主路径；对照 <code>0wjz-docs</code> 中调参与排列组合记录</td></tr><tr><td><strong>输出</strong></td><td>算法流程说明、问题清单（含与代码行为的对应关系）、分优先级改进建议</td></tr><tr><td><strong>未做</strong></td><td>未修改固件；未跑板级测试；未新增自动化用例</td></tr></tbody></table></div>
+<hr>
+<h2 id="7-关联阅读">7. 关联阅读<a aria-hidden="true" class="anchor-heading icon-link" href="#7-关联阅读"></a></h2>
+<ul>
+<li><a href="/notes/e219878f58bd997c455ca8">prn_tune 串口调参命令说明</a> — 串口调参入口与字段含义  </li>
+<li><a href="/notes/69fab073dcdd31f425755e">打印机参数排列组合记录</a> — 实测参数与现象  </li>
+<li><a href="/notes/795a1a96f9c620254c9633">AI 打印机固件开发记录</a> — 整体打印机相关开发脉络  </li>
+</ul>
+<hr>
+<p><em>本文档由对话梳理沉淀，后续若以示波器/标定数据更新结论，请在本节追加修订记录（日期 + 要点）。</em></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/notes/6d428def14b8ffdc828f43">AI 打印机固件 — 项目交接资料</a></li>
+<li><a href="/notes/62ff4545e5f1373c5cfe01">AI 打印机固件 — 项目开发记录总纲</a></li>
+</ul>

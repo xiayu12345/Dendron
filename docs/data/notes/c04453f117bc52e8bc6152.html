@@ -1,0 +1,76 @@
+<h1 id="组二时间戳--六种模式状态本版全局参数">组二：时间戳 + 六种模式状态（本版全局参数）<a aria-hidden="true" class="anchor-heading icon-link" href="#组二时间戳--六种模式状态本版全局参数"></a></h1>
+<h1 id="组二时间戳--六种模式状态本版全局参数-1">组二：时间戳 + 六种模式状态（本版全局参数）<a aria-hidden="true" class="anchor-heading icon-link" href="#组二时间戳--六种模式状态本版全局参数-1"></a></h1>
+<h2 id="纸上应出现的内容">纸上应出现的内容<a aria-hidden="true" class="anchor-heading icon-link" href="#纸上应出现的内容"></a></h2>
+<p>在 <code>S</code> / <code>E</code> / <code>C</code> 下方追加模式块，例如：</p>
+<pre class="language-text"><code class="language-text">S:12345
+E:14123
+C:1778ms
+Modes:
+* anime
+- cartoon
+- ink_wash
+- line_art
+- simple_drawing
+- sketch
+</code></pre>
+<ul>
+<li><code>* </code> 前缀：当前 UI 选中的模式  </li>
+<li><code>- </code> 前缀：其余五种模式（顺序与 <code>lv_example_meter.c</code> 中 <code>s_mode_names[]</code> 一致）</li>
+</ul>
+<h2 id="本版当前仓库speed5-全局参数纪要">本版（当前仓库）speed=5 全局参数纪要<a aria-hidden="true" class="anchor-heading icon-link" href="#本版当前仓库speed5-全局参数纪要"></a></h2>
+<p>对应 <code>applications/Printer/thermal_printer.c</code> 中 <code>apply_speed_profile()</code> 的 <code>default /* 5 fastest */</code> 分支及位图循环相关逻辑：</p>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>项</th><th>数值</th></tr></thead><tbody><tr><td><code>inter_group_us</code></td><td>1</td></tr><tr><td><code>line_cooling_us</code></td><td>10</td></tr><tr><td><code>heat_us_at_5c / 25c / 40c</code></td><td>1080 / 940 / 820</td></tr><tr><td><code>motor_step_us</code></td><td>650</td></tr><tr><td><code>status_check_period_lines</code></td><td>96</td></tr><tr><td>连续白行批量上限</td><td>96</td></tr><tr><td>周期性 <code>rt_thread_mdelay(1)</code></td><td>约每 256 行</td></tr><tr><td>位图结束后 <code>thermal_printer_feed</code></td><td>2</td></tr><tr><td>高密度行额外加热（黑点档）</td><td>+135 / +90 / +55 / +28 / +10（分档）</td></tr></tbody></table></div>
+<h2 id="与组一的差异便于分析">与组一的差异（便于分析）<a aria-hidden="true" class="anchor-heading icon-link" href="#与组一的差异便于分析"></a></h2>
+<ul>
+<li>纸上多出 <strong>Modes 文本块</strong>（由 <code>thermal_printer_print_text</code> → 内部再走位图，会略增加总时长与走纸，属正常现象）。  </li>
+<li>热参数与白行批量相对组一<strong>更激进</strong>，同图下 <code>C</code> 通常应 ≤ 组一；若画质下降，可对照两组样张与参数表回调。</li>
+</ul>
+<h2 id="归档建议">归档建议<a aria-hidden="true" class="anchor-heading icon-link" href="#归档建议"></a></h2>
+<ul>
+<li>文件名建议：<code>YYYYMMDD_纸上Modes行首模式名_含Modes_备注.jpg</code>（与 <code>* </code> 行一致即可）。</li>
+</ul>

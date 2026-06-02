@@ -1,0 +1,120 @@
+<h1 id="bk7252n-烧录教程基于当前工程产物">BK7252N 烧录教程（基于当前工程产物）<a aria-hidden="true" class="anchor-heading icon-link" href="#bk7252n-烧录教程基于当前工程产物"></a></h1>
+<h1 id="bk7252n-烧录教程基于当前工程产物-1">BK7252N 烧录教程（基于当前工程产物）<a aria-hidden="true" class="anchor-heading icon-link" href="#bk7252n-烧录教程基于当前工程产物-1"></a></h1>
+<p>本文档对应当前工程 <code>bk7252n_sdk-SDK_3.0.76.1_witch_lcd</code>，并基于你刚编译得到的 <code>out</code> 目录产物。</p>
+<h2 id="1-先确认编译产物">1. 先确认编译产物<a aria-hidden="true" class="anchor-heading icon-link" href="#1-先确认编译产物"></a></h2>
+<p>成功编译后，<code>out</code> 目录里通常有这些文件：</p>
+<ul>
+<li><code>bootloader_bk7252n_uart1_v1.0.14.bin</code>：Bootloader</li>
+<li><code>rtthread.bin</code>：应用裸 bin</li>
+<li><code>rtthread.elf</code>：调试用 ELF</li>
+<li><code>rtthread.map</code>：链接映射</li>
+<li><code>all_4M.1220.bin</code>：整包镜像（bootloader + app）</li>
+<li><code>rtthread_uart_4M.1220.bin</code>：串口下载镜像（app 分区导出镜像）</li>
+</ul>
+<blockquote>
+<p>推荐优先使用 <code>all_4M.1220.bin</code> 做“全量刷机”，最稳。</p>
+</blockquote>
+<h2 id="2-烧录工具说明">2. 烧录工具说明<a aria-hidden="true" class="anchor-heading icon-link" href="#2-烧录工具说明"></a></h2>
+<p>本 SDK 自带的官方烧录器位于：</p>
+<ul>
+<li><code>tools/beken_program_V2.5.4/BekenProgramV2.5.4.exe</code></li>
+</ul>
+<p>这是 Windows GUI 工具。<br>
+如果你现在在 Linux 环境开发，通常有三种方式：</p>
+<ol>
+<li>到一台 Windows 电脑上烧录（最常见）</li>
+<li>Linux 上用虚拟机跑 Windows 再烧录</li>
+<li>Linux + Wine 运行该 exe（兼容性不保证）</li>
+</ol>
+<h2 id="3-硬件连接">3. 硬件连接<a aria-hidden="true" class="anchor-heading icon-link" href="#3-硬件连接"></a></h2>
+<p>按常见 BK7252N 串口下载流程准备：</p>
+<ol>
+<li>USB 转串口连接开发板（TX/RX/GND，电平 3.3V）</li>
+<li>确认串口号（Windows 设备管理器中的 COMx）</li>
+<li>板子进入下载模式（通常是按住 Boot/Download 键上电或复位）</li>
+</ol>
+<blockquote>
+<p>不同板卡进入下载模式的按键组合可能不同，按你主板资料为准。</p>
+</blockquote>
+<h2 id="4-方法-a全量烧录推荐首次或异常恢复">4. 方法 A：全量烧录（推荐，首次或异常恢复）<a aria-hidden="true" class="anchor-heading icon-link" href="#4-方法-a全量烧录推荐首次或异常恢复"></a></h2>
+<h3 id="41-打开工具">4.1 打开工具<a aria-hidden="true" class="anchor-heading icon-link" href="#41-打开工具"></a></h3>
+<p>运行：</p>
+<ul>
+<li><code>tools/beken_program_V2.5.4/BekenProgramV2.5.4.exe</code></li>
+</ul>
+<h3 id="42-关键配置">4.2 关键配置<a aria-hidden="true" class="anchor-heading icon-link" href="#42-关键配置"></a></h3>
+<p>在工具中设置：</p>
+<ul>
+<li>串口：选择你的 <code>COMx</code></li>
+<li>波特率：先用默认（常见 115200；若工具推荐更高可按工具默认）</li>
+<li>下载文件：选择 <code>out/all_4M.1220.bin</code></li>
+<li>下载地址：通常工具对整包模式会自动处理；若需要手填，填 <code>0x00000000</code></li>
+</ul>
+<h3 id="43-开始烧录">4.3 开始烧录<a aria-hidden="true" class="anchor-heading icon-link" href="#43-开始烧录"></a></h3>
+<ol>
+<li>点击下载/开始（Start/Download）</li>
+<li>若工具提示等待 Boot，请重新执行“下载模式上电/复位”</li>
+<li>看到成功日志后重启板子</li>
+</ol>
+<h2 id="5-方法-b分区烧录仅更新应用">5. 方法 B：分区烧录（仅更新应用）<a aria-hidden="true" class="anchor-heading icon-link" href="#5-方法-b分区烧录仅更新应用"></a></h2>
+<p>适用于 Bootloader 不变、只升级应用的情况。</p>
+<p>可选文件：</p>
+<ul>
+<li><code>out/rtthread_uart_4M.1220.bin</code>（常用于串口升级流程）</li>
+<li>或 <code>out/rtthread.bin</code>（原始 app bin）</li>
+</ul>
+<p>推荐地址（来自本次打包配置）：</p>
+<ul>
+<li><code>bootloader</code> 起始地址：<code>0x00000000</code></li>
+<li><code>app</code> 起始地址：<code>0x00011000</code></li>
+</ul>
+<p>如果工具支持按地址写入：</p>
+<ul>
+<li>仅升级应用时，将 app 镜像写到 <code>0x00011000</code></li>
+</ul>
+<blockquote>
+<p>分区烧录必须确保地址与当前分区表一致，否则会导致无法启动。</p>
+</blockquote>
+<h2 id="6-烧录后如何验证">6. 烧录后如何验证<a aria-hidden="true" class="anchor-heading icon-link" href="#6-烧录后如何验证"></a></h2>
+<ol>
+<li>串口打开日志终端（115200 8N1，按工程默认）</li>
+<li>板子复位上电</li>
+<li>观察是否出现 RT-Thread 启动日志和你的应用日志</li>
+<li>执行功能自检（联网、按键、显示、音频等）</li>
+</ol>
+<h2 id="7-常见问题排查">7. 常见问题排查<a aria-hidden="true" class="anchor-heading icon-link" href="#7-常见问题排查"></a></h2>
+<h3 id="71-工具连不上板子">7.1 工具连不上板子<a aria-hidden="true" class="anchor-heading icon-link" href="#71-工具连不上板子"></a></h3>
+<ul>
+<li>检查 USB 转串口驱动是否正常</li>
+<li>TX/RX 是否交叉连接（PC-TX 到板-RX）</li>
+<li>GND 是否共地</li>
+<li>是否真的进入下载模式</li>
+</ul>
+<h3 id="72-烧录成功但不启动">7.2 烧录成功但不启动<a aria-hidden="true" class="anchor-heading icon-link" href="#72-烧录成功但不启动"></a></h3>
+<ul>
+<li>首次请改用“全量烧录”<code>all_4M.1220.bin</code></li>
+<li>检查是否误写了错误地址</li>
+<li>检查镜像是否对应芯片型号 <code>bk7252n</code></li>
+</ul>
+<h3 id="73-启动后异常重启">7.3 启动后异常重启<a aria-hidden="true" class="anchor-heading icon-link" href="#73-启动后异常重启"></a></h3>
+<ul>
+<li>查看串口启动日志定位 fault</li>
+<li>对照 <code>out/rtthread.elf</code> + <code>out/rtthread.map</code> 做地址回溯</li>
+</ul>
+<h2 id="8-你当前这版的推荐操作">8. 你当前这版的推荐操作<a aria-hidden="true" class="anchor-heading icon-link" href="#8-你当前这版的推荐操作"></a></h2>
+<p>对你当前工程，建议直接执行：</p>
+<ol>
+<li>进入下载模式</li>
+<li>用 <code>BekenProgramV2.5.4.exe</code> 选择 <code>out/all_4M.1220.bin</code></li>
+<li>地址 <code>0x00000000</code>（若工具要求）</li>
+<li>烧录完成后复位，观察串口日志</li>
+</ol>
+<hr>
+<p>如果你希望，我可以继续给你补一份《Linux + Wine 运行 BekenProgram 的步骤》，以及一个“烧录前检查清单（1 分钟版）”。</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/notes/6d428def14b8ffdc828f43">AI 打印机固件 — 项目交接资料</a></li>
+<li><a href="/notes/62ff4545e5f1373c5cfe01">AI 打印机固件 — 项目开发记录总纲</a></li>
+<li><a href="/notes/b829f8956cb30987ca7cc4">BK7252N 固件编译说明</a></li>
+</ul>

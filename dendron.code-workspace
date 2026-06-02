@@ -1,0 +1,42 @@
+{
+  "folders": [
+    {
+      "path": "notes",
+      "name": "Dendron"
+    },
+    {
+      "path": "../workspace/wang/Release_version/bk7252n_sdk-SDK_3.0.76.1_witch_lcd_bz",
+      "name": "BK7252N SDK"
+    }
+  ],
+  "settings": {
+    "dendron.rootDir": ".",
+    "dendron.defaultTimestampDecorationFormat": "DATE_MED_WITH_WEEKDAY",
+    "dendron.enableSelfContainedVaultWorkspace": true,
+    "files.autoSave": "onFocusChange",
+    "pasteImage.path": "${currentFileDir}/assets/images",
+    "pasteImage.prefix": "/",
+    "markdown-preview-enhanced.enableWikiLinkSyntax": true,
+    "markdown-preview-enhanced.wikiLinkFileExtension": ".md",
+    "editor.snippetSuggestions": "inline",
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggest.showSnippets": true,
+    "editor.tabCompletion": "on"
+  },
+  "extensions": {
+    "recommendations": [
+      "dendron.dendron",
+      "dendron.dendron-paste-image",
+      "dendron.dendron-markdown-shortcuts",
+      "redhat.vscode-yaml"
+    ],
+    "unwantedRecommendations": [
+      "dendron.dendron-markdown-links",
+      "dendron.dendron-markdown-notes",
+      "dendron.dendron-markdown-preview-enhanced",
+      "shd101wyy.markdown-preview-enhanced",
+      "kortina.vscode-markdown-notes",
+      "mushan.vscode-paste-image"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "dendron",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "publish:site": "bash scripts/publish-for-github-pages.sh"
+  },
+  "dependencies": {
+    "@dendronhq/dendron-cli": "0.122.0",
+    "@dendronhq/dendron-11ty-legacy": "1.63.2"
+  },
+  "overrides": {
+    "@dendronhq/common-all": "0.122.0",
+    "@dendronhq/common-server": "0.122.0",
+    "@dendronhq/engine-server": "0.122.0",
+    "@dendronhq/pods-core": "0.122.0",
+    "@dendronhq/api-server": "0.122.0"
+  }
+}

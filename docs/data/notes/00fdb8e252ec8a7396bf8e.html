@@ -1,0 +1,80 @@
+<h1 id="2026-05-15-首页六模式隐藏功能开发记录">2026-05-15 首页六模式隐藏功能开发记录<a aria-hidden="true" class="anchor-heading icon-link" href="#2026-05-15-首页六模式隐藏功能开发记录"></a></h1>
+<h1 id="2026-05-15-首页六模式隐藏功能开发记录-1">2026-05-15 首页六模式隐藏功能开发记录<a aria-hidden="true" class="anchor-heading icon-link" href="#2026-05-15-首页六模式隐藏功能开发记录-1"></a></h1>
+<h2 id="需求背景">需求背景<a aria-hidden="true" class="anchor-heading icon-link" href="#需求背景"></a></h2>
+<p>首页六个打印模式（动漫、卡通、水墨画、线条画、简笔画、速写）中，动漫、水墨画、简笔画三个模式打印效果不佳，需要暂时从首页轮播中隐藏。但代码不能删除，后续打印效果改善后需要恢复显示。</p>
+<h2 id="涉及文件">涉及文件<a aria-hidden="true" class="anchor-heading icon-link" href="#涉及文件"></a></h2>
+<ul>
+<li><code>applications/pages/lv_example_meter.c</code></li>
+</ul>
+<h2 id="变更内容">变更内容<a aria-hidden="true" class="anchor-heading icon-link" href="#变更内容"></a></h2>
+<h3 id="新增隐藏模式掩码宏">新增隐藏模式掩码宏<a aria-hidden="true" class="anchor-heading icon-link" href="#新增隐藏模式掩码宏"></a></h3>
+<p>在 <code>UI_STATUS_TIME_PLACEHOLDER</code> 定义之后、<code>ui_mode_next_visible</code> 函数之前，新增：</p>
+<pre class="language-c"><code class="language-c"><span class="token comment">/*
+ * Bitmask of mode indices hidden from desktop rotation.
+ * Bit 0=anime, 1=cartoon, 2=ink_wash, 3=line_art, 4=simple_drawing, 5=sketch.
+ * Set to 0 to show all six modes; set (1&#x3C;&#x3C;0)|(1&#x3C;&#x3C;2)|(1&#x3C;&#x3C;4) to hide anime/ink/simple.
+ */</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">LV_DESKTOP_HIDDEN_MODE_MASK</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LV_DESKTOP_HIDDEN_MODE_MASK</span> <span class="token expression"><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1U</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span><span class="token number">1U</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span><span class="token number">1U</span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+</code></pre>
+<p><strong>隐藏的模式</strong>：
+| 位 | 索引 | 模式名 | 枚举键 |
+|----|------|--------|--------|
+| 0  | 0    | 动漫   | anime  |
+| 2  | 2    | 水墨画 | ink_wash |
+| 4  | 4    | 简笔画 | simple_drawing |</p>
+<p><strong>保留的模式</strong>：卡通(1)、线条画/线稿(3)、速写/素描(5)</p>
+<h3 id="新增辅助函数">新增辅助函数<a aria-hidden="true" class="anchor-heading icon-link" href="#新增辅助函数"></a></h3>
+<pre class="language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token class-name">uint8_t</span> <span class="token function">ui_mode_next_visible</span><span class="token punctuation">(</span><span class="token class-name">uint8_t</span> cur<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name">uint8_t</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&#x3C;</span> MODE_SLOT_COUNT<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cur <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">uint8_t</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span>cur <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> MODE_SLOT_COUNT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>LV_DESKTOP_HIDDEN_MODE_MASK <span class="token operator">&#x26;</span> <span class="token punctuation">(</span><span class="token number">1U</span> <span class="token operator">&#x3C;&#x3C;</span> cur<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> cur<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> cur<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>从当前索引出发，循环查找下一个未被掩码标记的可见模式。</p>
+<h3 id="修改模式切换逻辑">修改模式切换逻辑<a aria-hidden="true" class="anchor-heading icon-link" href="#修改模式切换逻辑"></a></h3>
+<p><code>desktop_next_cb()</code> 中：</p>
+<pre class="language-c"><code class="language-c"><span class="token comment">// 旧代码</span>
+s_mode_idx <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">uint8_t</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span>s_mode_idx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token function">ui_mode_count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 新代码</span>
+s_mode_idx <span class="token operator">=</span> <span class="token function">ui_mode_next_visible</span><span class="token punctuation">(</span>s_mode_idx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="修改初始化逻辑">修改初始化逻辑<a aria-hidden="true" class="anchor-heading icon-link" href="#修改初始化逻辑"></a></h3>
+<p><code>lv_example_meter()</code> 中，如果初始索引 0 在隐藏列表中，则自动跳到第一个可见模式：</p>
+<pre class="language-c"><code class="language-c">s_mode_idx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>LV_DESKTOP_HIDDEN_MODE_MASK <span class="token operator">&#x26;</span> <span class="token punctuation">(</span><span class="token number">1U</span> <span class="token operator">&#x3C;&#x3C;</span> s_mode_idx<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    s_mode_idx <span class="token operator">=</span> <span class="token function">ui_mode_next_visible</span><span class="token punctuation">(</span>s_mode_idx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="恢复方法">恢复方法<a aria-hidden="true" class="anchor-heading icon-link" href="#恢复方法"></a></h2>
+<h3 id="方法一改代码推荐">方法一：改代码（推荐）<a aria-hidden="true" class="anchor-heading icon-link" href="#方法一改代码推荐"></a></h3>
+<p>将 <code>lv_example_meter.c</code> 中的掩码改为 <code>0</code>：</p>
+<pre class="language-c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LV_DESKTOP_HIDDEN_MODE_MASK</span> <span class="token expression"><span class="token number">0</span></span></span>
+</code></pre>
+<h3 id="方法二编译时覆盖">方法二：编译时覆盖<a aria-hidden="true" class="anchor-heading icon-link" href="#方法二编译时覆盖"></a></h3>
+<pre class="language-bash"><code class="language-bash">scons --beken<span class="token operator">=</span>bk7252n -j4 <span class="token assign-left variable">CCFLAGS</span><span class="token operator">=</span><span class="token string">"-DLV_DESKTOP_HIDDEN_MODE_MASK=0"</span>
+</code></pre>
+<h2 id="影响范围">影响范围<a aria-hidden="true" class="anchor-heading icon-link" href="#影响范围"></a></h2>
+<ul>
+<li><strong>仅影响首页模式轮播 UI</strong>：用户按键切换模式时跳过隐藏模式</li>
+<li><strong>不影响打印机驱动</strong>：<code>thermal_printer.c</code> 通过模式名字符串匹配参数，不受掩码影响</li>
+<li><strong>不影响多语言字符串</strong>：<code>ui_strings.c</code> 中的模式名称翻译全部保留</li>
+<li><strong>不影响图标资源</strong>：<code>mode_icons_bmp.c</code> 中的六个图标全部保留</li>
+</ul>
+<h2 id="编译验证">编译验证<a aria-hidden="true" class="anchor-heading icon-link" href="#编译验证"></a></h2>
+<pre class="language-bash"><code class="language-bash">scons --beken<span class="token operator">=</span>bk7252n -j4
+<span class="token comment"># 编译通过，无错误无警告</span>
+</code></pre>
+<h2 id="备注">备注<a aria-hidden="true" class="anchor-heading icon-link" href="#备注"></a></h2>
+<p>此方案采用掩码位图方式控制隐藏，扩展性好：</p>
+<ul>
+<li>如需隐藏其他模式，只需设置对应位</li>
+<li>支持非连续性隐藏（当前隐藏 0、2、4）</li>
+<li>不影响代码中其他任何对模式索引/名称的引用</li>
+</ul>

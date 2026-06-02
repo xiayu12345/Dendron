@@ -1,0 +1,117 @@
+<h1 id="bug-001按键极限操作触发-data-abort--意外重启">BUG-001：按键极限操作触发 Data Abort / 意外重启<a aria-hidden="true" class="anchor-heading icon-link" href="#bug-001按键极限操作触发-data-abort--意外重启"></a></h1>
+<h1 id="bug-001按键极限操作触发-data-abort--意外重启-1">BUG-001：按键极限操作触发 Data Abort / 意外重启<a aria-hidden="true" class="anchor-heading icon-link" href="#bug-001按键极限操作触发-data-abort--意外重启-1"></a></h1>
+<p><strong>状态</strong>：打开<br>
+<strong>优先级</strong>：P0（可靠性 / 数据竞争）<br>
+<strong>记录日期</strong>：2026-05-05<br>
+<strong>典型构建</strong>：<code>RT-Thread 3.1.0</code> / SDK 3.0.76 / <code>rtthread.elf</code> 中 fault PC 曾落在 <code>memcpy</code>（约 <code>0x0011ad2e</code>，须与同版本 <code>.map</code> 核对）</p>
+<hr>
+<h2 id="1-现象">1. 现象<a aria-hidden="true" class="anchor-heading icon-link" href="#1-现象"></a></h2>
+<ul>
+<li>设备在<strong>反复极限按键操作</strong>（快速切换桌面模式、secondary desktop、长按录音/松手停止、QR 预览、MQTT 收发图等）过程中，偶现 <strong><code>data abort</code></strong>，随后固件 <strong>shutdown 并重启</strong>。  </li>
+<li>用户主观感受多为：<strong>「一按按键相关流程就容易重启」</strong>；不一定伴随堆用量单调涨至 100%。  </li>
+<li>串口日志中常见前后文：  
+<ul>
+<li><code>[audio_wait] wait image complete timeout, auto unlock task=…</code>  </li>
+<li><code>mqtt backend dispatch ws image to ui</code> / <code>mqtt backend print thread start</code>  </li>
+<li><code>[button] …</code> / <code>[ui] secondary desktop …</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="2-初步结论架构层非补丁说明">2. 初步结论（架构层，非补丁说明）<a aria-hidden="true" class="anchor-heading icon-link" href="#2-初步结论架构层非补丁说明"></a></h2>
+<p>本问题<strong>首要怀疑并非「堆内存泄漏导致慢慢爆掉」</strong>，而是：</p>
+<ol>
+<li>
+<p><strong>单块共享二进制接收缓冲区</strong>（约 20KB，<code>MQTT_BINARY_SHARED_BUF_SIZE</code>）与 <strong>零拷贝传递</strong>：  </p>
+<ul>
+<li>打印线程 <code>mqtt_prn</code> 直接使用指向该缓冲的指针且不持有独立拷贝（当 <code>data == g_binary_shared_buf</code> 时）。  </li>
+<li>UI 侧 <code>lv_desktop_request_show_ws_thermal_image</code> 通过 <code>lv_async_call</code> 仅传递<strong>指针</strong>，异步回调内再解码/适配预览。  </li>
+<li>下一趟 <code>result.start</code> / 收包会继续往<strong>同一块物理缓冲</strong>写入。</li>
+</ul>
+</li>
+<li>
+<p><strong>多线程时间重叠</strong>：打印线程、LVGL 异步回调、MQTT 收包写入可能在时间上交错；极限按键会<strong>缩短会话间隔</strong>，放大「上一趟消费者未结束、下一趟已覆盖缓冲区」的概率。</p>
+</li>
+<li>
+<p><strong><code>audio_wait</code> 超时</strong>与云端<strong>迟到</strong>数据：超时后等待状态机会忽略部分迟到事件，但若其它路径仍假设 buffer / 界面状态有效，可能与「已离开 secondary / 已 teardown」交错，导致非法访问。</p>
+</li>
+<li>
+<p><strong>现象与按键绑定</strong>：按键是串联「录音上传 → MQTT → 二进制组装 → 打印 + UI 预览 → 超时解锁 → 下一轮」的触发器，故崩溃常出现在按键操作中。</p>
+</li>
+</ol>
+<p>fault 落在 <strong><code>memcpy</code></strong> 符合「目的/源地址无效或长度异常」类问题，与共享缓冲被覆盖或生命周期错乱一致。</p>
+<hr>
+<h2 id="3-涉及模块与文件便于-code-review">3. 涉及模块与文件（便于 Code Review）<a aria-hidden="true" class="anchor-heading icon-link" href="#3-涉及模块与文件便于-code-review"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>模块</th><th>路径</th></tr></thead><tbody><tr><td>二进制接收 / 打印投递</td><td><code>applications/mqtt_backend/mqtt_backend_binary_rx.c</code></td></tr><tr><td>MQTT 异步发布队列</td><td><code>applications/mqtt_backend/mqtt_backend_client.c</code></td></tr><tr><td>等待云端图像完成 / 超时</td><td><code>applications/audio/audio_result_wait.c</code></td></tr><tr><td>WS 图预览异步</td><td><code>applications/pages/lv_example_meter.c</code>（<code>lv_desktop_request_show_ws_thermal_image</code> 等）</td></tr></tbody></table></div>
+<hr>
+<h2 id="4-复现方向软件准备好后验证">4. 复现方向（软件准备好后验证）<a aria-hidden="true" class="anchor-heading icon-link" href="#4-复现方向软件准备好后验证"></a></h2>
+<ul>
+<li>保持 MQTT 在线，在 secondary desktop <strong>快速多轮</strong>：长按录音 → 松手 → 不等结果再次长按；或与 <strong>QR 预览</strong>、<strong>离开/进入 secondary</strong> 交错。  </li>
+<li>观察是否在 <strong><code>audio_wait timeout</code></strong> 之后仍出现 <strong><code>dispatch ws image</code></strong> / 背靠背 <strong><code>result.start</code></strong> 时崩溃。  </li>
+<li>使用<strong>与设备一致</strong>的 <code>rtthread.elf</code> 做 <code>addr2line</code>，确认 fault 是否仍在 <code>memcpy</code> 及调用栈上层归属。</li>
+</ul>
+<hr>
+<h2 id="5-关闭标准视为彻底解决">5. 关闭标准（视为「彻底解决」）<a aria-hidden="true" class="anchor-heading icon-link" href="#5-关闭标准视为彻底解决"></a></h2>
+<p>满足下列条款可在本文件将状态改为 <strong>已关闭</strong>：</p>
+<ol>
+<li><strong>缓冲区所有权清晰</strong>：任一时刻对「整图结果」仅有单一写者，或读者持有独立快照直至用完释放；禁止在未同步的情况下让 MQTT 收包覆盖仍被打印/UI 使用的内存。  </li>
+<li><strong>会话门禁</strong>：新 <code>result.start</code> 收包前，须确认上一会话的打印/UI 异步已完成或已明确取消（或采用队列化的「任务描述符 + 独立缓冲」模型）。  </li>
+<li><strong>超时与异步一致</strong>：<code>audio_wait</code> 超时后，所有仍可能触摸该任务缓冲区的路径（MQTT 完成回调、LVGL async）行为已定义且无野指针。  </li>
+<li><strong>压力测试</strong>：文档化的极限按键脚本下 <strong>连续运行 N 小时（建议 ≥2h）无 Data Abort</strong>；必要时开启堆/栈水印辅助确认无异常碎片尖峰。  </li>
+<li>在本条文末记录：<strong>修复 PR 或提交哈希</strong>、<strong>测试人 / 日期</strong>。</li>
+</ol>
+<hr>
+<h2 id="6-备注">6. 备注<a aria-hidden="true" class="anchor-heading icon-link" href="#6-备注"></a></h2>
+<ul>
+<li>MQTT 异步发布队列深度固定（如 15），worker 会释放消息；该类设计<strong>更易造成短暂排队</strong>，而非无限堆涨，与「单次 fault」形态区分对待。  </li>
+<li>若后续证明另有独立泄漏，应拆分为 <strong>BUG-xxx</strong> 新条，不在本条混杂。</li>
+</ul>
+<hr>
+<h2 id="7-变更记录">7. 变更记录<a aria-hidden="true" class="anchor-heading icon-link" href="#7-变更记录"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>日期</th><th>说明</th></tr></thead><tbody><tr><td>2026-05-05</td><td>初始录入：现象、架构原因、关闭标准</td></tr></tbody></table></div>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/notes/f068cc85f553b7fa6f808b">多语言字库与稳定性开发纪要</a></li>
+<li><a href="/notes/124fc2bd28f4ff32a71b93">BK7252n LVGL：桌面、二维码页与 MQTT 图片预览 UI 开发总结</a></li>
+<li><a href="/notes/6d428def14b8ffdc828f43">AI 打印机固件 — 项目交接资料</a></li>
+<li><a href="/notes/62ff4545e5f1373c5cfe01">AI 打印机固件 — 项目开发记录总纲</a></li>
+</ul>
