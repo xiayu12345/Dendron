@@ -18,6 +18,9 @@ if [[ ! -d .next ]]; then
 fi
 
 echo ">>> publish export (GitHub Pages: assetsPrefix=/Dendron)"
+export LANG=C.UTF-8
+export LC_ALL=C.UTF-8
+export NODE_ENV=production
 npx dendron publish export $WS_ARG --target github --yes
 echo "Íê³É: $WS_ROOT/docs"
 echo "Õ¾µã: https://xiayu12345.github.io/Dendron/"

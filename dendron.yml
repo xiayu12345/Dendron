@@ -93,8 +93,8 @@ publishing:
     writeStubs: false
     siteRootDir: docs
     seo:
-        title: Dendron
-        description: Personal Knowledge Space
+        title: BK7252N AI 打印机固件文档
+        description: BK7252N + RT-Thread + LVGL 固件开发记录与交接资料
     github:
         enableEditLink: true
         editLinkText: Edit this page on GitHub

@@ -33,11 +33,22 @@ git push -u origin main
 
 3. 仓库 **Settings → Pages** → Source: **Deploy from branch** → Branch **`main`**，Folder **`/docs`**。
 
+## 常见问题
+
+| 现象 | 原因 | 处理 |
+|------|------|------|
+| 页面无样式、链接 404 | 站点在 `/Dendron/` 子路径，旧构建未带前缀 | 确认 `dendron.yml` 中 `assetsPrefix: /Dendron`，重新 `publish:site` 并 **push** |
+| 中文乱码 | 笔记非 UTF-8 保存 | 用 UTF-8 保存 `.md`；发布脚本已设置 `LANG=C.UTF-8` |
+
+推送若 `Broken pipe`，可换网络后重试，或用 HTTPS：`git remote set-url origin https://github.com/xiayu12345/Dendron.git`
+
 ## 日常更新
 
 改 `notes/*.md` 后：
 
 ```bash
 npm run publish:site
-git add notes docs && git commit -m "Update notes" && git push
+git add notes docs dendron.yml && git commit -m "Update notes" && git push origin main
 ```
+
+推送后等 GitHub Pages 重建（约 1–2 分钟），浏览器 **Ctrl+F5** 强刷。
