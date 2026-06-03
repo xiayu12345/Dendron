@@ -1,6 +1,6 @@
 ---
 id: root
-title: root
+title: 个人开发笔记
 desc: 个人开发笔记（Dendron 多项目知识库）
 updated: 1780371367067
 created: 1595961348801

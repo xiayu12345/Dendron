@@ -111,8 +111,8 @@
     "writeStubs": false,
     "siteRootDir": "docs",
     "seo": {
-      "title": "���˿����ʼ�",
-      "description": "����Ŀ��֯�Ĺ̼������������ĵ���Dendron��"
+      "title": "个人开发笔记",
+      "description": "按项目组织的固件与软件开发文档（Dendron）"
     },
     "github": {
       "enableEditLink": true,

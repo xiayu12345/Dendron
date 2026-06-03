@@ -10,8 +10,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1780459358024,
-      "created": 1780459358024,
+      "updated": 1780470460195,
+      "created": 1780470460195,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -21,7 +21,7 @@
     },
     "root": {
       "id": "root",
-      "title": "root",
+      "title": "个人开发笔记",
       "desc": "个人开发笔记（Dendron 多项目知识库）",
       "updated": 1780371367067,
       "created": 1595961348801,
@@ -35,7 +35,7 @@
         "fsPath": "notes",
         "name": "Dendron"
       },
-      "contentHash": "185a3f748171123c20ed21d8566347c8",
+      "contentHash": "d51a8f7f24bc2acc9ea8f5b1c7c06a7c",
       "links": [
         {
           "type": "wiki",
@@ -1057,13 +1057,13 @@
         "29688af9637cf23baf5a53",
         "b214abeb9f8f17aa994522",
         "9fd53d681f5e8043762252",
-        "wn668uyx88v4u3xlc5q5uka",
-        "99a2uzx948x7ti8302mrpui"
+        "mbdf67704o4svznedu4qpt9",
+        "fnwrltaypl2c41ovy6d6ldk"
       ],
       "parent": "projects",
       "data": {}
     },
-    "99a2uzx948x7ti8302mrpui": {
+    "fnwrltaypl2c41ovy6d6ldk": {
       "fname": "项目.BK7252N-AI打印机.芯片SDK相关",
       "stub": true,
       "vault": {
@@ -1072,9 +1072,9 @@
       },
       "schemaStub": false,
       "type": "note",
-      "updated": 1780459356496,
-      "created": 1780459356496,
-      "id": "99a2uzx948x7ti8302mrpui",
+      "updated": 1780470458570,
+      "created": 1780470458570,
+      "id": "fnwrltaypl2c41ovy6d6ldk",
       "desc": "",
       "links": [],
       "anchors": {},
@@ -1235,10 +1235,10 @@
         }
       },
       "children": [],
-      "parent": "99a2uzx948x7ti8302mrpui",
+      "parent": "fnwrltaypl2c41ovy6d6ldk",
       "data": {}
     },
-    "wn668uyx88v4u3xlc5q5uka": {
+    "mbdf67704o4svznedu4qpt9": {
       "fname": "项目.BK7252N-AI打印机.开发记录",
       "stub": true,
       "vault": {
@@ -1247,9 +1247,9 @@
       },
       "schemaStub": false,
       "type": "note",
-      "updated": 1780459356484,
-      "created": 1780459356484,
-      "id": "wn668uyx88v4u3xlc5q5uka",
+      "updated": 1780470458559,
+      "created": 1780470458559,
+      "id": "mbdf67704o4svznedu4qpt9",
       "desc": "",
       "links": [],
       "anchors": {},
@@ -1992,7 +1992,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "6d428def14b8ffdc828f43": {
@@ -2645,7 +2645,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "69fab073dcdd31f425755e": {
@@ -3087,7 +3087,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "e219878f58bd997c455ca8": {
@@ -3190,14 +3190,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 93,
-              "column": 45,
-              "offset": 3149
+              "line": 96,
+              "column": 42,
+              "offset": 3031
             },
             "end": {
-              "line": 93,
-              "column": 85,
-              "offset": 3189
+              "line": 96,
+              "column": 82,
+              "offset": 3071
             },
             "indent": []
           },
@@ -3212,14 +3212,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 118,
+              "line": 121,
               "column": 10,
-              "offset": 3789
+              "offset": 3633
             },
             "end": {
-              "line": 118,
+              "line": 121,
               "column": 50,
-              "offset": 3829
+              "offset": 3673
             },
             "indent": []
           },
@@ -3517,7 +3517,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "40a0c1d0224426bb0700ea": {
@@ -3769,7 +3769,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "782168230f49885740b191": {
@@ -3861,7 +3861,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "7e757dba3afa1d4361d951": {
@@ -4079,7 +4079,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "86d6a17041618132f76abf": {
@@ -4417,7 +4417,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "4b4a79d037a6f442a84233": {
@@ -4625,7 +4625,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "8e26e8749bccd9d3739356": {
@@ -4932,7 +4932,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "cebf2bd5cc8bb777ea20e6": {
@@ -5150,7 +5150,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "5c0ce6ce26de9213ed1377": {
@@ -5330,7 +5330,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "60bc7871dc2e4626e2aeb0": {
@@ -5470,7 +5470,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "238cee9d6e5d3351d1562b": {
@@ -5664,7 +5664,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "00fdb8e252ec8a7396bf8e": {
@@ -5820,7 +5820,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "2207f5431c8c6bd7291f9f": {
@@ -6056,7 +6056,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "ce0040cd0ceb63ee76fdd1": {
@@ -6228,7 +6228,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "0a6f1fae03382ed23a61e4": {
@@ -6617,7 +6617,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "0faf28cd9ea6b2133119c7": {
@@ -6825,7 +6825,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "124fc2bd28f4ff32a71b93": {
@@ -7087,7 +7087,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "f068cc85f553b7fa6f808b": {
@@ -7387,7 +7387,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "6b99e0b40de02b4f011208": {
@@ -7549,7 +7549,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "c82a45ea03c9396b83d2e6": {
@@ -7805,12 +7805,12 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "4b9db1416687083f72ec72": {
       "id": "4b9db1416687083f72ec72",
-      "title": "�?敏打印与 MQTT 开发�?�录（BK7252N�?",
+      "title": "热敏打印与 MQTT 开发记录（BK7252N）",
       "desc": "",
       "updated": 1780371367054,
       "created": 1780371330023,
@@ -7821,7 +7821,7 @@
         "fsPath": "notes",
         "name": "Dendron"
       },
-      "contentHash": "59a462d81731dbc499a14b0bbd1cef91",
+      "contentHash": "13134bc3e33cdc4cde89f207550189e0",
       "links": [
         {
           "type": "wiki",
@@ -7833,14 +7833,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.prn_tune串口调参命令",
           "position": {
             "start": {
-              "line": 93,
-              "column": 45,
-              "offset": 3149
+              "line": 96,
+              "column": 42,
+              "offset": 3031
             },
             "end": {
-              "line": 93,
-              "column": 85,
-              "offset": 3189
+              "line": 96,
+              "column": 82,
+              "offset": 3071
             },
             "indent": []
           },
@@ -7860,14 +7860,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.prn_tune串口调参命令",
           "position": {
             "start": {
-              "line": 118,
+              "line": 121,
               "column": 10,
-              "offset": 3789
+              "offset": 3633
             },
             "end": {
-              "line": 118,
+              "line": 121,
               "column": 50,
-              "offset": 3829
+              "offset": 3673
             },
             "indent": []
           },
@@ -7923,11 +7923,19 @@
         }
       ],
       "anchors": {
-        "敏打印与-mqtt-开发录bk7252n": {
+        "热敏打印与-mqtt-开发记录bk7252n": {
           "type": "header",
-          "text": "�?敏打印与 MQTT 开发�?�录（BK7252N�?",
-          "value": "敏打印与-mqtt-开发录bk7252n",
+          "text": "热敏打印与 MQTT 开发记录（BK7252N）",
+          "value": "热敏打印与-mqtt-开发记录bk7252n",
           "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "热敏打印与-mqtt-开发记录bk7252n-1": {
+          "type": "header",
+          "text": "热敏打印与 MQTT 开发记录（BK7252N）",
+          "value": "热敏打印与-mqtt-开发记录bk7252n-1",
+          "line": 11,
           "column": 0,
           "depth": 1
         },
@@ -7935,7 +7943,7 @@
           "type": "header",
           "text": "1. 编译命令",
           "value": "1-编译命令",
-          "line": 16,
+          "line": 19,
           "column": 0,
           "depth": 2
         },
@@ -7943,31 +7951,31 @@
           "type": "header",
           "text": "2. prn_tune：白行跳过可关闭",
           "value": "2-prn_tune白行跳过可关闭",
-          "line": 27,
+          "line": 30,
           "column": 0,
           "depth": 2
         },
         "3-gpio36-长按二维码打印走当-prn_tune": {
           "type": "header",
-          "text": "3. GPIO36 长按二维码打印（走当�? prn_tune�?",
+          "text": "3. GPIO36 长按二维码打印（走当? prn_tune?",
           "value": "3-gpio36-长按二维码打印走当-prn_tune",
-          "line": 43,
+          "line": 46,
           "column": 0,
           "depth": 2
         },
         "4-mqttimageprint--resultstart-共用接收大缓": {
           "type": "header",
-          "text": "4. MQTT：imagePrint �? result.start 共用接收大缓�?",
+          "text": "4. MQTT：imagePrint ? result.start 共用接收大缓?",
           "value": "4-mqttimageprint--resultstart-共用接收大缓",
-          "line": 60,
+          "line": 63,
           "column": 0,
           "depth": 2
         },
         "5-prn_tune-preset-devterm齐-clockworkpi-devterm-开源思路": {
           "type": "header",
-          "text": "5. prn_tune preset devterm（�?�齐 ClockworkPi DevTerm 开源思路�?",
+          "text": "5. prn_tune preset devterm（?齐 ClockworkPi DevTerm 开源思路?",
           "value": "5-prn_tune-preset-devterm齐-clockworkpi-devterm-开源思路",
-          "line": 74,
+          "line": 77,
           "column": 0,
           "depth": 2
         },
@@ -7975,37 +7983,37 @@
           "type": "header",
           "text": "6. 参数使用梳理（简要）",
           "value": "6-参数使用梳理简要",
-          "line": 92,
+          "line": 95,
           "column": 0,
           "depth": 2
         },
         "7-件与安全警示重要": {
           "type": "header",
-          "text": "7. �?件与安全警示（重要）",
+          "text": "7. ?件与安全警示（重要）",
           "value": "7-件与安全警示重要",
-          "line": 103,
+          "line": 106,
           "column": 0,
           "depth": 2
         },
         "8-参考路径索": {
           "type": "header",
-          "text": "8. 参考路径索�?",
+          "text": "8. 参考路径索?",
           "value": "8-参考路径索",
-          "line": 118,
+          "line": 121,
           "column": 0,
           "depth": 2
         },
-        "9-变更文件清单本汇总": {
+        "9-变更文件清单本仓汇总": {
           "type": "header",
-          "text": "9. 变更文件清单（本�?汇总）",
-          "value": "9-变更文件清单本汇总",
-          "line": 129,
+          "text": "9. 变更文件清单（本仓?汇总）",
+          "value": "9-变更文件清单本仓汇总",
+          "line": 132,
           "column": 0,
           "depth": 2
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "795a1a96f9c620254c9633": {
@@ -8283,7 +8291,7 @@
         }
       },
       "children": [],
-      "parent": "wn668uyx88v4u3xlc5q5uka",
+      "parent": "mbdf67704o4svznedu4qpt9",
       "data": {}
     },
     "9fd53d681f5e8043762252": {
@@ -9050,7 +9058,7 @@
   "domains": [
     {
       "id": "root",
-      "title": "root",
+      "title": "个人开发笔记",
       "desc": "个人开发笔记（Dendron 多项目知识库）",
       "updated": 1780371367067,
       "created": 1595961348801,
@@ -9064,7 +9072,7 @@
         "fsPath": "notes",
         "name": "Dendron"
       },
-      "contentHash": "185a3f748171123c20ed21d8566347c8",
+      "contentHash": "d51a8f7f24bc2acc9ea8f5b1c7c06a7c",
       "links": [
         {
           "type": "wiki",
@@ -9185,7 +9193,7 @@
   ],
   "noteIndex": {
     "id": "root",
-    "title": "root",
+    "title": "个人开发笔记",
     "desc": "个人开发笔记（Dendron 多项目知识库）",
     "updated": 1780371367067,
     "created": 1595961348801,
@@ -9199,7 +9207,7 @@
       "fsPath": "notes",
       "name": "Dendron"
     },
-    "contentHash": "185a3f748171123c20ed21d8566347c8",
+    "contentHash": "d51a8f7f24bc2acc9ea8f5b1c7c06a7c",
     "links": [
       {
         "type": "wiki",
