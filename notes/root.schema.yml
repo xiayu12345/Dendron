@@ -13,7 +13,6 @@
     parent: root
     children:
         - 项目
-        - tutorial
 -
     id: projects
     title: 项目

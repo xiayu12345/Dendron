@@ -50,7 +50,7 @@ body .ant-layout > section.ant-layout {
   max-width: none !important;
 }
 
-/* Wider article column on desktop */
+/* Hide right TOC on shallow hub pages (single heading) */
 @media (min-width: 768px) {
   .main-content .ant-col-md-18 {
     flex: 0 0 78% !important;
@@ -60,5 +60,14 @@ body .ant-layout > section.ant-layout {
   .main-content .ant-col-md-6 {
     flex: 0 0 22% !important;
     max-width: 22% !important;
+  }
+
+  .main-content .ant-row:has(.dendron-toc:not(:has(.ant-anchor-link:nth-child(2)))) .ant-col-md-6 {
+    display: none !important;
+  }
+
+  .main-content .ant-row:has(.dendron-toc:not(:has(.ant-anchor-link:nth-child(2)))) .ant-col-md-18 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
   }
 }

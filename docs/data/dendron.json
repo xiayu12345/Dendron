@@ -111,7 +111,7 @@
     "writeStubs": false,
     "siteRootDir": "docs",
     "seo": {
-      "title": "个人开发笔记",
+      "title": "项目开发笔记",
       "description": "按项目组织的固件与软件开发文档（Dendron）"
     },
     "github": {
