@@ -10,8 +10,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1780450775426,
-      "created": 1780450775426,
+      "updated": 1780451014564,
+      "created": 1780451014564,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -22,7 +22,7 @@
     "root": {
       "id": "root",
       "title": "root",
-      "desc": "BK7252N AI ��ӡ���̼��ĵ���",
+      "desc": "BK7252N AI 打印机固件文档库",
       "updated": 1780371367067,
       "created": 1595961348801,
       "custom": {
@@ -35,7 +35,7 @@
         "fsPath": "notes",
         "name": "Dendron"
       },
-      "contentHash": "801bb942f5d3a833cb045cb9b3abd9d0",
+      "contentHash": "e5d7823b7368b844c5d7bde821080751",
       "links": [
         {
           "type": "wiki",
@@ -44,24 +44,24 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.��Ŀ������¼�ܸ�",
+          "value": "开发记录.项目开发记录总纲",
           "position": {
             "start": {
               "line": 8,
               "column": 3,
-              "offset": 96
+              "offset": 83
             },
             "end": {
               "line": 8,
-              "column": 28,
-              "offset": 121
+              "column": 20,
+              "offset": 100
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.��Ŀ������¼�ܸ�"
+            "fname": "开发记录.项目开发记录总纲"
           }
         },
         {
@@ -71,51 +71,51 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.��Ŀ��������",
+          "value": "开发记录.项目交接资料",
           "position": {
             "start": {
               "line": 9,
               "column": 3,
-              "offset": 143
+              "offset": 115
             },
             "end": {
               "line": 9,
-              "column": 26,
-              "offset": 166
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.��Ŀ��������"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "�׶��Կ����ܽ�",
-          "position": {
-            "start": {
-              "line": 10,
-              "column": 3,
-              "offset": 187
-            },
-            "end": {
-              "line": 10,
               "column": 18,
-              "offset": 202
+              "offset": 130
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "�׶��Կ����ܽ�"
+            "fname": "开发记录.项目交接资料"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "阶段性开发总结",
+          "position": {
+            "start": {
+              "line": 10,
+              "column": 3,
+              "offset": 145
+            },
+            "end": {
+              "line": 10,
+              "column": 14,
+              "offset": 156
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "阶段性开发总结"
           }
         },
         {
@@ -130,12 +130,12 @@
             "start": {
               "line": 11,
               "column": 3,
-              "offset": 219
+              "offset": 169
             },
             "end": {
               "line": 11,
               "column": 15,
-              "offset": 231
+              "offset": 181
             },
             "indent": []
           },
@@ -152,483 +152,24 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.2026-05-01_0234-AI��ӡ���̼�������¼",
+          "value": "开发记录.2026-05-01_0234-AI打印机固件开发记录",
           "position": {
             "start": {
               "line": 17,
               "column": 3,
-              "offset": 276
+              "offset": 219
             },
             "end": {
               "line": 17,
-              "column": 48,
-              "offset": 321
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-01_0234-AI��ӡ���̼�������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-03_������ӡ��MQTT������¼",
-          "position": {
-            "start": {
-              "line": 18,
-              "column": 3,
-              "offset": 324
-            },
-            "end": {
-              "line": 18,
-              "column": 46,
-              "offset": 367
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-03_������ӡ��MQTT������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-06_LVGL��������ģʽ��������ƬUI��ֲ�ܽ�",
-          "position": {
-            "start": {
-              "line": 19,
-              "column": 3,
-              "offset": 370
-            },
-            "end": {
-              "line": 19,
-              "column": 57,
-              "offset": 424
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-06_LVGL��������ģʽ��������ƬUI��ֲ�ܽ�"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-06_��������MP3¼���ϴ���ASR�Ų��ܽ�",
-          "position": {
-            "start": {
-              "line": 20,
-              "column": 3,
-              "offset": 427
-            },
-            "end": {
-              "line": 20,
-              "column": 54,
-              "offset": 478
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-06_��������MP3¼���ϴ���ASR�Ų��ܽ�"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-07-�������ֿ����ȶ��Կ�����Ҫ",
-          "position": {
-            "start": {
-              "line": 21,
-              "column": 3,
-              "offset": 481
-            },
-            "end": {
-              "line": 21,
-              "column": 48,
-              "offset": 526
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-07-�������ֿ����ȶ��Կ�����Ҫ"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-07_LVGL�����ά����WSԤ��UI�����ܽ�",
-          "position": {
-            "start": {
-              "line": 22,
-              "column": 3,
-              "offset": 529
-            },
-            "end": {
-              "line": 22,
-              "column": 54,
-              "offset": 580
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-07_LVGL�����ά����WSԤ��UI�����ܽ�"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-07_LVGLģʽ��Ƭ��Դ�붯Ч�����ܽ�",
-          "position": {
-            "start": {
-              "line": 23,
-              "column": 3,
-              "offset": 583
-            },
-            "end": {
-              "line": 23,
-              "column": 48,
-              "offset": 628
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-07_LVGLģʽ��Ƭ��Դ�붯Ч�����ܽ�"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-07_������ӡ�������㷨�����빤����¼",
-          "position": {
-            "start": {
-              "line": 24,
-              "column": 3,
-              "offset": 631
-            },
-            "end": {
-              "line": 24,
-              "column": 52,
-              "offset": 680
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-07_������ӡ�������㷨�����빤����¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-14_P36��ά��ҳ�̼��汾����ʾ������¼",
-          "position": {
-            "start": {
-              "line": 25,
-              "column": 3,
-              "offset": 683
-            },
-            "end": {
-              "line": 25,
-              "column": 52,
-              "offset": 732
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-14_P36��ά��ҳ�̼��汾����ʾ������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-15_��������ҳ��������֡����������¼",
-          "position": {
-            "start": {
-              "line": 26,
-              "column": 3,
-              "offset": 735
-            },
-            "end": {
-              "line": 26,
-              "column": 55,
-              "offset": 787
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-15_��������ҳ��������֡����������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-15_��ҳ��ģʽ���ع��ܿ�����¼",
-          "position": {
-            "start": {
-              "line": 27,
-              "column": 3,
-              "offset": 790
-            },
-            "end": {
-              "line": 27,
-              "column": 46,
-              "offset": 833
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-15_��ҳ��ģʽ���ع��ܿ�����¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-18_��������������ȴ����ɿ�����¼",
-          "position": {
-            "start": {
-              "line": 28,
-              "column": 3,
-              "offset": 836
-            },
-            "end": {
-              "line": 28,
-              "column": 52,
-              "offset": 885
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-18_��������������ȴ����ɿ�����¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-18_ģʽͼ��BMP24תRGB565ѹ���Ż�������¼",
-          "position": {
-            "start": {
-              "line": 29,
-              "column": 3,
-              "offset": 888
-            },
-            "end": {
-              "line": 29,
-              "column": 56,
-              "offset": 941
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-18_ģʽͼ��BMP24תRGB565ѹ���Ż�������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-19_Flash���ѻ���ͼ��ӡ������¼",
-          "position": {
-            "start": {
-              "line": 30,
-              "column": 3,
-              "offset": 944
-            },
-            "end": {
-              "line": 30,
-              "column": 49,
-              "offset": 990
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-19_Flash���ѻ���ͼ��ӡ������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-19_WS����ͼԤ��ѹ�������Ż�������¼",
-          "position": {
-            "start": {
-              "line": 31,
-              "column": 3,
-              "offset": 993
-            },
-            "end": {
-              "line": 31,
-              "column": 53,
-              "offset": 1043
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-19_WS����ͼԤ��ѹ�������Ż�������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-27_��������MQTTЭͬ��TCM�ڴ��Ż�������¼",
-          "position": {
-            "start": {
-              "line": 32,
-              "column": 3,
-              "offset": 1046
-            },
-            "end": {
-              "line": 32,
-              "column": 58,
-              "offset": 1101
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-27_��������MQTTЭͬ��TCM�ڴ��Ż�������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.AI��ӡ��Ӧ�üܹ��������Ż�����",
-          "position": {
-            "start": {
-              "line": 33,
-              "column": 3,
-              "offset": 1104
-            },
-            "end": {
-              "line": 33,
-              "column": 40,
-              "offset": 1141
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.AI��ӡ��Ӧ�üܹ��������Ż�����"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.BK7252n-LVGL�����Կ���ָ��",
-          "position": {
-            "start": {
-              "line": 34,
-              "column": 3,
-              "offset": 1144
-            },
-            "end": {
-              "line": 34,
               "column": 39,
-              "offset": 1180
+              "offset": 255
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.BK7252n-LVGL�����Կ���ָ��"
+            "fname": "开发记录.2026-05-01_0234-AI打印机固件开发记录"
           }
         },
         {
@@ -638,24 +179,24 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.BUG-001-����_Data_Abort_�������徺̬",
+          "value": "开发记录.2026-05-03_热敏打印与MQTT开发记录",
           "position": {
             "start": {
-              "line": 35,
+              "line": 18,
               "column": 3,
-              "offset": 1183
+              "offset": 258
             },
             "end": {
-              "line": 35,
-              "column": 48,
-              "offset": 1228
+              "line": 18,
+              "column": 36,
+              "offset": 291
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.BUG-001-����_Data_Abort_�������徺̬"
+            "fname": "开发记录.2026-05-03_热敏打印与MQTT开发记录"
           }
         },
         {
@@ -665,24 +206,294 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.BUG-002-LVGL_�ڴ��ط���_Data_Abort",
+          "value": "开发记录.2026-05-06_LVGL主桌面六模式与语音卡片UI移植总结",
           "position": {
             "start": {
-              "line": 36,
+              "line": 19,
               "column": 3,
-              "offset": 1231
+              "offset": 294
             },
             "end": {
-              "line": 36,
+              "line": 19,
+              "column": 44,
+              "offset": 335
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-06_LVGL主桌面六模式与语音卡片UI移植总结"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-06_语音按键MP3录音上传与ASR排查总结",
+          "position": {
+            "start": {
+              "line": 20,
+              "column": 3,
+              "offset": 338
+            },
+            "end": {
+              "line": 20,
+              "column": 42,
+              "offset": 377
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-06_语音按键MP3录音上传与ASR排查总结"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-07-多语言字库与稳定性开发纪要",
+          "position": {
+            "start": {
+              "line": 21,
+              "column": 3,
+              "offset": 380
+            },
+            "end": {
+              "line": 21,
+              "column": 36,
+              "offset": 413
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-07-多语言字库与稳定性开发纪要"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-07_LVGL桌面二维码与WS预览UI开发总结",
+          "position": {
+            "start": {
+              "line": 22,
+              "column": 3,
+              "offset": 416
+            },
+            "end": {
+              "line": 22,
+              "column": 43,
+              "offset": 456
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-07_LVGL桌面二维码与WS预览UI开发总结"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-07_LVGL模式卡片资源与动效开发总结",
+          "position": {
+            "start": {
+              "line": 23,
+              "column": 3,
+              "offset": 459
+            },
+            "end": {
+              "line": 23,
+              "column": 40,
+              "offset": 496
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-07_LVGL模式卡片资源与动效开发总结"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-07_热敏打印机驱动算法分析与工作记录",
+          "position": {
+            "start": {
+              "line": 24,
+              "column": 3,
+              "offset": 499
+            },
+            "end": {
+              "line": 24,
+              "column": 39,
+              "offset": 535
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-07_热敏打印机驱动算法分析与工作记录"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-14_P36二维码页固件版本号显示开发记录",
+          "position": {
+            "start": {
+              "line": 25,
+              "column": 3,
+              "offset": 538
+            },
+            "end": {
+              "line": 25,
+              "column": 41,
+              "offset": 576
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-14_P36二维码页固件版本号显示开发记录"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-15_语音生成页陪伴机器人帧动画开发记录",
+          "position": {
+            "start": {
+              "line": 26,
+              "column": 3,
+              "offset": 579
+            },
+            "end": {
+              "line": 26,
+              "column": 40,
+              "offset": 616
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-15_语音生成页陪伴机器人帧动画开发记录"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-15_首页六模式隐藏功能开发记录",
+          "position": {
+            "start": {
+              "line": 27,
+              "column": 3,
+              "offset": 619
+            },
+            "end": {
+              "line": 27,
+              "column": 36,
+              "offset": 652
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-15_首页六模式隐藏功能开发记录"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-18_按键发声蜂鸣与等待旋律开发记录",
+          "position": {
+            "start": {
+              "line": 28,
+              "column": 3,
+              "offset": 655
+            },
+            "end": {
+              "line": 28,
+              "column": 38,
+              "offset": 690
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-18_按键发声蜂鸣与等待旋律开发记录"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-18_模式图标BMP24转RGB565压缩优化开发记录",
+          "position": {
+            "start": {
+              "line": 29,
+              "column": 3,
+              "offset": 693
+            },
+            "end": {
+              "line": 29,
               "column": 47,
-              "offset": 1275
+              "offset": 737
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.BUG-002-LVGL_�ڴ��ط���_Data_Abort"
+            "fname": "开发记录.2026-05-18_模式图标BMP24转RGB565压缩优化开发记录"
           }
         },
         {
@@ -692,24 +503,24 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.bk7252n-��¼�̳�",
+          "value": "开发记录.2026-05-19_Flash假脱机长图打印开发记录",
           "position": {
             "start": {
-              "line": 37,
+              "line": 30,
               "column": 3,
-              "offset": 1278
+              "offset": 740
             },
             "end": {
-              "line": 37,
-              "column": 29,
-              "offset": 1304
+              "line": 30,
+              "column": 39,
+              "offset": 776
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.bk7252n-��¼�̳�"
+            "fname": "开发记录.2026-05-19_Flash假脱机长图打印开发记录"
           }
         },
         {
@@ -719,24 +530,24 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.prn_tune���ڵ�������",
+          "value": "开发记录.2026-05-19_WS热敏图预览压缩质量优化开发记录",
           "position": {
             "start": {
-              "line": 38,
+              "line": 31,
               "column": 3,
-              "offset": 1307
+              "offset": 779
             },
             "end": {
-              "line": 38,
-              "column": 34,
-              "offset": 1338
+              "line": 31,
+              "column": 40,
+              "offset": 816
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.prn_tune���ڵ�������"
+            "fname": "开发记录.2026-05-19_WS热敏图预览压缩质量优化开发记录"
           }
         },
         {
@@ -746,24 +557,24 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.��ӡ������������ϼ�¼",
+          "value": "开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录",
           "position": {
             "start": {
-              "line": 39,
+              "line": 32,
               "column": 3,
-              "offset": 1341
+              "offset": 819
             },
             "end": {
-              "line": 39,
-              "column": 33,
-              "offset": 1371
+              "line": 32,
+              "column": 45,
+              "offset": 861
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.��ӡ������������ϼ�¼"
+            "fname": "开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录"
           }
         },
         {
@@ -773,51 +584,240 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.��Ŀ��������",
+          "value": "开发记录.AI打印机应用架构评估与优化方向",
           "position": {
             "start": {
-              "line": 40,
+              "line": 33,
               "column": 3,
-              "offset": 1374
+              "offset": 864
             },
             "end": {
-              "line": 40,
-              "column": 26,
-              "offset": 1397
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.��Ŀ��������"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.��Ŀ������¼�ܸ�",
-          "position": {
-            "start": {
-              "line": 41,
-              "column": 3,
-              "offset": 1400
-            },
-            "end": {
-              "line": 41,
+              "line": 33,
               "column": 28,
-              "offset": 1425
+              "offset": 889
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.��Ŀ������¼�ܸ�"
+            "fname": "开发记录.AI打印机应用架构评估与优化方向"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.BK7252n-LVGL多语言开发指南",
+          "position": {
+            "start": {
+              "line": 34,
+              "column": 3,
+              "offset": 892
+            },
+            "end": {
+              "line": 34,
+              "column": 31,
+              "offset": 920
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.BK7252n-LVGL多语言开发指南"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.BUG-001-按键_Data_Abort_共享缓冲竞态",
+          "position": {
+            "start": {
+              "line": 35,
+              "column": 3,
+              "offset": 923
+            },
+            "end": {
+              "line": 35,
+              "column": 40,
+              "offset": 960
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.BUG-001-按键_Data_Abort_共享缓冲竞态"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.BUG-002-LVGL_内存重分配_Data_Abort",
+          "position": {
+            "start": {
+              "line": 36,
+              "column": 3,
+              "offset": 963
+            },
+            "end": {
+              "line": 36,
+              "column": 41,
+              "offset": 1001
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.BUG-002-LVGL_内存重分配_Data_Abort"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.bk7252n-烧录教程",
+          "position": {
+            "start": {
+              "line": 37,
+              "column": 3,
+              "offset": 1004
+            },
+            "end": {
+              "line": 37,
+              "column": 24,
+              "offset": 1025
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.bk7252n-烧录教程"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.prn_tune串口调参命令",
+          "position": {
+            "start": {
+              "line": 38,
+              "column": 3,
+              "offset": 1028
+            },
+            "end": {
+              "line": 38,
+              "column": 26,
+              "offset": 1051
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.prn_tune串口调参命令"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.打印机参数排列组合记录",
+          "position": {
+            "start": {
+              "line": 39,
+              "column": 3,
+              "offset": 1054
+            },
+            "end": {
+              "line": 39,
+              "column": 23,
+              "offset": 1074
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.打印机参数排列组合记录"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.项目交接资料",
+          "position": {
+            "start": {
+              "line": 40,
+              "column": 3,
+              "offset": 1077
+            },
+            "end": {
+              "line": 40,
+              "column": 18,
+              "offset": 1092
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.项目交接资料"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.项目开发记录总纲",
+          "position": {
+            "start": {
+              "line": 41,
+              "column": 3,
+              "offset": 1095
+            },
+            "end": {
+              "line": 41,
+              "column": 20,
+              "offset": 1112
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.项目开发记录总纲"
           }
         },
         {
@@ -832,12 +832,12 @@
             "start": {
               "line": 45,
               "column": 3,
-              "offset": 1448
+              "offset": 1135
             },
             "end": {
               "line": 45,
               "column": 20,
-              "offset": 1465
+              "offset": 1152
             },
             "indent": []
           },
@@ -854,24 +854,24 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "оƬSDK���.BK7252N-����˵��",
+          "value": "芯片SDK相关.BK7252N-编译说明",
           "position": {
             "start": {
               "line": 49,
               "column": 3,
-              "offset": 1491
+              "offset": 1173
             },
             "end": {
               "line": 49,
-              "column": 31,
-              "offset": 1519
+              "column": 27,
+              "offset": 1197
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "оƬSDK���.BK7252N-����˵��"
+            "fname": "芯片SDK相关.BK7252N-编译说明"
           }
         },
         {
@@ -881,137 +881,137 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "��ӡ����",
+          "value": "打印数据",
           "position": {
             "start": {
               "line": 53,
               "column": 3,
-              "offset": 1536
+              "offset": 1211
             },
             "end": {
               "line": 53,
+              "column": 11,
+              "offset": 1219
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "打印数据"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "打印数据.01-上一版-仅开始结束时间",
+          "position": {
+            "start": {
+              "line": 54,
+              "column": 3,
+              "offset": 1226
+            },
+            "end": {
+              "line": 54,
+              "column": 26,
+              "offset": 1249
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "打印数据.01-上一版-仅开始结束时间"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "打印数据.02-本版-含模式状态",
+          "position": {
+            "start": {
+              "line": 55,
+              "column": 3,
+              "offset": 1252
+            },
+            "end": {
+              "line": 55,
+              "column": 23,
+              "offset": 1272
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "打印数据.02-本版-含模式状态"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "阶段性开发总结",
+          "position": {
+            "start": {
+              "line": 57,
+              "column": 3,
+              "offset": 1276
+            },
+            "end": {
+              "line": 57,
               "column": 14,
-              "offset": 1547
+              "offset": 1287
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "��ӡ����"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "��ӡ����.01-��һ��-����ʼ����ʱ��",
-          "position": {
-            "start": {
-              "line": 54,
-              "column": 3,
-              "offset": 1558
-            },
-            "end": {
-              "line": 54,
-              "column": 36,
-              "offset": 1591
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "��ӡ����.01-��һ��-����ʼ����ʱ��"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "��ӡ����.02-����-��ģʽ״̬",
-          "position": {
-            "start": {
-              "line": 55,
-              "column": 3,
-              "offset": 1594
-            },
-            "end": {
-              "line": 55,
-              "column": 29,
-              "offset": 1620
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "��ӡ����.02-����-��ģʽ״̬"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "�׶��Կ����ܽ�",
-          "position": {
-            "start": {
-              "line": 57,
-              "column": 3,
-              "offset": 1624
-            },
-            "end": {
-              "line": 57,
-              "column": 18,
-              "offset": 1639
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "�׶��Կ����ܽ�"
+            "fname": "阶段性开发总结"
           }
         }
       ],
       "anchors": {
-        "bk7252n-ai-ӡ̼ĵ": {
+        "bk7252n-ai-打印机固件文档": {
           "type": "header",
-          "text": "BK7252N AI ��ӡ���̼��ĵ�",
-          "value": "bk7252n-ai-ӡ̼ĵ",
+          "text": "BK7252N AI 打印机固件文档",
+          "value": "bk7252n-ai-打印机固件文档",
           "line": 8,
           "column": 0,
           "depth": 1
         },
-        "": {
+        "入口": {
           "type": "header",
-          "text": "���",
-          "value": "",
+          "text": "入口",
+          "value": "入口",
           "line": 12,
           "column": 0,
           "depth": 2
         },
-        "㼶": {
+        "层级索引": {
           "type": "header",
-          "text": "�㼶����",
-          "value": "㼶",
+          "text": "层级索引",
+          "value": "层级索引",
           "line": 19,
           "column": 0,
           "depth": 2
         },
-        "-1": {
+        "开发记录": {
           "type": "header",
-          "text": "������¼",
-          "value": "-1",
+          "text": "开发记录",
+          "value": "开发记录",
           "line": 21,
           "column": 0,
           "depth": 3
@@ -1024,18 +1024,18 @@
           "column": 0,
           "depth": 3
         },
-        "оƭsdk": {
+        "芯片sdk相关": {
           "type": "header",
-          "text": "оƬSDK���",
-          "value": "оƭsdk",
+          "text": "芯片SDK相关",
+          "value": "芯片sdk相关",
           "line": 53,
           "column": 0,
           "depth": 3
         },
-        "ӡ": {
+        "打印数据": {
           "type": "header",
-          "text": "��ӡ����",
-          "value": "ӡ",
+          "text": "打印数据",
+          "value": "打印数据",
           "line": 57,
           "column": 0,
           "depth": 3
@@ -1046,13 +1046,13 @@
         "c1bs7wsjfbhb0zipaywqv1",
         "b214abeb9f8f17aa994522",
         "9fd53d681f5e8043762252",
-        "x43b2g7jzkj4yilx9xlswpb",
-        "vk70m20t3p71hgio6ei0bnn"
+        "w0x0z2descd3ztesnx5y6au",
+        "iavnwk4paxjpretttwfawte"
       ],
       "parent": null,
       "data": {}
     },
-    "vk70m20t3p71hgio6ei0bnn": {
+    "iavnwk4paxjpretttwfawte": {
       "fname": "芯片SDK相关",
       "stub": true,
       "vault": {
@@ -1061,9 +1061,9 @@
       },
       "schemaStub": false,
       "type": "note",
-      "updated": 1780450773891,
-      "created": 1780450773891,
-      "id": "vk70m20t3p71hgio6ei0bnn",
+      "updated": 1780451013003,
+      "created": 1780451013003,
+      "id": "iavnwk4paxjpretttwfawte",
       "desc": "",
       "links": [],
       "anchors": {},
@@ -1115,6 +1115,28 @@
           "to": {
             "fname": "开发记录.bk7252n-烧录教程"
           }
+        },
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 49,
+              "column": 3,
+              "offset": 1173
+            },
+            "end": {
+              "line": 49,
+              "column": 27,
+              "offset": 1197
+            },
+            "indent": []
+          },
+          "value": "芯片SDK相关.BK7252N-编译说明"
         }
       ],
       "anchors": {
@@ -1224,10 +1246,10 @@
         }
       },
       "children": [],
-      "parent": "vk70m20t3p71hgio6ei0bnn",
+      "parent": "iavnwk4paxjpretttwfawte",
       "data": {}
     },
-    "x43b2g7jzkj4yilx9xlswpb": {
+    "w0x0z2descd3ztesnx5y6au": {
       "fname": "开发记录",
       "stub": true,
       "vault": {
@@ -1236,9 +1258,9 @@
       },
       "schemaStub": false,
       "type": "note",
-      "updated": 1780450773879,
-      "created": 1780450773879,
-      "id": "x43b2g7jzkj4yilx9xlswpb",
+      "updated": 1780451012991,
+      "created": 1780451012991,
+      "id": "w0x0z2descd3ztesnx5y6au",
       "desc": "",
       "links": [],
       "anchors": {},
@@ -1857,6 +1879,50 @@
         },
         {
           "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 8,
+              "column": 3,
+              "offset": 83
+            },
+            "end": {
+              "line": 8,
+              "column": 20,
+              "offset": 100
+            },
+            "indent": []
+          },
+          "value": "开发记录.项目开发记录总纲"
+        },
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 41,
+              "column": 3,
+              "offset": 1095
+            },
+            "end": {
+              "line": 41,
+              "column": 20,
+              "offset": 1112
+            },
+            "indent": []
+          },
+          "value": "开发记录.项目开发记录总纲"
+        },
+        {
+          "from": {
             "fname": "开发记录.项目交接资料",
             "id": "6d428def14b8ffdc828f43",
             "vaultName": "Dendron"
@@ -1959,7 +2025,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "6d428def14b8ffdc828f43": {
@@ -2438,6 +2504,50 @@
         },
         {
           "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 9,
+              "column": 3,
+              "offset": 115
+            },
+            "end": {
+              "line": 9,
+              "column": 18,
+              "offset": 130
+            },
+            "indent": []
+          },
+          "value": "开发记录.项目交接资料"
+        },
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 40,
+              "column": 3,
+              "offset": 1077
+            },
+            "end": {
+              "line": 40,
+              "column": 18,
+              "offset": 1092
+            },
+            "indent": []
+          },
+          "value": "开发记录.项目交接资料"
+        },
+        {
+          "from": {
             "fname": "开发记录.项目开发记录总纲",
             "id": "62ff4545e5f1373c5cfe01",
             "vaultName": "Dendron"
@@ -2590,7 +2700,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "69fab073dcdd31f425755e": {
@@ -2608,6 +2718,28 @@
       },
       "contentHash": "ed31e628a8b2f1d616db373b3d1d5ada",
       "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 39,
+              "column": 3,
+              "offset": 1054
+            },
+            "end": {
+              "line": 39,
+              "column": 23,
+              "offset": 1074
+            },
+            "indent": []
+          },
+          "value": "开发记录.打印机参数排列组合记录"
+        },
         {
           "from": {
             "fname": "开发记录.2026-05-07_热敏打印机驱动算法分析与工作记录",
@@ -3010,7 +3142,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "e219878f58bd997c455ca8": {
@@ -3081,6 +3213,28 @@
           "to": {
             "fname": "打印数据"
           }
+        },
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 38,
+              "column": 3,
+              "offset": 1028
+            },
+            "end": {
+              "line": 38,
+              "column": 26,
+              "offset": 1051
+            },
+            "indent": []
+          },
+          "value": "开发记录.prn_tune串口调参命令"
         },
         {
           "from": {
@@ -3418,7 +3572,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "40a0c1d0224426bb0700ea": {
@@ -3436,6 +3590,28 @@
       },
       "contentHash": "9f2c1c909998344970a5606de98944b0",
       "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 37,
+              "column": 3,
+              "offset": 1004
+            },
+            "end": {
+              "line": 37,
+              "column": 24,
+              "offset": 1025
+            },
+            "indent": []
+          },
+          "value": "开发记录.bk7252n-烧录教程"
+        },
         {
           "from": {
             "fname": "开发记录.项目交接资料",
@@ -3648,7 +3824,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "782168230f49885740b191": {
@@ -3665,7 +3841,30 @@
         "name": "Dendron"
       },
       "contentHash": "38c962812d841c249c31a84a7c081b06",
-      "links": [],
+      "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 36,
+              "column": 3,
+              "offset": 963
+            },
+            "end": {
+              "line": 36,
+              "column": 41,
+              "offset": 1001
+            },
+            "indent": []
+          },
+          "value": "开发记录.BUG-002-LVGL_内存重分配_Data_Abort"
+        }
+      ],
       "anchors": {
         "bug-002lvgl-内存重分配触发-data-abort-os_realloc-越界读取": {
           "type": "header",
@@ -3717,7 +3916,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "7e757dba3afa1d4361d951": {
@@ -3735,6 +3934,28 @@
       },
       "contentHash": "c58b3682dee3f444260dd8093d07f767",
       "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 35,
+              "column": 3,
+              "offset": 923
+            },
+            "end": {
+              "line": 35,
+              "column": 40,
+              "offset": 960
+            },
+            "indent": []
+          },
+          "value": "开发记录.BUG-001-按键_Data_Abort_共享缓冲竞态"
+        },
         {
           "from": {
             "fname": "开发记录.2026-05-07-多语言字库与稳定性开发纪要",
@@ -3913,7 +4134,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "86d6a17041618132f76abf": {
@@ -3931,6 +4152,28 @@
       },
       "contentHash": "4489206053b13a804145c078bae4d893",
       "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 34,
+              "column": 3,
+              "offset": 892
+            },
+            "end": {
+              "line": 34,
+              "column": 31,
+              "offset": 920
+            },
+            "indent": []
+          },
+          "value": "开发记录.BK7252n-LVGL多语言开发指南"
+        },
         {
           "from": {
             "fname": "开发记录.2026-05-07-多语言字库与稳定性开发纪要",
@@ -4229,7 +4472,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "4b4a79d037a6f442a84233": {
@@ -4247,6 +4490,28 @@
       },
       "contentHash": "1852ce7d35ae0f3fe6f1e107a360f734",
       "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 33,
+              "column": 3,
+              "offset": 864
+            },
+            "end": {
+              "line": 33,
+              "column": 28,
+              "offset": 889
+            },
+            "indent": []
+          },
+          "value": "开发记录.AI打印机应用架构评估与优化方向"
+        },
         {
           "from": {
             "fname": "开发记录.项目交接资料",
@@ -4415,7 +4680,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "8e26e8749bccd9d3739356": {
@@ -4459,6 +4724,28 @@
           "to": {
             "fname": "开发记录.2026-05-18_按键发声蜂鸣与等待旋律开发记录"
           }
+        },
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 32,
+              "column": 3,
+              "offset": 819
+            },
+            "end": {
+              "line": 32,
+              "column": 45,
+              "offset": 861
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录"
         },
         {
           "from": {
@@ -4700,7 +4987,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "cebf2bd5cc8bb777ea20e6": {
@@ -4718,6 +5005,28 @@
       },
       "contentHash": "295da44d0af237a9ce68cd615f7a0de5",
       "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 31,
+              "column": 3,
+              "offset": 779
+            },
+            "end": {
+              "line": 31,
+              "column": 40,
+              "offset": 816
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-19_WS热敏图预览压缩质量优化开发记录"
+        },
         {
           "from": {
             "fname": "开发记录.项目开发记录总纲",
@@ -4896,7 +5205,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "5c0ce6ce26de9213ed1377": {
@@ -4913,7 +5222,30 @@
         "name": "Dendron"
       },
       "contentHash": "ab04cd6505ae9e66c108f25dfc5dae20",
-      "links": [],
+      "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 30,
+              "column": 3,
+              "offset": 740
+            },
+            "end": {
+              "line": 30,
+              "column": 39,
+              "offset": 776
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-19_Flash假脱机长图打印开发记录"
+        }
+      ],
       "anchors": {
         "2026-05-19-flash-假脱机长图打印开发记录": {
           "type": "header",
@@ -5053,7 +5385,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "60bc7871dc2e4626e2aeb0": {
@@ -5070,7 +5402,30 @@
         "name": "Dendron"
       },
       "contentHash": "18385b7e03d4601254ca88d30cb94065",
-      "links": [],
+      "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 29,
+              "column": 3,
+              "offset": 693
+            },
+            "end": {
+              "line": 29,
+              "column": 47,
+              "offset": 737
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-18_模式图标BMP24转RGB565压缩优化开发记录"
+        }
+      ],
       "anchors": {
         "2026-05-18-模式图标-bmp24rgb565-压缩优化开发记录": {
           "type": "header",
@@ -5170,7 +5525,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "238cee9d6e5d3351d1562b": {
@@ -5188,6 +5543,28 @@
       },
       "contentHash": "0faeb5e2eb464db690255a82c63340b6",
       "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 28,
+              "column": 3,
+              "offset": 655
+            },
+            "end": {
+              "line": 28,
+              "column": 38,
+              "offset": 690
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-18_按键发声蜂鸣与等待旋律开发记录"
+        },
         {
           "from": {
             "fname": "开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录",
@@ -5342,7 +5719,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "00fdb8e252ec8a7396bf8e": {
@@ -5359,7 +5736,30 @@
         "name": "Dendron"
       },
       "contentHash": "383cdef34ffb3085a5da4690b917ae23",
-      "links": [],
+      "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 27,
+              "column": 3,
+              "offset": 619
+            },
+            "end": {
+              "line": 27,
+              "column": 36,
+              "offset": 652
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-15_首页六模式隐藏功能开发记录"
+        }
+      ],
       "anchors": {
         "2026-05-15-首页六模式隐藏功能开发记录": {
           "type": "header",
@@ -5475,7 +5875,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "2207f5431c8c6bd7291f9f": {
@@ -5492,7 +5892,30 @@
         "name": "Dendron"
       },
       "contentHash": "45c83867d23996e91387e9ab217ed351",
-      "links": [],
+      "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 26,
+              "column": 3,
+              "offset": 579
+            },
+            "end": {
+              "line": 26,
+              "column": 40,
+              "offset": 616
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-15_语音生成页陪伴机器人帧动画开发记录"
+        }
+      ],
       "anchors": {
         "p-语音生成中页面陪伴机器人帧动画开发记录": {
           "type": "header",
@@ -5688,7 +6111,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "ce0040cd0ceb63ee76fdd1": {
@@ -5705,7 +6128,30 @@
         "name": "Dendron"
       },
       "contentHash": "0019c37475f246ab9afa5420bbbebce0",
-      "links": [],
+      "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 25,
+              "column": 3,
+              "offset": 538
+            },
+            "end": {
+              "line": 25,
+              "column": 41,
+              "offset": 576
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-14_P36二维码页固件版本号显示开发记录"
+        }
+      ],
       "anchors": {
         "p36-长按二维码页固件版本号显示开发记录": {
           "type": "header",
@@ -5837,7 +6283,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "0a6f1fae03382ed23a61e4": {
@@ -5989,6 +6435,28 @@
           "to": {
             "fname": "开发记录.2026-05-01_0234-AI打印机固件开发记录"
           }
+        },
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 24,
+              "column": 3,
+              "offset": 499
+            },
+            "end": {
+              "line": 24,
+              "column": 39,
+              "offset": 535
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-07_热敏打印机驱动算法分析与工作记录"
         },
         {
           "from": {
@@ -6204,7 +6672,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "0faf28cd9ea6b2133119c7": {
@@ -6222,6 +6690,28 @@
       },
       "contentHash": "c3f14c2be0c72b63950d5422233842f4",
       "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 23,
+              "column": 3,
+              "offset": 459
+            },
+            "end": {
+              "line": 23,
+              "column": 40,
+              "offset": 496
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-07_LVGL模式卡片资源与动效开发总结"
+        },
         {
           "from": {
             "fname": "开发记录.项目交接资料",
@@ -6390,7 +6880,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "124fc2bd28f4ff32a71b93": {
@@ -6461,6 +6951,28 @@
           "to": {
             "fname": "开发记录.BUG-001-按键_Data_Abort_共享缓冲竞态"
           }
+        },
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 22,
+              "column": 3,
+              "offset": 416
+            },
+            "end": {
+              "line": 22,
+              "column": 43,
+              "offset": 456
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-07_LVGL桌面二维码与WS预览UI开发总结"
         },
         {
           "from": {
@@ -6630,7 +7142,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "f068cc85f553b7fa6f808b": {
@@ -6755,6 +7267,28 @@
           "to": {
             "fname": "开发记录.2026-05-01_0234-AI打印机固件开发记录"
           }
+        },
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 21,
+              "column": 3,
+              "offset": 380
+            },
+            "end": {
+              "line": 21,
+              "column": 36,
+              "offset": 413
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-07-多语言字库与稳定性开发纪要"
         },
         {
           "from": {
@@ -6908,7 +7442,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "6b99e0b40de02b4f011208": {
@@ -6926,6 +7460,28 @@
       },
       "contentHash": "e33da6b2b25e1643e3218db50297c7ba",
       "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 20,
+              "column": 3,
+              "offset": 338
+            },
+            "end": {
+              "line": 20,
+              "column": 42,
+              "offset": 377
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-06_语音按键MP3录音上传与ASR排查总结"
+        },
         {
           "from": {
             "fname": "开发记录.项目开发记录总纲",
@@ -7048,7 +7604,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "c82a45ea03c9396b83d2e6": {
@@ -7066,6 +7622,28 @@
       },
       "contentHash": "256d065ef0cb0e7caa6189df03193d3a",
       "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 19,
+              "column": 3,
+              "offset": 294
+            },
+            "end": {
+              "line": 19,
+              "column": 44,
+              "offset": 335
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-06_LVGL主桌面六模式与语音卡片UI移植总结"
+        },
         {
           "from": {
             "fname": "开发记录.项目交接资料",
@@ -7282,7 +7860,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "4b9db1416687083f72ec72": {
@@ -7353,6 +7931,28 @@
           "to": {
             "fname": "开发记录.prn_tune串口调参命令"
           }
+        },
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 18,
+              "column": 3,
+              "offset": 258
+            },
+            "end": {
+              "line": 18,
+              "column": 36,
+              "offset": 291
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-03_热敏打印与MQTT开发记录"
         },
         {
           "from": {
@@ -7460,7 +8060,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "795a1a96f9c620254c9633": {
@@ -7533,6 +8133,28 @@
           "to": {
             "fname": "2026-05-07-多语言字库与稳定性开发纪要"
           }
+        },
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 17,
+              "column": 3,
+              "offset": 219
+            },
+            "end": {
+              "line": 17,
+              "column": 39,
+              "offset": 255
+            },
+            "indent": []
+          },
+          "value": "开发记录.2026-05-01_0234-AI打印机固件开发记录"
         },
         {
           "from": {
@@ -7716,7 +8338,7 @@
         }
       },
       "children": [],
-      "parent": "x43b2g7jzkj4yilx9xlswpb",
+      "parent": "w0x0z2descd3ztesnx5y6au",
       "data": {}
     },
     "9fd53d681f5e8043762252": {
@@ -7734,6 +8356,50 @@
       },
       "contentHash": "2e362eb426b152067a58b997274517cf",
       "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 10,
+              "column": 3,
+              "offset": 145
+            },
+            "end": {
+              "line": 10,
+              "column": 14,
+              "offset": 156
+            },
+            "indent": []
+          },
+          "value": "阶段性开发总结"
+        },
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 57,
+              "column": 3,
+              "offset": 1276
+            },
+            "end": {
+              "line": 57,
+              "column": 14,
+              "offset": 1287
+            },
+            "indent": []
+          },
+          "value": "阶段性开发总结"
+        },
         {
           "from": {
             "fname": "开发记录.项目交接资料",
@@ -7974,6 +8640,28 @@
         },
         {
           "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 53,
+              "column": 3,
+              "offset": 1211
+            },
+            "end": {
+              "line": 53,
+              "column": 11,
+              "offset": 1219
+            },
+            "indent": []
+          },
+          "value": "打印数据"
+        },
+        {
+          "from": {
             "fname": "开发记录.prn_tune串口调参命令",
             "id": "e219878f58bd997c455ca8",
             "vaultName": "Dendron"
@@ -8048,7 +8736,30 @@
         "name": "Dendron"
       },
       "contentHash": "58623ede5983b7cd306383862c941193",
-      "links": [],
+      "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 55,
+              "column": 3,
+              "offset": 1252
+            },
+            "end": {
+              "line": 55,
+              "column": 23,
+              "offset": 1272
+            },
+            "indent": []
+          },
+          "value": "打印数据.02-本版-含模式状态"
+        }
+      ],
       "anchors": {
         "组二时间戳--六种模式状态本版全局参数": {
           "type": "header",
@@ -8109,7 +8820,30 @@
         "name": "Dendron"
       },
       "contentHash": "7f5ab15f6a70a3de0bf0eaf21fcba5fe",
-      "links": [],
+      "links": [
+        {
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 54,
+              "column": 3,
+              "offset": 1226
+            },
+            "end": {
+              "line": 54,
+              "column": 26,
+              "offset": 1249
+            },
+            "indent": []
+          },
+          "value": "打印数据.01-上一版-仅开始结束时间"
+        }
+      ],
       "anchors": {
         "组一仅打印开始--结束时间上一版全局参数": {
           "type": "header",
@@ -8263,12 +8997,12 @@
             "start": {
               "line": 11,
               "column": 3,
-              "offset": 219
+              "offset": 169
             },
             "end": {
               "line": 11,
               "column": 15,
-              "offset": 231
+              "offset": 181
             },
             "indent": []
           },
@@ -8407,12 +9141,12 @@
             "start": {
               "line": 45,
               "column": 3,
-              "offset": 1448
+              "offset": 1135
             },
             "end": {
               "line": 45,
               "column": 20,
-              "offset": 1465
+              "offset": 1152
             },
             "indent": []
           },
@@ -8484,7 +9218,7 @@
     {
       "id": "root",
       "title": "root",
-      "desc": "BK7252N AI ��ӡ���̼��ĵ���",
+      "desc": "BK7252N AI 打印机固件文档库",
       "updated": 1780371367067,
       "created": 1595961348801,
       "custom": {
@@ -8497,7 +9231,7 @@
         "fsPath": "notes",
         "name": "Dendron"
       },
-      "contentHash": "801bb942f5d3a833cb045cb9b3abd9d0",
+      "contentHash": "e5d7823b7368b844c5d7bde821080751",
       "links": [
         {
           "type": "wiki",
@@ -8506,24 +9240,24 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.��Ŀ������¼�ܸ�",
+          "value": "开发记录.项目开发记录总纲",
           "position": {
             "start": {
               "line": 8,
               "column": 3,
-              "offset": 96
+              "offset": 83
             },
             "end": {
               "line": 8,
-              "column": 28,
-              "offset": 121
+              "column": 20,
+              "offset": 100
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.��Ŀ������¼�ܸ�"
+            "fname": "开发记录.项目开发记录总纲"
           }
         },
         {
@@ -8533,51 +9267,51 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.��Ŀ��������",
+          "value": "开发记录.项目交接资料",
           "position": {
             "start": {
               "line": 9,
               "column": 3,
-              "offset": 143
+              "offset": 115
             },
             "end": {
               "line": 9,
-              "column": 26,
-              "offset": 166
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.��Ŀ��������"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "�׶��Կ����ܽ�",
-          "position": {
-            "start": {
-              "line": 10,
-              "column": 3,
-              "offset": 187
-            },
-            "end": {
-              "line": 10,
               "column": 18,
-              "offset": 202
+              "offset": 130
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "�׶��Կ����ܽ�"
+            "fname": "开发记录.项目交接资料"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "阶段性开发总结",
+          "position": {
+            "start": {
+              "line": 10,
+              "column": 3,
+              "offset": 145
+            },
+            "end": {
+              "line": 10,
+              "column": 14,
+              "offset": 156
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "阶段性开发总结"
           }
         },
         {
@@ -8592,12 +9326,12 @@
             "start": {
               "line": 11,
               "column": 3,
-              "offset": 219
+              "offset": 169
             },
             "end": {
               "line": 11,
               "column": 15,
-              "offset": 231
+              "offset": 181
             },
             "indent": []
           },
@@ -8614,483 +9348,24 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.2026-05-01_0234-AI��ӡ���̼�������¼",
+          "value": "开发记录.2026-05-01_0234-AI打印机固件开发记录",
           "position": {
             "start": {
               "line": 17,
               "column": 3,
-              "offset": 276
+              "offset": 219
             },
             "end": {
               "line": 17,
-              "column": 48,
-              "offset": 321
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-01_0234-AI��ӡ���̼�������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-03_������ӡ��MQTT������¼",
-          "position": {
-            "start": {
-              "line": 18,
-              "column": 3,
-              "offset": 324
-            },
-            "end": {
-              "line": 18,
-              "column": 46,
-              "offset": 367
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-03_������ӡ��MQTT������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-06_LVGL��������ģʽ��������ƬUI��ֲ�ܽ�",
-          "position": {
-            "start": {
-              "line": 19,
-              "column": 3,
-              "offset": 370
-            },
-            "end": {
-              "line": 19,
-              "column": 57,
-              "offset": 424
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-06_LVGL��������ģʽ��������ƬUI��ֲ�ܽ�"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-06_��������MP3¼���ϴ���ASR�Ų��ܽ�",
-          "position": {
-            "start": {
-              "line": 20,
-              "column": 3,
-              "offset": 427
-            },
-            "end": {
-              "line": 20,
-              "column": 54,
-              "offset": 478
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-06_��������MP3¼���ϴ���ASR�Ų��ܽ�"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-07-�������ֿ����ȶ��Կ�����Ҫ",
-          "position": {
-            "start": {
-              "line": 21,
-              "column": 3,
-              "offset": 481
-            },
-            "end": {
-              "line": 21,
-              "column": 48,
-              "offset": 526
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-07-�������ֿ����ȶ��Կ�����Ҫ"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-07_LVGL�����ά����WSԤ��UI�����ܽ�",
-          "position": {
-            "start": {
-              "line": 22,
-              "column": 3,
-              "offset": 529
-            },
-            "end": {
-              "line": 22,
-              "column": 54,
-              "offset": 580
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-07_LVGL�����ά����WSԤ��UI�����ܽ�"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-07_LVGLģʽ��Ƭ��Դ�붯Ч�����ܽ�",
-          "position": {
-            "start": {
-              "line": 23,
-              "column": 3,
-              "offset": 583
-            },
-            "end": {
-              "line": 23,
-              "column": 48,
-              "offset": 628
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-07_LVGLģʽ��Ƭ��Դ�붯Ч�����ܽ�"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-07_������ӡ�������㷨�����빤����¼",
-          "position": {
-            "start": {
-              "line": 24,
-              "column": 3,
-              "offset": 631
-            },
-            "end": {
-              "line": 24,
-              "column": 52,
-              "offset": 680
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-07_������ӡ�������㷨�����빤����¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-14_P36��ά��ҳ�̼��汾����ʾ������¼",
-          "position": {
-            "start": {
-              "line": 25,
-              "column": 3,
-              "offset": 683
-            },
-            "end": {
-              "line": 25,
-              "column": 52,
-              "offset": 732
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-14_P36��ά��ҳ�̼��汾����ʾ������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-15_��������ҳ��������֡����������¼",
-          "position": {
-            "start": {
-              "line": 26,
-              "column": 3,
-              "offset": 735
-            },
-            "end": {
-              "line": 26,
-              "column": 55,
-              "offset": 787
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-15_��������ҳ��������֡����������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-15_��ҳ��ģʽ���ع��ܿ�����¼",
-          "position": {
-            "start": {
-              "line": 27,
-              "column": 3,
-              "offset": 790
-            },
-            "end": {
-              "line": 27,
-              "column": 46,
-              "offset": 833
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-15_��ҳ��ģʽ���ع��ܿ�����¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-18_��������������ȴ����ɿ�����¼",
-          "position": {
-            "start": {
-              "line": 28,
-              "column": 3,
-              "offset": 836
-            },
-            "end": {
-              "line": 28,
-              "column": 52,
-              "offset": 885
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-18_��������������ȴ����ɿ�����¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-18_ģʽͼ��BMP24תRGB565ѹ���Ż�������¼",
-          "position": {
-            "start": {
-              "line": 29,
-              "column": 3,
-              "offset": 888
-            },
-            "end": {
-              "line": 29,
-              "column": 56,
-              "offset": 941
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-18_ģʽͼ��BMP24תRGB565ѹ���Ż�������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-19_Flash���ѻ���ͼ��ӡ������¼",
-          "position": {
-            "start": {
-              "line": 30,
-              "column": 3,
-              "offset": 944
-            },
-            "end": {
-              "line": 30,
-              "column": 49,
-              "offset": 990
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-19_Flash���ѻ���ͼ��ӡ������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-19_WS����ͼԤ��ѹ�������Ż�������¼",
-          "position": {
-            "start": {
-              "line": 31,
-              "column": 3,
-              "offset": 993
-            },
-            "end": {
-              "line": 31,
-              "column": 53,
-              "offset": 1043
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-19_WS����ͼԤ��ѹ�������Ż�������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.2026-05-27_��������MQTTЭͬ��TCM�ڴ��Ż�������¼",
-          "position": {
-            "start": {
-              "line": 32,
-              "column": 3,
-              "offset": 1046
-            },
-            "end": {
-              "line": 32,
-              "column": 58,
-              "offset": 1101
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.2026-05-27_��������MQTTЭͬ��TCM�ڴ��Ż�������¼"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.AI��ӡ��Ӧ�üܹ��������Ż�����",
-          "position": {
-            "start": {
-              "line": 33,
-              "column": 3,
-              "offset": 1104
-            },
-            "end": {
-              "line": 33,
-              "column": 40,
-              "offset": 1141
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.AI��ӡ��Ӧ�üܹ��������Ż�����"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.BK7252n-LVGL�����Կ���ָ��",
-          "position": {
-            "start": {
-              "line": 34,
-              "column": 3,
-              "offset": 1144
-            },
-            "end": {
-              "line": 34,
               "column": 39,
-              "offset": 1180
+              "offset": 255
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.BK7252n-LVGL�����Կ���ָ��"
+            "fname": "开发记录.2026-05-01_0234-AI打印机固件开发记录"
           }
         },
         {
@@ -9100,24 +9375,24 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.BUG-001-����_Data_Abort_�������徺̬",
+          "value": "开发记录.2026-05-03_热敏打印与MQTT开发记录",
           "position": {
             "start": {
-              "line": 35,
+              "line": 18,
               "column": 3,
-              "offset": 1183
+              "offset": 258
             },
             "end": {
-              "line": 35,
-              "column": 48,
-              "offset": 1228
+              "line": 18,
+              "column": 36,
+              "offset": 291
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.BUG-001-����_Data_Abort_�������徺̬"
+            "fname": "开发记录.2026-05-03_热敏打印与MQTT开发记录"
           }
         },
         {
@@ -9127,24 +9402,294 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.BUG-002-LVGL_�ڴ��ط���_Data_Abort",
+          "value": "开发记录.2026-05-06_LVGL主桌面六模式与语音卡片UI移植总结",
           "position": {
             "start": {
-              "line": 36,
+              "line": 19,
               "column": 3,
-              "offset": 1231
+              "offset": 294
             },
             "end": {
-              "line": 36,
+              "line": 19,
+              "column": 44,
+              "offset": 335
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-06_LVGL主桌面六模式与语音卡片UI移植总结"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-06_语音按键MP3录音上传与ASR排查总结",
+          "position": {
+            "start": {
+              "line": 20,
+              "column": 3,
+              "offset": 338
+            },
+            "end": {
+              "line": 20,
+              "column": 42,
+              "offset": 377
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-06_语音按键MP3录音上传与ASR排查总结"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-07-多语言字库与稳定性开发纪要",
+          "position": {
+            "start": {
+              "line": 21,
+              "column": 3,
+              "offset": 380
+            },
+            "end": {
+              "line": 21,
+              "column": 36,
+              "offset": 413
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-07-多语言字库与稳定性开发纪要"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-07_LVGL桌面二维码与WS预览UI开发总结",
+          "position": {
+            "start": {
+              "line": 22,
+              "column": 3,
+              "offset": 416
+            },
+            "end": {
+              "line": 22,
+              "column": 43,
+              "offset": 456
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-07_LVGL桌面二维码与WS预览UI开发总结"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-07_LVGL模式卡片资源与动效开发总结",
+          "position": {
+            "start": {
+              "line": 23,
+              "column": 3,
+              "offset": 459
+            },
+            "end": {
+              "line": 23,
+              "column": 40,
+              "offset": 496
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-07_LVGL模式卡片资源与动效开发总结"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-07_热敏打印机驱动算法分析与工作记录",
+          "position": {
+            "start": {
+              "line": 24,
+              "column": 3,
+              "offset": 499
+            },
+            "end": {
+              "line": 24,
+              "column": 39,
+              "offset": 535
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-07_热敏打印机驱动算法分析与工作记录"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-14_P36二维码页固件版本号显示开发记录",
+          "position": {
+            "start": {
+              "line": 25,
+              "column": 3,
+              "offset": 538
+            },
+            "end": {
+              "line": 25,
+              "column": 41,
+              "offset": 576
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-14_P36二维码页固件版本号显示开发记录"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-15_语音生成页陪伴机器人帧动画开发记录",
+          "position": {
+            "start": {
+              "line": 26,
+              "column": 3,
+              "offset": 579
+            },
+            "end": {
+              "line": 26,
+              "column": 40,
+              "offset": 616
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-15_语音生成页陪伴机器人帧动画开发记录"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-15_首页六模式隐藏功能开发记录",
+          "position": {
+            "start": {
+              "line": 27,
+              "column": 3,
+              "offset": 619
+            },
+            "end": {
+              "line": 27,
+              "column": 36,
+              "offset": 652
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-15_首页六模式隐藏功能开发记录"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-18_按键发声蜂鸣与等待旋律开发记录",
+          "position": {
+            "start": {
+              "line": 28,
+              "column": 3,
+              "offset": 655
+            },
+            "end": {
+              "line": 28,
+              "column": 38,
+              "offset": 690
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.2026-05-18_按键发声蜂鸣与等待旋律开发记录"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.2026-05-18_模式图标BMP24转RGB565压缩优化开发记录",
+          "position": {
+            "start": {
+              "line": 29,
+              "column": 3,
+              "offset": 693
+            },
+            "end": {
+              "line": 29,
               "column": 47,
-              "offset": 1275
+              "offset": 737
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.BUG-002-LVGL_�ڴ��ط���_Data_Abort"
+            "fname": "开发记录.2026-05-18_模式图标BMP24转RGB565压缩优化开发记录"
           }
         },
         {
@@ -9154,24 +9699,24 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.bk7252n-��¼�̳�",
+          "value": "开发记录.2026-05-19_Flash假脱机长图打印开发记录",
           "position": {
             "start": {
-              "line": 37,
+              "line": 30,
               "column": 3,
-              "offset": 1278
+              "offset": 740
             },
             "end": {
-              "line": 37,
-              "column": 29,
-              "offset": 1304
+              "line": 30,
+              "column": 39,
+              "offset": 776
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.bk7252n-��¼�̳�"
+            "fname": "开发记录.2026-05-19_Flash假脱机长图打印开发记录"
           }
         },
         {
@@ -9181,24 +9726,24 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.prn_tune���ڵ�������",
+          "value": "开发记录.2026-05-19_WS热敏图预览压缩质量优化开发记录",
           "position": {
             "start": {
-              "line": 38,
+              "line": 31,
               "column": 3,
-              "offset": 1307
+              "offset": 779
             },
             "end": {
-              "line": 38,
-              "column": 34,
-              "offset": 1338
+              "line": 31,
+              "column": 40,
+              "offset": 816
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.prn_tune���ڵ�������"
+            "fname": "开发记录.2026-05-19_WS热敏图预览压缩质量优化开发记录"
           }
         },
         {
@@ -9208,24 +9753,24 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.��ӡ������������ϼ�¼",
+          "value": "开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录",
           "position": {
             "start": {
-              "line": 39,
+              "line": 32,
               "column": 3,
-              "offset": 1341
+              "offset": 819
             },
             "end": {
-              "line": 39,
-              "column": 33,
-              "offset": 1371
+              "line": 32,
+              "column": 45,
+              "offset": 861
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.��ӡ������������ϼ�¼"
+            "fname": "开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录"
           }
         },
         {
@@ -9235,51 +9780,240 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "������¼.��Ŀ��������",
+          "value": "开发记录.AI打印机应用架构评估与优化方向",
           "position": {
             "start": {
-              "line": 40,
+              "line": 33,
               "column": 3,
-              "offset": 1374
+              "offset": 864
             },
             "end": {
-              "line": 40,
-              "column": 26,
-              "offset": 1397
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "������¼.��Ŀ��������"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "������¼.��Ŀ������¼�ܸ�",
-          "position": {
-            "start": {
-              "line": 41,
-              "column": 3,
-              "offset": 1400
-            },
-            "end": {
-              "line": 41,
+              "line": 33,
               "column": 28,
-              "offset": 1425
+              "offset": 889
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "������¼.��Ŀ������¼�ܸ�"
+            "fname": "开发记录.AI打印机应用架构评估与优化方向"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.BK7252n-LVGL多语言开发指南",
+          "position": {
+            "start": {
+              "line": 34,
+              "column": 3,
+              "offset": 892
+            },
+            "end": {
+              "line": 34,
+              "column": 31,
+              "offset": 920
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.BK7252n-LVGL多语言开发指南"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.BUG-001-按键_Data_Abort_共享缓冲竞态",
+          "position": {
+            "start": {
+              "line": 35,
+              "column": 3,
+              "offset": 923
+            },
+            "end": {
+              "line": 35,
+              "column": 40,
+              "offset": 960
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.BUG-001-按键_Data_Abort_共享缓冲竞态"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.BUG-002-LVGL_内存重分配_Data_Abort",
+          "position": {
+            "start": {
+              "line": 36,
+              "column": 3,
+              "offset": 963
+            },
+            "end": {
+              "line": 36,
+              "column": 41,
+              "offset": 1001
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.BUG-002-LVGL_内存重分配_Data_Abort"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.bk7252n-烧录教程",
+          "position": {
+            "start": {
+              "line": 37,
+              "column": 3,
+              "offset": 1004
+            },
+            "end": {
+              "line": 37,
+              "column": 24,
+              "offset": 1025
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.bk7252n-烧录教程"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.prn_tune串口调参命令",
+          "position": {
+            "start": {
+              "line": 38,
+              "column": 3,
+              "offset": 1028
+            },
+            "end": {
+              "line": 38,
+              "column": 26,
+              "offset": 1051
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.prn_tune串口调参命令"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.打印机参数排列组合记录",
+          "position": {
+            "start": {
+              "line": 39,
+              "column": 3,
+              "offset": 1054
+            },
+            "end": {
+              "line": 39,
+              "column": 23,
+              "offset": 1074
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.打印机参数排列组合记录"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.项目交接资料",
+          "position": {
+            "start": {
+              "line": 40,
+              "column": 3,
+              "offset": 1077
+            },
+            "end": {
+              "line": 40,
+              "column": 18,
+              "offset": 1092
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.项目交接资料"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "开发记录.项目开发记录总纲",
+          "position": {
+            "start": {
+              "line": 41,
+              "column": 3,
+              "offset": 1095
+            },
+            "end": {
+              "line": 41,
+              "column": 20,
+              "offset": 1112
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "开发记录.项目开发记录总纲"
           }
         },
         {
@@ -9294,12 +10028,12 @@
             "start": {
               "line": 45,
               "column": 3,
-              "offset": 1448
+              "offset": 1135
             },
             "end": {
               "line": 45,
               "column": 20,
-              "offset": 1465
+              "offset": 1152
             },
             "indent": []
           },
@@ -9316,24 +10050,24 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "оƬSDK���.BK7252N-����˵��",
+          "value": "芯片SDK相关.BK7252N-编译说明",
           "position": {
             "start": {
               "line": 49,
               "column": 3,
-              "offset": 1491
+              "offset": 1173
             },
             "end": {
               "line": 49,
-              "column": 31,
-              "offset": 1519
+              "column": 27,
+              "offset": 1197
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "оƬSDK���.BK7252N-����˵��"
+            "fname": "芯片SDK相关.BK7252N-编译说明"
           }
         },
         {
@@ -9343,137 +10077,137 @@
             "id": "root",
             "vaultName": "Dendron"
           },
-          "value": "��ӡ����",
+          "value": "打印数据",
           "position": {
             "start": {
               "line": 53,
               "column": 3,
-              "offset": 1536
+              "offset": 1211
             },
             "end": {
               "line": 53,
+              "column": 11,
+              "offset": 1219
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "打印数据"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "打印数据.01-上一版-仅开始结束时间",
+          "position": {
+            "start": {
+              "line": 54,
+              "column": 3,
+              "offset": 1226
+            },
+            "end": {
+              "line": 54,
+              "column": 26,
+              "offset": 1249
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "打印数据.01-上一版-仅开始结束时间"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "打印数据.02-本版-含模式状态",
+          "position": {
+            "start": {
+              "line": 55,
+              "column": 3,
+              "offset": 1252
+            },
+            "end": {
+              "line": 55,
+              "column": 23,
+              "offset": 1272
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "打印数据.02-本版-含模式状态"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "root",
+            "vaultName": "Dendron"
+          },
+          "value": "阶段性开发总结",
+          "position": {
+            "start": {
+              "line": 57,
+              "column": 3,
+              "offset": 1276
+            },
+            "end": {
+              "line": 57,
               "column": 14,
-              "offset": 1547
+              "offset": 1287
             },
             "indent": []
           },
           "xvault": false,
           "sameFile": false,
           "to": {
-            "fname": "��ӡ����"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "��ӡ����.01-��һ��-����ʼ����ʱ��",
-          "position": {
-            "start": {
-              "line": 54,
-              "column": 3,
-              "offset": 1558
-            },
-            "end": {
-              "line": 54,
-              "column": 36,
-              "offset": 1591
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "��ӡ����.01-��һ��-����ʼ����ʱ��"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "��ӡ����.02-����-��ģʽ״̬",
-          "position": {
-            "start": {
-              "line": 55,
-              "column": 3,
-              "offset": 1594
-            },
-            "end": {
-              "line": 55,
-              "column": 29,
-              "offset": 1620
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "��ӡ����.02-����-��ģʽ״̬"
-          }
-        },
-        {
-          "type": "wiki",
-          "from": {
-            "fname": "root",
-            "id": "root",
-            "vaultName": "Dendron"
-          },
-          "value": "�׶��Կ����ܽ�",
-          "position": {
-            "start": {
-              "line": 57,
-              "column": 3,
-              "offset": 1624
-            },
-            "end": {
-              "line": 57,
-              "column": 18,
-              "offset": 1639
-            },
-            "indent": []
-          },
-          "xvault": false,
-          "sameFile": false,
-          "to": {
-            "fname": "�׶��Կ����ܽ�"
+            "fname": "阶段性开发总结"
           }
         }
       ],
       "anchors": {
-        "bk7252n-ai-ӡ̼ĵ": {
+        "bk7252n-ai-打印机固件文档": {
           "type": "header",
-          "text": "BK7252N AI ��ӡ���̼��ĵ�",
-          "value": "bk7252n-ai-ӡ̼ĵ",
+          "text": "BK7252N AI 打印机固件文档",
+          "value": "bk7252n-ai-打印机固件文档",
           "line": 8,
           "column": 0,
           "depth": 1
         },
-        "": {
+        "入口": {
           "type": "header",
-          "text": "���",
-          "value": "",
+          "text": "入口",
+          "value": "入口",
           "line": 12,
           "column": 0,
           "depth": 2
         },
-        "㼶": {
+        "层级索引": {
           "type": "header",
-          "text": "�㼶����",
-          "value": "㼶",
+          "text": "层级索引",
+          "value": "层级索引",
           "line": 19,
           "column": 0,
           "depth": 2
         },
-        "-1": {
+        "开发记录": {
           "type": "header",
-          "text": "������¼",
-          "value": "-1",
+          "text": "开发记录",
+          "value": "开发记录",
           "line": 21,
           "column": 0,
           "depth": 3
@@ -9486,18 +10220,18 @@
           "column": 0,
           "depth": 3
         },
-        "оƭsdk": {
+        "芯片sdk相关": {
           "type": "header",
-          "text": "оƬSDK���",
-          "value": "оƭsdk",
+          "text": "芯片SDK相关",
+          "value": "芯片sdk相关",
           "line": 53,
           "column": 0,
           "depth": 3
         },
-        "ӡ": {
+        "打印数据": {
           "type": "header",
-          "text": "��ӡ����",
-          "value": "ӡ",
+          "text": "打印数据",
+          "value": "打印数据",
           "line": 57,
           "column": 0,
           "depth": 3
@@ -9508,18 +10242,18 @@
         "c1bs7wsjfbhb0zipaywqv1",
         "b214abeb9f8f17aa994522",
         "9fd53d681f5e8043762252",
-        "x43b2g7jzkj4yilx9xlswpb",
-        "vk70m20t3p71hgio6ei0bnn"
+        "w0x0z2descd3ztesnx5y6au",
+        "iavnwk4paxjpretttwfawte"
       ],
       "parent": null,
       "data": {},
-      "body": "\n# BK7252N AI ��ӡ���̼��ĵ�\n\nBK7252N + RT-Thread + LVGL AI ��ӡ���̼���Ŀ�ĵ���Dendron����\n\n## ���\n\n- [[������¼.��Ŀ������¼�ܸ�]] �� �ĵ����������ӳ��\n- [[������¼.��Ŀ��������]] �� �����嵥��ģ���ٲ�\n- [[�׶��Կ����ܽ�]] �� �׶��Թ�ʶ��Ҫ\n- [[tutorial]] �� Dendron ʹ�ý̳�\n\n## �㼶����\n\n### ������¼\n\n- [[������¼.2026-05-01_0234-AI��ӡ���̼�������¼]]\n- [[������¼.2026-05-03_������ӡ��MQTT������¼]]\n- [[������¼.2026-05-06_LVGL��������ģʽ��������ƬUI��ֲ�ܽ�]]\n- [[������¼.2026-05-06_��������MP3¼���ϴ���ASR�Ų��ܽ�]]\n- [[������¼.2026-05-07-�������ֿ����ȶ��Կ�����Ҫ]]\n- [[������¼.2026-05-07_LVGL�����ά����WSԤ��UI�����ܽ�]]\n- [[������¼.2026-05-07_LVGLģʽ��Ƭ��Դ�붯Ч�����ܽ�]]\n- [[������¼.2026-05-07_������ӡ�������㷨�����빤����¼]]\n- [[������¼.2026-05-14_P36��ά��ҳ�̼��汾����ʾ������¼]]\n- [[������¼.2026-05-15_��������ҳ��������֡����������¼]]\n- [[������¼.2026-05-15_��ҳ��ģʽ���ع��ܿ�����¼]]\n- [[������¼.2026-05-18_��������������ȴ����ɿ�����¼]]\n- [[������¼.2026-05-18_ģʽͼ��BMP24תRGB565ѹ���Ż�������¼]]\n- [[������¼.2026-05-19_Flash���ѻ���ͼ��ӡ������¼]]\n- [[������¼.2026-05-19_WS����ͼԤ��ѹ�������Ż�������¼]]\n- [[������¼.2026-05-27_��������MQTTЭͬ��TCM�ڴ��Ż�������¼]]\n- [[������¼.AI��ӡ��Ӧ�üܹ��������Ż�����]]\n- [[������¼.BK7252n-LVGL�����Կ���ָ��]]\n- [[������¼.BUG-001-����_Data_Abort_�������徺̬]]\n- [[������¼.BUG-002-LVGL_�ڴ��ط���_Data_Abort]]\n- [[������¼.bk7252n-��¼�̳�]]\n- [[������¼.prn_tune���ڵ�������]]\n- [[������¼.��ӡ������������ϼ�¼]]\n- [[������¼.��Ŀ��������]]\n- [[������¼.��Ŀ������¼�ܸ�]]\n\n### bug-collector\n\n- [[bug-collector]]��������\n\n### оƬSDK���\n\n- [[оƬSDK���.BK7252N-����˵��]]\n\n### ��ӡ����\n\n- [[��ӡ����]]��������\n- [[��ӡ����.01-��һ��-����ʼ����ʱ��]]\n- [[��ӡ����.02-����-��ģʽ״̬]]\n\n- [[�׶��Կ����ܽ�]]\n"
+      "body": "\n# BK7252N AI 打印机固件文档\n\nBK7252N + RT-Thread + LVGL AI 打印机固件项目文档（Dendron）。\n\n## 入口\n\n- [[开发记录.项目开发记录总纲]] — 文档索引与代码映射\n- [[开发记录.项目交接资料]] — 接手清单与模块速查\n- [[阶段性开发总结]] — 阶段性共识纪要\n- [[tutorial]] — Dendron 使用教程\n\n## 层级索引\n\n### 开发记录\n\n- [[开发记录.2026-05-01_0234-AI打印机固件开发记录]]\n- [[开发记录.2026-05-03_热敏打印与MQTT开发记录]]\n- [[开发记录.2026-05-06_LVGL主桌面六模式与语音卡片UI移植总结]]\n- [[开发记录.2026-05-06_语音按键MP3录音上传与ASR排查总结]]\n- [[开发记录.2026-05-07-多语言字库与稳定性开发纪要]]\n- [[开发记录.2026-05-07_LVGL桌面二维码与WS预览UI开发总结]]\n- [[开发记录.2026-05-07_LVGL模式卡片资源与动效开发总结]]\n- [[开发记录.2026-05-07_热敏打印机驱动算法分析与工作记录]]\n- [[开发记录.2026-05-14_P36二维码页固件版本号显示开发记录]]\n- [[开发记录.2026-05-15_语音生成页陪伴机器人帧动画开发记录]]\n- [[开发记录.2026-05-15_首页六模式隐藏功能开发记录]]\n- [[开发记录.2026-05-18_按键发声蜂鸣与等待旋律开发记录]]\n- [[开发记录.2026-05-18_模式图标BMP24转RGB565压缩优化开发记录]]\n- [[开发记录.2026-05-19_Flash假脱机长图打印开发记录]]\n- [[开发记录.2026-05-19_WS热敏图预览压缩质量优化开发记录]]\n- [[开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录]]\n- [[开发记录.AI打印机应用架构评估与优化方向]]\n- [[开发记录.BK7252n-LVGL多语言开发指南]]\n- [[开发记录.BUG-001-按键_Data_Abort_共享缓冲竞态]]\n- [[开发记录.BUG-002-LVGL_内存重分配_Data_Abort]]\n- [[开发记录.bk7252n-烧录教程]]\n- [[开发记录.prn_tune串口调参命令]]\n- [[开发记录.打印机参数排列组合记录]]\n- [[开发记录.项目交接资料]]\n- [[开发记录.项目开发记录总纲]]\n\n### bug-collector\n\n- [[bug-collector]]（索引）\n\n### 芯片SDK相关\n\n- [[芯片SDK相关.BK7252N-编译说明]]\n\n### 打印数据\n\n- [[打印数据]]（索引）\n- [[打印数据.01-上一版-仅开始结束时间]]\n- [[打印数据.02-本版-含模式状态]]\n\n- [[阶段性开发总结]]\n"
     }
   ],
   "noteIndex": {
     "id": "root",
     "title": "root",
-    "desc": "BK7252N AI ��ӡ���̼��ĵ���",
+    "desc": "BK7252N AI 打印机固件文档库",
     "updated": 1780371367067,
     "created": 1595961348801,
     "custom": {
@@ -9532,7 +10266,7 @@
       "fsPath": "notes",
       "name": "Dendron"
     },
-    "contentHash": "801bb942f5d3a833cb045cb9b3abd9d0",
+    "contentHash": "e5d7823b7368b844c5d7bde821080751",
     "links": [
       {
         "type": "wiki",
@@ -9541,24 +10275,24 @@
           "id": "root",
           "vaultName": "Dendron"
         },
-        "value": "������¼.��Ŀ������¼�ܸ�",
+        "value": "开发记录.项目开发记录总纲",
         "position": {
           "start": {
             "line": 8,
             "column": 3,
-            "offset": 96
+            "offset": 83
           },
           "end": {
             "line": 8,
-            "column": 28,
-            "offset": 121
+            "column": 20,
+            "offset": 100
           },
           "indent": []
         },
         "xvault": false,
         "sameFile": false,
         "to": {
-          "fname": "������¼.��Ŀ������¼�ܸ�"
+          "fname": "开发记录.项目开发记录总纲"
         }
       },
       {
@@ -9568,51 +10302,51 @@
           "id": "root",
           "vaultName": "Dendron"
         },
-        "value": "������¼.��Ŀ��������",
+        "value": "开发记录.项目交接资料",
         "position": {
           "start": {
             "line": 9,
             "column": 3,
-            "offset": 143
+            "offset": 115
           },
           "end": {
             "line": 9,
-            "column": 26,
-            "offset": 166
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.��Ŀ��������"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "�׶��Կ����ܽ�",
-        "position": {
-          "start": {
-            "line": 10,
-            "column": 3,
-            "offset": 187
-          },
-          "end": {
-            "line": 10,
             "column": 18,
-            "offset": 202
+            "offset": 130
           },
           "indent": []
         },
         "xvault": false,
         "sameFile": false,
         "to": {
-          "fname": "�׶��Կ����ܽ�"
+          "fname": "开发记录.项目交接资料"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "阶段性开发总结",
+        "position": {
+          "start": {
+            "line": 10,
+            "column": 3,
+            "offset": 145
+          },
+          "end": {
+            "line": 10,
+            "column": 14,
+            "offset": 156
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "阶段性开发总结"
         }
       },
       {
@@ -9627,12 +10361,12 @@
           "start": {
             "line": 11,
             "column": 3,
-            "offset": 219
+            "offset": 169
           },
           "end": {
             "line": 11,
             "column": 15,
-            "offset": 231
+            "offset": 181
           },
           "indent": []
         },
@@ -9649,483 +10383,24 @@
           "id": "root",
           "vaultName": "Dendron"
         },
-        "value": "������¼.2026-05-01_0234-AI��ӡ���̼�������¼",
+        "value": "开发记录.2026-05-01_0234-AI打印机固件开发记录",
         "position": {
           "start": {
             "line": 17,
             "column": 3,
-            "offset": 276
+            "offset": 219
           },
           "end": {
             "line": 17,
-            "column": 48,
-            "offset": 321
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-01_0234-AI��ӡ���̼�������¼"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-03_������ӡ��MQTT������¼",
-        "position": {
-          "start": {
-            "line": 18,
-            "column": 3,
-            "offset": 324
-          },
-          "end": {
-            "line": 18,
-            "column": 46,
-            "offset": 367
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-03_������ӡ��MQTT������¼"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-06_LVGL��������ģʽ��������ƬUI��ֲ�ܽ�",
-        "position": {
-          "start": {
-            "line": 19,
-            "column": 3,
-            "offset": 370
-          },
-          "end": {
-            "line": 19,
-            "column": 57,
-            "offset": 424
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-06_LVGL��������ģʽ��������ƬUI��ֲ�ܽ�"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-06_��������MP3¼���ϴ���ASR�Ų��ܽ�",
-        "position": {
-          "start": {
-            "line": 20,
-            "column": 3,
-            "offset": 427
-          },
-          "end": {
-            "line": 20,
-            "column": 54,
-            "offset": 478
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-06_��������MP3¼���ϴ���ASR�Ų��ܽ�"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-07-�������ֿ����ȶ��Կ�����Ҫ",
-        "position": {
-          "start": {
-            "line": 21,
-            "column": 3,
-            "offset": 481
-          },
-          "end": {
-            "line": 21,
-            "column": 48,
-            "offset": 526
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-07-�������ֿ����ȶ��Կ�����Ҫ"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-07_LVGL�����ά����WSԤ��UI�����ܽ�",
-        "position": {
-          "start": {
-            "line": 22,
-            "column": 3,
-            "offset": 529
-          },
-          "end": {
-            "line": 22,
-            "column": 54,
-            "offset": 580
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-07_LVGL�����ά����WSԤ��UI�����ܽ�"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-07_LVGLģʽ��Ƭ��Դ�붯Ч�����ܽ�",
-        "position": {
-          "start": {
-            "line": 23,
-            "column": 3,
-            "offset": 583
-          },
-          "end": {
-            "line": 23,
-            "column": 48,
-            "offset": 628
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-07_LVGLģʽ��Ƭ��Դ�붯Ч�����ܽ�"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-07_������ӡ�������㷨�����빤����¼",
-        "position": {
-          "start": {
-            "line": 24,
-            "column": 3,
-            "offset": 631
-          },
-          "end": {
-            "line": 24,
-            "column": 52,
-            "offset": 680
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-07_������ӡ�������㷨�����빤����¼"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-14_P36��ά��ҳ�̼��汾����ʾ������¼",
-        "position": {
-          "start": {
-            "line": 25,
-            "column": 3,
-            "offset": 683
-          },
-          "end": {
-            "line": 25,
-            "column": 52,
-            "offset": 732
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-14_P36��ά��ҳ�̼��汾����ʾ������¼"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-15_��������ҳ��������֡����������¼",
-        "position": {
-          "start": {
-            "line": 26,
-            "column": 3,
-            "offset": 735
-          },
-          "end": {
-            "line": 26,
-            "column": 55,
-            "offset": 787
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-15_��������ҳ��������֡����������¼"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-15_��ҳ��ģʽ���ع��ܿ�����¼",
-        "position": {
-          "start": {
-            "line": 27,
-            "column": 3,
-            "offset": 790
-          },
-          "end": {
-            "line": 27,
-            "column": 46,
-            "offset": 833
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-15_��ҳ��ģʽ���ع��ܿ�����¼"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-18_��������������ȴ����ɿ�����¼",
-        "position": {
-          "start": {
-            "line": 28,
-            "column": 3,
-            "offset": 836
-          },
-          "end": {
-            "line": 28,
-            "column": 52,
-            "offset": 885
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-18_��������������ȴ����ɿ�����¼"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-18_ģʽͼ��BMP24תRGB565ѹ���Ż�������¼",
-        "position": {
-          "start": {
-            "line": 29,
-            "column": 3,
-            "offset": 888
-          },
-          "end": {
-            "line": 29,
-            "column": 56,
-            "offset": 941
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-18_ģʽͼ��BMP24תRGB565ѹ���Ż�������¼"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-19_Flash���ѻ���ͼ��ӡ������¼",
-        "position": {
-          "start": {
-            "line": 30,
-            "column": 3,
-            "offset": 944
-          },
-          "end": {
-            "line": 30,
-            "column": 49,
-            "offset": 990
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-19_Flash���ѻ���ͼ��ӡ������¼"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-19_WS����ͼԤ��ѹ�������Ż�������¼",
-        "position": {
-          "start": {
-            "line": 31,
-            "column": 3,
-            "offset": 993
-          },
-          "end": {
-            "line": 31,
-            "column": 53,
-            "offset": 1043
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-19_WS����ͼԤ��ѹ�������Ż�������¼"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.2026-05-27_��������MQTTЭͬ��TCM�ڴ��Ż�������¼",
-        "position": {
-          "start": {
-            "line": 32,
-            "column": 3,
-            "offset": 1046
-          },
-          "end": {
-            "line": 32,
-            "column": 58,
-            "offset": 1101
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.2026-05-27_��������MQTTЭͬ��TCM�ڴ��Ż�������¼"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.AI��ӡ��Ӧ�üܹ��������Ż�����",
-        "position": {
-          "start": {
-            "line": 33,
-            "column": 3,
-            "offset": 1104
-          },
-          "end": {
-            "line": 33,
-            "column": 40,
-            "offset": 1141
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.AI��ӡ��Ӧ�üܹ��������Ż�����"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.BK7252n-LVGL�����Կ���ָ��",
-        "position": {
-          "start": {
-            "line": 34,
-            "column": 3,
-            "offset": 1144
-          },
-          "end": {
-            "line": 34,
             "column": 39,
-            "offset": 1180
+            "offset": 255
           },
           "indent": []
         },
         "xvault": false,
         "sameFile": false,
         "to": {
-          "fname": "������¼.BK7252n-LVGL�����Կ���ָ��"
+          "fname": "开发记录.2026-05-01_0234-AI打印机固件开发记录"
         }
       },
       {
@@ -10135,24 +10410,24 @@
           "id": "root",
           "vaultName": "Dendron"
         },
-        "value": "������¼.BUG-001-����_Data_Abort_�������徺̬",
+        "value": "开发记录.2026-05-03_热敏打印与MQTT开发记录",
         "position": {
           "start": {
-            "line": 35,
+            "line": 18,
             "column": 3,
-            "offset": 1183
+            "offset": 258
           },
           "end": {
-            "line": 35,
-            "column": 48,
-            "offset": 1228
+            "line": 18,
+            "column": 36,
+            "offset": 291
           },
           "indent": []
         },
         "xvault": false,
         "sameFile": false,
         "to": {
-          "fname": "������¼.BUG-001-����_Data_Abort_�������徺̬"
+          "fname": "开发记录.2026-05-03_热敏打印与MQTT开发记录"
         }
       },
       {
@@ -10162,24 +10437,294 @@
           "id": "root",
           "vaultName": "Dendron"
         },
-        "value": "������¼.BUG-002-LVGL_�ڴ��ط���_Data_Abort",
+        "value": "开发记录.2026-05-06_LVGL主桌面六模式与语音卡片UI移植总结",
         "position": {
           "start": {
-            "line": 36,
+            "line": 19,
             "column": 3,
-            "offset": 1231
+            "offset": 294
           },
           "end": {
-            "line": 36,
+            "line": 19,
+            "column": 44,
+            "offset": 335
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.2026-05-06_LVGL主桌面六模式与语音卡片UI移植总结"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.2026-05-06_语音按键MP3录音上传与ASR排查总结",
+        "position": {
+          "start": {
+            "line": 20,
+            "column": 3,
+            "offset": 338
+          },
+          "end": {
+            "line": 20,
+            "column": 42,
+            "offset": 377
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.2026-05-06_语音按键MP3录音上传与ASR排查总结"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.2026-05-07-多语言字库与稳定性开发纪要",
+        "position": {
+          "start": {
+            "line": 21,
+            "column": 3,
+            "offset": 380
+          },
+          "end": {
+            "line": 21,
+            "column": 36,
+            "offset": 413
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.2026-05-07-多语言字库与稳定性开发纪要"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.2026-05-07_LVGL桌面二维码与WS预览UI开发总结",
+        "position": {
+          "start": {
+            "line": 22,
+            "column": 3,
+            "offset": 416
+          },
+          "end": {
+            "line": 22,
+            "column": 43,
+            "offset": 456
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.2026-05-07_LVGL桌面二维码与WS预览UI开发总结"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.2026-05-07_LVGL模式卡片资源与动效开发总结",
+        "position": {
+          "start": {
+            "line": 23,
+            "column": 3,
+            "offset": 459
+          },
+          "end": {
+            "line": 23,
+            "column": 40,
+            "offset": 496
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.2026-05-07_LVGL模式卡片资源与动效开发总结"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.2026-05-07_热敏打印机驱动算法分析与工作记录",
+        "position": {
+          "start": {
+            "line": 24,
+            "column": 3,
+            "offset": 499
+          },
+          "end": {
+            "line": 24,
+            "column": 39,
+            "offset": 535
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.2026-05-07_热敏打印机驱动算法分析与工作记录"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.2026-05-14_P36二维码页固件版本号显示开发记录",
+        "position": {
+          "start": {
+            "line": 25,
+            "column": 3,
+            "offset": 538
+          },
+          "end": {
+            "line": 25,
+            "column": 41,
+            "offset": 576
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.2026-05-14_P36二维码页固件版本号显示开发记录"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.2026-05-15_语音生成页陪伴机器人帧动画开发记录",
+        "position": {
+          "start": {
+            "line": 26,
+            "column": 3,
+            "offset": 579
+          },
+          "end": {
+            "line": 26,
+            "column": 40,
+            "offset": 616
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.2026-05-15_语音生成页陪伴机器人帧动画开发记录"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.2026-05-15_首页六模式隐藏功能开发记录",
+        "position": {
+          "start": {
+            "line": 27,
+            "column": 3,
+            "offset": 619
+          },
+          "end": {
+            "line": 27,
+            "column": 36,
+            "offset": 652
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.2026-05-15_首页六模式隐藏功能开发记录"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.2026-05-18_按键发声蜂鸣与等待旋律开发记录",
+        "position": {
+          "start": {
+            "line": 28,
+            "column": 3,
+            "offset": 655
+          },
+          "end": {
+            "line": 28,
+            "column": 38,
+            "offset": 690
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.2026-05-18_按键发声蜂鸣与等待旋律开发记录"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.2026-05-18_模式图标BMP24转RGB565压缩优化开发记录",
+        "position": {
+          "start": {
+            "line": 29,
+            "column": 3,
+            "offset": 693
+          },
+          "end": {
+            "line": 29,
             "column": 47,
-            "offset": 1275
+            "offset": 737
           },
           "indent": []
         },
         "xvault": false,
         "sameFile": false,
         "to": {
-          "fname": "������¼.BUG-002-LVGL_�ڴ��ط���_Data_Abort"
+          "fname": "开发记录.2026-05-18_模式图标BMP24转RGB565压缩优化开发记录"
         }
       },
       {
@@ -10189,24 +10734,24 @@
           "id": "root",
           "vaultName": "Dendron"
         },
-        "value": "������¼.bk7252n-��¼�̳�",
+        "value": "开发记录.2026-05-19_Flash假脱机长图打印开发记录",
         "position": {
           "start": {
-            "line": 37,
+            "line": 30,
             "column": 3,
-            "offset": 1278
+            "offset": 740
           },
           "end": {
-            "line": 37,
-            "column": 29,
-            "offset": 1304
+            "line": 30,
+            "column": 39,
+            "offset": 776
           },
           "indent": []
         },
         "xvault": false,
         "sameFile": false,
         "to": {
-          "fname": "������¼.bk7252n-��¼�̳�"
+          "fname": "开发记录.2026-05-19_Flash假脱机长图打印开发记录"
         }
       },
       {
@@ -10216,24 +10761,24 @@
           "id": "root",
           "vaultName": "Dendron"
         },
-        "value": "������¼.prn_tune���ڵ�������",
+        "value": "开发记录.2026-05-19_WS热敏图预览压缩质量优化开发记录",
         "position": {
           "start": {
-            "line": 38,
+            "line": 31,
             "column": 3,
-            "offset": 1307
+            "offset": 779
           },
           "end": {
-            "line": 38,
-            "column": 34,
-            "offset": 1338
+            "line": 31,
+            "column": 40,
+            "offset": 816
           },
           "indent": []
         },
         "xvault": false,
         "sameFile": false,
         "to": {
-          "fname": "������¼.prn_tune���ڵ�������"
+          "fname": "开发记录.2026-05-19_WS热敏图预览压缩质量优化开发记录"
         }
       },
       {
@@ -10243,24 +10788,24 @@
           "id": "root",
           "vaultName": "Dendron"
         },
-        "value": "������¼.��ӡ������������ϼ�¼",
+        "value": "开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录",
         "position": {
           "start": {
-            "line": 39,
+            "line": 32,
             "column": 3,
-            "offset": 1341
+            "offset": 819
           },
           "end": {
-            "line": 39,
-            "column": 33,
-            "offset": 1371
+            "line": 32,
+            "column": 45,
+            "offset": 861
           },
           "indent": []
         },
         "xvault": false,
         "sameFile": false,
         "to": {
-          "fname": "������¼.��ӡ������������ϼ�¼"
+          "fname": "开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录"
         }
       },
       {
@@ -10270,51 +10815,240 @@
           "id": "root",
           "vaultName": "Dendron"
         },
-        "value": "������¼.��Ŀ��������",
+        "value": "开发记录.AI打印机应用架构评估与优化方向",
         "position": {
           "start": {
-            "line": 40,
+            "line": 33,
             "column": 3,
-            "offset": 1374
+            "offset": 864
           },
           "end": {
-            "line": 40,
-            "column": 26,
-            "offset": 1397
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "������¼.��Ŀ��������"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "������¼.��Ŀ������¼�ܸ�",
-        "position": {
-          "start": {
-            "line": 41,
-            "column": 3,
-            "offset": 1400
-          },
-          "end": {
-            "line": 41,
+            "line": 33,
             "column": 28,
-            "offset": 1425
+            "offset": 889
           },
           "indent": []
         },
         "xvault": false,
         "sameFile": false,
         "to": {
-          "fname": "������¼.��Ŀ������¼�ܸ�"
+          "fname": "开发记录.AI打印机应用架构评估与优化方向"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.BK7252n-LVGL多语言开发指南",
+        "position": {
+          "start": {
+            "line": 34,
+            "column": 3,
+            "offset": 892
+          },
+          "end": {
+            "line": 34,
+            "column": 31,
+            "offset": 920
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.BK7252n-LVGL多语言开发指南"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.BUG-001-按键_Data_Abort_共享缓冲竞态",
+        "position": {
+          "start": {
+            "line": 35,
+            "column": 3,
+            "offset": 923
+          },
+          "end": {
+            "line": 35,
+            "column": 40,
+            "offset": 960
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.BUG-001-按键_Data_Abort_共享缓冲竞态"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.BUG-002-LVGL_内存重分配_Data_Abort",
+        "position": {
+          "start": {
+            "line": 36,
+            "column": 3,
+            "offset": 963
+          },
+          "end": {
+            "line": 36,
+            "column": 41,
+            "offset": 1001
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.BUG-002-LVGL_内存重分配_Data_Abort"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.bk7252n-烧录教程",
+        "position": {
+          "start": {
+            "line": 37,
+            "column": 3,
+            "offset": 1004
+          },
+          "end": {
+            "line": 37,
+            "column": 24,
+            "offset": 1025
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.bk7252n-烧录教程"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.prn_tune串口调参命令",
+        "position": {
+          "start": {
+            "line": 38,
+            "column": 3,
+            "offset": 1028
+          },
+          "end": {
+            "line": 38,
+            "column": 26,
+            "offset": 1051
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.prn_tune串口调参命令"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.打印机参数排列组合记录",
+        "position": {
+          "start": {
+            "line": 39,
+            "column": 3,
+            "offset": 1054
+          },
+          "end": {
+            "line": 39,
+            "column": 23,
+            "offset": 1074
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.打印机参数排列组合记录"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.项目交接资料",
+        "position": {
+          "start": {
+            "line": 40,
+            "column": 3,
+            "offset": 1077
+          },
+          "end": {
+            "line": 40,
+            "column": 18,
+            "offset": 1092
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.项目交接资料"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "开发记录.项目开发记录总纲",
+        "position": {
+          "start": {
+            "line": 41,
+            "column": 3,
+            "offset": 1095
+          },
+          "end": {
+            "line": 41,
+            "column": 20,
+            "offset": 1112
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "开发记录.项目开发记录总纲"
         }
       },
       {
@@ -10329,12 +11063,12 @@
           "start": {
             "line": 45,
             "column": 3,
-            "offset": 1448
+            "offset": 1135
           },
           "end": {
             "line": 45,
             "column": 20,
-            "offset": 1465
+            "offset": 1152
           },
           "indent": []
         },
@@ -10351,24 +11085,24 @@
           "id": "root",
           "vaultName": "Dendron"
         },
-        "value": "оƬSDK���.BK7252N-����˵��",
+        "value": "芯片SDK相关.BK7252N-编译说明",
         "position": {
           "start": {
             "line": 49,
             "column": 3,
-            "offset": 1491
+            "offset": 1173
           },
           "end": {
             "line": 49,
-            "column": 31,
-            "offset": 1519
+            "column": 27,
+            "offset": 1197
           },
           "indent": []
         },
         "xvault": false,
         "sameFile": false,
         "to": {
-          "fname": "оƬSDK���.BK7252N-����˵��"
+          "fname": "芯片SDK相关.BK7252N-编译说明"
         }
       },
       {
@@ -10378,137 +11112,137 @@
           "id": "root",
           "vaultName": "Dendron"
         },
-        "value": "��ӡ����",
+        "value": "打印数据",
         "position": {
           "start": {
             "line": 53,
             "column": 3,
-            "offset": 1536
+            "offset": 1211
           },
           "end": {
             "line": 53,
+            "column": 11,
+            "offset": 1219
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "打印数据"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "打印数据.01-上一版-仅开始结束时间",
+        "position": {
+          "start": {
+            "line": 54,
+            "column": 3,
+            "offset": 1226
+          },
+          "end": {
+            "line": 54,
+            "column": 26,
+            "offset": 1249
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "打印数据.01-上一版-仅开始结束时间"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "打印数据.02-本版-含模式状态",
+        "position": {
+          "start": {
+            "line": 55,
+            "column": 3,
+            "offset": 1252
+          },
+          "end": {
+            "line": 55,
+            "column": 23,
+            "offset": 1272
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "打印数据.02-本版-含模式状态"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "root",
+          "vaultName": "Dendron"
+        },
+        "value": "阶段性开发总结",
+        "position": {
+          "start": {
+            "line": 57,
+            "column": 3,
+            "offset": 1276
+          },
+          "end": {
+            "line": 57,
             "column": 14,
-            "offset": 1547
+            "offset": 1287
           },
           "indent": []
         },
         "xvault": false,
         "sameFile": false,
         "to": {
-          "fname": "��ӡ����"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "��ӡ����.01-��һ��-����ʼ����ʱ��",
-        "position": {
-          "start": {
-            "line": 54,
-            "column": 3,
-            "offset": 1558
-          },
-          "end": {
-            "line": 54,
-            "column": 36,
-            "offset": 1591
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "��ӡ����.01-��һ��-����ʼ����ʱ��"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "��ӡ����.02-����-��ģʽ״̬",
-        "position": {
-          "start": {
-            "line": 55,
-            "column": 3,
-            "offset": 1594
-          },
-          "end": {
-            "line": 55,
-            "column": 29,
-            "offset": 1620
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "��ӡ����.02-����-��ģʽ״̬"
-        }
-      },
-      {
-        "type": "wiki",
-        "from": {
-          "fname": "root",
-          "id": "root",
-          "vaultName": "Dendron"
-        },
-        "value": "�׶��Կ����ܽ�",
-        "position": {
-          "start": {
-            "line": 57,
-            "column": 3,
-            "offset": 1624
-          },
-          "end": {
-            "line": 57,
-            "column": 18,
-            "offset": 1639
-          },
-          "indent": []
-        },
-        "xvault": false,
-        "sameFile": false,
-        "to": {
-          "fname": "�׶��Կ����ܽ�"
+          "fname": "阶段性开发总结"
         }
       }
     ],
     "anchors": {
-      "bk7252n-ai-ӡ̼ĵ": {
+      "bk7252n-ai-打印机固件文档": {
         "type": "header",
-        "text": "BK7252N AI ��ӡ���̼��ĵ�",
-        "value": "bk7252n-ai-ӡ̼ĵ",
+        "text": "BK7252N AI 打印机固件文档",
+        "value": "bk7252n-ai-打印机固件文档",
         "line": 8,
         "column": 0,
         "depth": 1
       },
-      "": {
+      "入口": {
         "type": "header",
-        "text": "���",
-        "value": "",
+        "text": "入口",
+        "value": "入口",
         "line": 12,
         "column": 0,
         "depth": 2
       },
-      "㼶": {
+      "层级索引": {
         "type": "header",
-        "text": "�㼶����",
-        "value": "㼶",
+        "text": "层级索引",
+        "value": "层级索引",
         "line": 19,
         "column": 0,
         "depth": 2
       },
-      "-1": {
+      "开发记录": {
         "type": "header",
-        "text": "������¼",
-        "value": "-1",
+        "text": "开发记录",
+        "value": "开发记录",
         "line": 21,
         "column": 0,
         "depth": 3
@@ -10521,18 +11255,18 @@
         "column": 0,
         "depth": 3
       },
-      "оƭsdk": {
+      "芯片sdk相关": {
         "type": "header",
-        "text": "оƬSDK���",
-        "value": "оƭsdk",
+        "text": "芯片SDK相关",
+        "value": "芯片sdk相关",
         "line": 53,
         "column": 0,
         "depth": 3
       },
-      "ӡ": {
+      "打印数据": {
         "type": "header",
-        "text": "��ӡ����",
-        "value": "ӡ",
+        "text": "打印数据",
+        "value": "打印数据",
         "line": 57,
         "column": 0,
         "depth": 3
@@ -10543,12 +11277,12 @@
       "c1bs7wsjfbhb0zipaywqv1",
       "b214abeb9f8f17aa994522",
       "9fd53d681f5e8043762252",
-      "x43b2g7jzkj4yilx9xlswpb",
-      "vk70m20t3p71hgio6ei0bnn"
+      "w0x0z2descd3ztesnx5y6au",
+      "iavnwk4paxjpretttwfawte"
     ],
     "parent": null,
     "data": {},
-    "body": "\n# BK7252N AI ��ӡ���̼��ĵ�\n\nBK7252N + RT-Thread + LVGL AI ��ӡ���̼���Ŀ�ĵ���Dendron����\n\n## ���\n\n- [[������¼.��Ŀ������¼�ܸ�]] �� �ĵ����������ӳ��\n- [[������¼.��Ŀ��������]] �� �����嵥��ģ���ٲ�\n- [[�׶��Կ����ܽ�]] �� �׶��Թ�ʶ��Ҫ\n- [[tutorial]] �� Dendron ʹ�ý̳�\n\n## �㼶����\n\n### ������¼\n\n- [[������¼.2026-05-01_0234-AI��ӡ���̼�������¼]]\n- [[������¼.2026-05-03_������ӡ��MQTT������¼]]\n- [[������¼.2026-05-06_LVGL��������ģʽ��������ƬUI��ֲ�ܽ�]]\n- [[������¼.2026-05-06_��������MP3¼���ϴ���ASR�Ų��ܽ�]]\n- [[������¼.2026-05-07-�������ֿ����ȶ��Կ�����Ҫ]]\n- [[������¼.2026-05-07_LVGL�����ά����WSԤ��UI�����ܽ�]]\n- [[������¼.2026-05-07_LVGLģʽ��Ƭ��Դ�붯Ч�����ܽ�]]\n- [[������¼.2026-05-07_������ӡ�������㷨�����빤����¼]]\n- [[������¼.2026-05-14_P36��ά��ҳ�̼��汾����ʾ������¼]]\n- [[������¼.2026-05-15_��������ҳ��������֡����������¼]]\n- [[������¼.2026-05-15_��ҳ��ģʽ���ع��ܿ�����¼]]\n- [[������¼.2026-05-18_��������������ȴ����ɿ�����¼]]\n- [[������¼.2026-05-18_ģʽͼ��BMP24תRGB565ѹ���Ż�������¼]]\n- [[������¼.2026-05-19_Flash���ѻ���ͼ��ӡ������¼]]\n- [[������¼.2026-05-19_WS����ͼԤ��ѹ�������Ż�������¼]]\n- [[������¼.2026-05-27_��������MQTTЭͬ��TCM�ڴ��Ż�������¼]]\n- [[������¼.AI��ӡ��Ӧ�üܹ��������Ż�����]]\n- [[������¼.BK7252n-LVGL�����Կ���ָ��]]\n- [[������¼.BUG-001-����_Data_Abort_�������徺̬]]\n- [[������¼.BUG-002-LVGL_�ڴ��ط���_Data_Abort]]\n- [[������¼.bk7252n-��¼�̳�]]\n- [[������¼.prn_tune���ڵ�������]]\n- [[������¼.��ӡ������������ϼ�¼]]\n- [[������¼.��Ŀ��������]]\n- [[������¼.��Ŀ������¼�ܸ�]]\n\n### bug-collector\n\n- [[bug-collector]]��������\n\n### оƬSDK���\n\n- [[оƬSDK���.BK7252N-����˵��]]\n\n### ��ӡ����\n\n- [[��ӡ����]]��������\n- [[��ӡ����.01-��һ��-����ʼ����ʱ��]]\n- [[��ӡ����.02-����-��ģʽ״̬]]\n\n- [[�׶��Կ����ܽ�]]\n"
+    "body": "\n# BK7252N AI 打印机固件文档\n\nBK7252N + RT-Thread + LVGL AI 打印机固件项目文档（Dendron）。\n\n## 入口\n\n- [[开发记录.项目开发记录总纲]] — 文档索引与代码映射\n- [[开发记录.项目交接资料]] — 接手清单与模块速查\n- [[阶段性开发总结]] — 阶段性共识纪要\n- [[tutorial]] — Dendron 使用教程\n\n## 层级索引\n\n### 开发记录\n\n- [[开发记录.2026-05-01_0234-AI打印机固件开发记录]]\n- [[开发记录.2026-05-03_热敏打印与MQTT开发记录]]\n- [[开发记录.2026-05-06_LVGL主桌面六模式与语音卡片UI移植总结]]\n- [[开发记录.2026-05-06_语音按键MP3录音上传与ASR排查总结]]\n- [[开发记录.2026-05-07-多语言字库与稳定性开发纪要]]\n- [[开发记录.2026-05-07_LVGL桌面二维码与WS预览UI开发总结]]\n- [[开发记录.2026-05-07_LVGL模式卡片资源与动效开发总结]]\n- [[开发记录.2026-05-07_热敏打印机驱动算法分析与工作记录]]\n- [[开发记录.2026-05-14_P36二维码页固件版本号显示开发记录]]\n- [[开发记录.2026-05-15_语音生成页陪伴机器人帧动画开发记录]]\n- [[开发记录.2026-05-15_首页六模式隐藏功能开发记录]]\n- [[开发记录.2026-05-18_按键发声蜂鸣与等待旋律开发记录]]\n- [[开发记录.2026-05-18_模式图标BMP24转RGB565压缩优化开发记录]]\n- [[开发记录.2026-05-19_Flash假脱机长图打印开发记录]]\n- [[开发记录.2026-05-19_WS热敏图预览压缩质量优化开发记录]]\n- [[开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录]]\n- [[开发记录.AI打印机应用架构评估与优化方向]]\n- [[开发记录.BK7252n-LVGL多语言开发指南]]\n- [[开发记录.BUG-001-按键_Data_Abort_共享缓冲竞态]]\n- [[开发记录.BUG-002-LVGL_内存重分配_Data_Abort]]\n- [[开发记录.bk7252n-烧录教程]]\n- [[开发记录.prn_tune串口调参命令]]\n- [[开发记录.打印机参数排列组合记录]]\n- [[开发记录.项目交接资料]]\n- [[开发记录.项目开发记录总纲]]\n\n### bug-collector\n\n- [[bug-collector]]（索引）\n\n### 芯片SDK相关\n\n- [[芯片SDK相关.BK7252N-编译说明]]\n\n### 打印数据\n\n- [[打印数据]]（索引）\n- [[打印数据.01-上一版-仅开始结束时间]]\n- [[打印数据.02-本版-含模式状态]]\n\n- [[阶段性开发总结]]\n"
   },
   "vaults": [
     {
