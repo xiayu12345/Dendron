@@ -10,8 +10,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1780471849645,
-      "created": 1780471849645,
+      "updated": 1780476105908,
+      "created": 1780476105908,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -1033,13 +1033,13 @@
         "29688af9637cf23baf5a53",
         "b214abeb9f8f17aa994522",
         "9fd53d681f5e8043762252",
-        "lo6380sffe7882xxcsgnwby",
-        "847relnusoxh7chgkhm5d4x"
+        "xsq1mkrqaj59l9qxnxi8lpj",
+        "viweupjb0svnabkzcx8hurp"
       ],
       "parent": "projects",
       "data": {}
     },
-    "847relnusoxh7chgkhm5d4x": {
+    "viweupjb0svnabkzcx8hurp": {
       "fname": "项目.BK7252N-AI打印机.芯片SDK相关",
       "stub": true,
       "vault": {
@@ -1048,9 +1048,9 @@
       },
       "schemaStub": false,
       "type": "note",
-      "updated": 1780471848099,
-      "created": 1780471848099,
-      "id": "847relnusoxh7chgkhm5d4x",
+      "updated": 1780476104398,
+      "created": 1780476104398,
+      "id": "viweupjb0svnabkzcx8hurp",
       "desc": "",
       "links": [],
       "anchors": {},
@@ -1211,10 +1211,10 @@
         }
       },
       "children": [],
-      "parent": "847relnusoxh7chgkhm5d4x",
+      "parent": "viweupjb0svnabkzcx8hurp",
       "data": {}
     },
-    "lo6380sffe7882xxcsgnwby": {
+    "xsq1mkrqaj59l9qxnxi8lpj": {
       "fname": "项目.BK7252N-AI打印机.开发记录",
       "stub": true,
       "vault": {
@@ -1223,9 +1223,9 @@
       },
       "schemaStub": false,
       "type": "note",
-      "updated": 1780471848091,
-      "created": 1780471848091,
-      "id": "lo6380sffe7882xxcsgnwby",
+      "updated": 1780476104385,
+      "created": 1780476104385,
+      "id": "xsq1mkrqaj59l9qxnxi8lpj",
       "desc": "",
       "links": [],
       "anchors": {},
@@ -1968,7 +1968,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "6d428def14b8ffdc828f43": {
@@ -2621,7 +2621,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "69fab073dcdd31f425755e": {
@@ -3063,7 +3063,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "e219878f58bd997c455ca8": {
@@ -3493,7 +3493,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "40a0c1d0224426bb0700ea": {
@@ -3745,7 +3745,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "782168230f49885740b191": {
@@ -3837,7 +3837,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "7e757dba3afa1d4361d951": {
@@ -4055,7 +4055,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "86d6a17041618132f76abf": {
@@ -4393,7 +4393,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "4b4a79d037a6f442a84233": {
@@ -4601,7 +4601,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "8e26e8749bccd9d3739356": {
@@ -4908,7 +4908,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "cebf2bd5cc8bb777ea20e6": {
@@ -5126,7 +5126,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "5c0ce6ce26de9213ed1377": {
@@ -5306,7 +5306,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "60bc7871dc2e4626e2aeb0": {
@@ -5446,7 +5446,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "238cee9d6e5d3351d1562b": {
@@ -5640,7 +5640,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "00fdb8e252ec8a7396bf8e": {
@@ -5796,7 +5796,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "2207f5431c8c6bd7291f9f": {
@@ -6032,7 +6032,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "ce0040cd0ceb63ee76fdd1": {
@@ -6204,7 +6204,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "0a6f1fae03382ed23a61e4": {
@@ -6593,7 +6593,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "0faf28cd9ea6b2133119c7": {
@@ -6801,7 +6801,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "124fc2bd28f4ff32a71b93": {
@@ -7063,7 +7063,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "f068cc85f553b7fa6f808b": {
@@ -7363,7 +7363,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "6b99e0b40de02b4f011208": {
@@ -7525,7 +7525,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "c82a45ea03c9396b83d2e6": {
@@ -7781,7 +7781,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "4b9db1416687083f72ec72": {
@@ -7989,7 +7989,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "795a1a96f9c620254c9633": {
@@ -8267,7 +8267,7 @@
         }
       },
       "children": [],
-      "parent": "lo6380sffe7882xxcsgnwby",
+      "parent": "xsq1mkrqaj59l9qxnxi8lpj",
       "data": {}
     },
     "9fd53d681f5e8043762252": {

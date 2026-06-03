@@ -1,22 +1,64 @@
-/* 取消宽屏居中留白，避免侧栏与正文之间出现大片空白 */
-.site-layout-sidebar {
-  padding-left: 0 !important;
-  width: 220px !important;
-  flex: 0 0 220px !important;
-  min-width: 220px !important;
+/* Centered layout: sidebar + wide article, balanced side margins */
+:root {
+  --dendron-layout-max: 1400px;
+  --dendron-sidebar-width: 240px;
+  --dendron-page-padding: max(24px, 4vw);
 }
 
+/* Header follows the same centered width as body */
 .ant-layout-header .ant-row {
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 24px !important;
+  max-width: var(--dendron-layout-max) !important;
+  margin: 0 auto !important;
+  padding: 0 var(--dendron-page-padding) !important;
+}
+
+/* Center sidebar + main content together */
+body .ant-layout > section.ant-layout {
+  max-width: var(--dendron-layout-max) !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  padding: 0 var(--dendron-page-padding) !important;
+  box-sizing: border-box !important;
+}
+
+.site-layout-sidebar {
+  padding-left: 0 !important;
+  width: var(--dendron-sidebar-width) !important;
+  flex: 0 0 var(--dendron-sidebar-width) !important;
+  min-width: var(--dendron-sidebar-width) !important;
+}
+
+/* Sidebar in document flow (no fixed-position gap) */
+.site-layout-sidebar .ant-layout-sider {
+  position: sticky !important;
+  top: 64px !important;
+  left: auto !important;
+  width: var(--dendron-sidebar-width) !important;
+  max-width: var(--dendron-sidebar-width) !important;
+  flex: 0 0 var(--dendron-sidebar-width) !important;
+  height: calc(100vh - 64px) !important;
 }
 
 .side-layout-main {
   flex: 1 1 auto !important;
+  min-width: 0 !important;
   max-width: none !important;
+  width: auto !important;
 }
 
 .main-content {
-  max-width: 960px;
+  max-width: none !important;
+}
+
+/* Wider article column on desktop */
+@media (min-width: 768px) {
+  .main-content .ant-col-md-18 {
+    flex: 0 0 78% !important;
+    max-width: 78% !important;
+  }
+
+  .main-content .ant-col-md-6 {
+    flex: 0 0 22% !important;
+    max-width: 22% !important;
+  }
 }
