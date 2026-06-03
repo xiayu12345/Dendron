@@ -1,6 +1,4 @@
 
-# BK7252N AI 打印机
-
 **工程**：`bk7252n_sdk-SDK_3.0.76.1_witch_lcd`（BK7252N + RT-Thread + LVGL）
 
 ## 快速入口

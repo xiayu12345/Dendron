@@ -129,6 +129,7 @@
     "searchMode": "search",
     "siteUrl": "https://xiayu12345.github.io",
     "assetsPrefix": "/Dendron",
+    "theme": "custom",
     "siteFaviconPath": "favicon.ico",
     "siteIndex": "root"
   }

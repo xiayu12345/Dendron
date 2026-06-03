@@ -10,8 +10,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1780470460195,
-      "created": 1780470460195,
+      "updated": 1780471849645,
+      "created": 1780471849645,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -35,7 +35,7 @@
         "fsPath": "notes",
         "name": "Dendron"
       },
-      "contentHash": "d51a8f7f24bc2acc9ea8f5b1c7c06a7c",
+      "contentHash": "e7a2abab31fd5da92a5ad2e013605349",
       "links": [
         {
           "type": "wiki",
@@ -47,14 +47,14 @@
           "value": "项目",
           "position": {
             "start": {
-              "line": 8,
+              "line": 6,
               "column": 3,
-              "offset": 51
+              "offset": 41
             },
             "end": {
-              "line": 8,
+              "line": 6,
               "column": 9,
-              "offset": 57
+              "offset": 47
             },
             "indent": []
           },
@@ -74,14 +74,14 @@
           "value": "项目.BK7252N-AI打印机",
           "position": {
             "start": {
-              "line": 9,
+              "line": 7,
               "column": 3,
-              "offset": 69
+              "offset": 59
             },
             "end": {
-              "line": 9,
+              "line": 7,
               "column": 23,
-              "offset": 89
+              "offset": 79
             },
             "indent": []
           },
@@ -101,14 +101,14 @@
           "value": "tutorial",
           "position": {
             "start": {
-              "line": 13,
+              "line": 11,
               "column": 3,
-              "offset": 138
+              "offset": 128
             },
             "end": {
-              "line": 13,
+              "line": 11,
               "column": 15,
-              "offset": 150
+              "offset": 140
             },
             "indent": []
           },
@@ -120,19 +120,11 @@
         }
       ],
       "anchors": {
-        "个人开发笔记": {
-          "type": "header",
-          "text": "个人开发笔记",
-          "value": "个人开发笔记",
-          "line": 8,
-          "column": 0,
-          "depth": 1
-        },
         "项目": {
           "type": "header",
           "text": "项目",
           "value": "项目",
-          "line": 12,
+          "line": 10,
           "column": 0,
           "depth": 2
         },
@@ -140,7 +132,7 @@
           "type": "header",
           "text": "工作区",
           "value": "工作区",
-          "line": 17,
+          "line": 15,
           "column": 0,
           "depth": 2
         }
@@ -163,9 +155,9 @@
         "fsPath": "notes",
         "name": "Dendron"
       },
-      "contentHash": "2a22a2322318d34692d623ee2ba8e195",
-      "updated": 1780457582226,
-      "created": 1780457582226,
+      "contentHash": "72406f1ea6049bb4b1cb5ceeebf2507b",
+      "updated": 1780471848001,
+      "created": 1780471848001,
       "links": [
         {
           "type": "wiki",
@@ -177,14 +169,14 @@
           "value": "项目.BK7252N-AI打印机",
           "position": {
             "start": {
-              "line": 10,
+              "line": 8,
               "column": 52,
-              "offset": 152
+              "offset": 146
             },
             "end": {
-              "line": 10,
+              "line": 8,
               "column": 72,
-              "offset": 172
+              "offset": 166
             },
             "indent": []
           },
@@ -203,14 +195,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 8,
+              "line": 6,
               "column": 3,
-              "offset": 51
+              "offset": 41
             },
             "end": {
-              "line": 8,
+              "line": 6,
               "column": 9,
-              "offset": 57
+              "offset": 47
             },
             "indent": []
           },
@@ -218,19 +210,11 @@
         }
       ],
       "anchors": {
-        "项目": {
-          "type": "header",
-          "text": "项目",
-          "value": "项目",
-          "line": 8,
-          "column": 0,
-          "depth": 1
-        },
         "进行中": {
           "type": "header",
           "text": "进行中",
           "value": "进行中",
-          "line": 12,
+          "line": 10,
           "column": 0,
           "depth": 2
         },
@@ -238,7 +222,7 @@
           "type": "header",
           "text": "添加新项目",
           "value": "添加新项目",
-          "line": 18,
+          "line": 16,
           "column": 0,
           "depth": 2
         }
@@ -260,9 +244,9 @@
         "fsPath": "notes",
         "name": "Dendron"
       },
-      "contentHash": "6abd4e9c05792fa539fde8d62e215522",
-      "updated": 1780457582236,
-      "created": 1780457582236,
+      "contentHash": "b7f6df21b7a56b5fdcba30ba82d0e550",
+      "updated": 1780471848011,
+      "created": 1780471848011,
       "links": [
         {
           "type": "wiki",
@@ -274,14 +258,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.项目开发记录总纲",
           "position": {
             "start": {
-              "line": 8,
+              "line": 6,
               "column": 3,
-              "offset": 103
+              "offset": 85
             },
             "end": {
-              "line": 8,
+              "line": 6,
               "column": 37,
-              "offset": 137
+              "offset": 119
             },
             "indent": []
           },
@@ -301,14 +285,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.项目交接资料",
           "position": {
             "start": {
-              "line": 9,
+              "line": 7,
               "column": 3,
-              "offset": 152
+              "offset": 134
             },
             "end": {
-              "line": 9,
+              "line": 7,
               "column": 35,
-              "offset": 184
+              "offset": 166
             },
             "indent": []
           },
@@ -328,14 +312,14 @@
           "value": "项目.BK7252N-AI打印机.阶段性开发总结",
           "position": {
             "start": {
-              "line": 10,
+              "line": 8,
               "column": 3,
-              "offset": 199
+              "offset": 181
             },
             "end": {
-              "line": 10,
+              "line": 8,
               "column": 31,
-              "offset": 227
+              "offset": 209
             },
             "indent": []
           },
@@ -355,14 +339,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-01_0234-AI打印机固件开发记录",
           "position": {
             "start": {
-              "line": 23,
+              "line": 21,
               "column": 3,
-              "offset": 522
+              "offset": 504
             },
             "end": {
-              "line": 23,
+              "line": 21,
               "column": 56,
-              "offset": 575
+              "offset": 557
             },
             "indent": []
           },
@@ -382,14 +366,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-03_热敏打印与MQTT开发记录",
           "position": {
             "start": {
-              "line": 24,
+              "line": 22,
               "column": 3,
-              "offset": 578
+              "offset": 560
             },
             "end": {
-              "line": 24,
+              "line": 22,
               "column": 53,
-              "offset": 628
+              "offset": 610
             },
             "indent": []
           },
@@ -409,14 +393,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-06_LVGL主桌面六模式与语音卡片UI移植总结",
           "position": {
             "start": {
-              "line": 25,
+              "line": 23,
               "column": 3,
-              "offset": 631
+              "offset": 613
             },
             "end": {
-              "line": 25,
+              "line": 23,
               "column": 61,
-              "offset": 689
+              "offset": 671
             },
             "indent": []
           },
@@ -436,14 +420,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-06_语音按键MP3录音上传与ASR排查总结",
           "position": {
             "start": {
-              "line": 26,
+              "line": 24,
               "column": 3,
-              "offset": 692
+              "offset": 674
             },
             "end": {
-              "line": 26,
+              "line": 24,
               "column": 59,
-              "offset": 748
+              "offset": 730
             },
             "indent": []
           },
@@ -463,14 +447,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-07-多语言字库与稳定性开发纪要",
           "position": {
             "start": {
-              "line": 27,
+              "line": 25,
               "column": 3,
-              "offset": 751
+              "offset": 733
             },
             "end": {
-              "line": 27,
+              "line": 25,
               "column": 53,
-              "offset": 801
+              "offset": 783
             },
             "indent": []
           },
@@ -490,14 +474,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-07_LVGL桌面二维码与WS预览UI开发总结",
           "position": {
             "start": {
-              "line": 28,
+              "line": 26,
               "column": 3,
-              "offset": 804
+              "offset": 786
             },
             "end": {
-              "line": 28,
+              "line": 26,
               "column": 60,
-              "offset": 861
+              "offset": 843
             },
             "indent": []
           },
@@ -517,14 +501,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-07_LVGL模式卡片资源与动效开发总结",
           "position": {
             "start": {
-              "line": 29,
+              "line": 27,
               "column": 3,
-              "offset": 864
+              "offset": 846
             },
             "end": {
-              "line": 29,
+              "line": 27,
               "column": 57,
-              "offset": 918
+              "offset": 900
             },
             "indent": []
           },
@@ -544,14 +528,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-07_热敏打印机驱动算法分析与工作记录",
           "position": {
             "start": {
-              "line": 30,
+              "line": 28,
               "column": 3,
-              "offset": 921
+              "offset": 903
             },
             "end": {
-              "line": 30,
+              "line": 28,
               "column": 56,
-              "offset": 974
+              "offset": 956
             },
             "indent": []
           },
@@ -571,14 +555,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-14_P36二维码页固件版本号显示开发记录",
           "position": {
             "start": {
-              "line": 31,
+              "line": 29,
               "column": 3,
-              "offset": 977
+              "offset": 959
             },
             "end": {
-              "line": 31,
+              "line": 29,
               "column": 58,
-              "offset": 1032
+              "offset": 1014
             },
             "indent": []
           },
@@ -598,14 +582,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-15_语音生成页陪伴机器人帧动画开发记录",
           "position": {
             "start": {
-              "line": 32,
+              "line": 30,
               "column": 3,
-              "offset": 1035
+              "offset": 1017
             },
             "end": {
-              "line": 32,
+              "line": 30,
               "column": 57,
-              "offset": 1089
+              "offset": 1071
             },
             "indent": []
           },
@@ -625,14 +609,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-15_首页六模式隐藏功能开发记录",
           "position": {
             "start": {
-              "line": 33,
+              "line": 31,
               "column": 3,
-              "offset": 1092
+              "offset": 1074
             },
             "end": {
-              "line": 33,
+              "line": 31,
               "column": 53,
-              "offset": 1142
+              "offset": 1124
             },
             "indent": []
           },
@@ -652,14 +636,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-18_按键发声蜂鸣与等待旋律开发记录",
           "position": {
             "start": {
-              "line": 34,
+              "line": 32,
               "column": 3,
-              "offset": 1145
+              "offset": 1127
             },
             "end": {
-              "line": 34,
+              "line": 32,
               "column": 55,
-              "offset": 1197
+              "offset": 1179
             },
             "indent": []
           },
@@ -679,14 +663,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-18_模式图标BMP24转RGB565压缩优化开发记录",
           "position": {
             "start": {
-              "line": 35,
+              "line": 33,
               "column": 3,
-              "offset": 1200
+              "offset": 1182
             },
             "end": {
-              "line": 35,
+              "line": 33,
               "column": 64,
-              "offset": 1261
+              "offset": 1243
             },
             "indent": []
           },
@@ -706,14 +690,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-19_Flash假脱机长图打印开发记录",
           "position": {
             "start": {
-              "line": 36,
+              "line": 34,
               "column": 3,
-              "offset": 1264
+              "offset": 1246
             },
             "end": {
-              "line": 36,
+              "line": 34,
               "column": 56,
-              "offset": 1317
+              "offset": 1299
             },
             "indent": []
           },
@@ -733,14 +717,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-19_WS热敏图预览压缩质量优化开发记录",
           "position": {
             "start": {
-              "line": 37,
+              "line": 35,
               "column": 3,
-              "offset": 1320
+              "offset": 1302
             },
             "end": {
-              "line": 37,
+              "line": 35,
               "column": 57,
-              "offset": 1374
+              "offset": 1356
             },
             "indent": []
           },
@@ -760,14 +744,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录",
           "position": {
             "start": {
-              "line": 38,
+              "line": 36,
               "column": 3,
-              "offset": 1377
+              "offset": 1359
             },
             "end": {
-              "line": 38,
+              "line": 36,
               "column": 62,
-              "offset": 1436
+              "offset": 1418
             },
             "indent": []
           },
@@ -787,14 +771,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.AI打印机应用架构评估与优化方向",
           "position": {
             "start": {
-              "line": 42,
+              "line": 40,
               "column": 3,
-              "offset": 1450
+              "offset": 1432
             },
             "end": {
-              "line": 42,
+              "line": 40,
               "column": 45,
-              "offset": 1492
+              "offset": 1474
             },
             "indent": []
           },
@@ -814,14 +798,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.BK7252n-LVGL多语言开发指南",
           "position": {
             "start": {
-              "line": 43,
+              "line": 41,
               "column": 3,
-              "offset": 1495
+              "offset": 1477
             },
             "end": {
-              "line": 43,
+              "line": 41,
               "column": 48,
-              "offset": 1540
+              "offset": 1522
             },
             "indent": []
           },
@@ -841,14 +825,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.bk7252n-烧录教程",
           "position": {
             "start": {
-              "line": 44,
+              "line": 42,
               "column": 3,
-              "offset": 1543
+              "offset": 1525
             },
             "end": {
-              "line": 44,
+              "line": 42,
               "column": 41,
-              "offset": 1581
+              "offset": 1563
             },
             "indent": []
           },
@@ -868,14 +852,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.prn_tune串口调参命令",
           "position": {
             "start": {
-              "line": 45,
+              "line": 43,
               "column": 3,
-              "offset": 1584
+              "offset": 1566
             },
             "end": {
-              "line": 45,
+              "line": 43,
               "column": 43,
-              "offset": 1624
+              "offset": 1606
             },
             "indent": []
           },
@@ -895,14 +879,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.打印机参数排列组合记录",
           "position": {
             "start": {
-              "line": 46,
+              "line": 44,
               "column": 3,
-              "offset": 1627
+              "offset": 1609
             },
             "end": {
-              "line": 46,
+              "line": 44,
               "column": 40,
-              "offset": 1664
+              "offset": 1646
             },
             "indent": []
           },
@@ -922,14 +906,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.BUG-001-按键_Data_Abort_共享缓冲竞态",
           "position": {
             "start": {
-              "line": 47,
+              "line": 45,
               "column": 3,
-              "offset": 1667
+              "offset": 1649
             },
             "end": {
-              "line": 47,
+              "line": 45,
               "column": 57,
-              "offset": 1721
+              "offset": 1703
             },
             "indent": []
           },
@@ -949,14 +933,14 @@
           "value": "项目.BK7252N-AI打印机.开发记录.BUG-002-LVGL_内存重分配_Data_Abort",
           "position": {
             "start": {
-              "line": 48,
+              "line": 46,
               "column": 3,
-              "offset": 1724
+              "offset": 1706
             },
             "end": {
-              "line": 48,
+              "line": 46,
               "column": 58,
-              "offset": 1779
+              "offset": 1761
             },
             "indent": []
           },
@@ -975,14 +959,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 10,
+              "line": 8,
               "column": 52,
-              "offset": 152
+              "offset": 146
             },
             "end": {
-              "line": 10,
+              "line": 8,
               "column": 72,
-              "offset": 172
+              "offset": 166
             },
             "indent": []
           },
@@ -997,14 +981,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 9,
+              "line": 7,
               "column": 3,
-              "offset": 69
+              "offset": 59
             },
             "end": {
-              "line": 9,
+              "line": 7,
               "column": 23,
-              "offset": 89
+              "offset": 79
             },
             "indent": []
           },
@@ -1012,19 +996,11 @@
         }
       ],
       "anchors": {
-        "bk7252n-ai-打印机": {
-          "type": "header",
-          "text": "BK7252N AI 打印机",
-          "value": "bk7252n-ai-打印机",
-          "line": 8,
-          "column": 0,
-          "depth": 1
-        },
         "快速入口": {
           "type": "header",
           "text": "快速入口",
           "value": "快速入口",
-          "line": 12,
+          "line": 10,
           "column": 0,
           "depth": 2
         },
@@ -1032,7 +1008,7 @@
           "type": "header",
           "text": "子域",
           "value": "子域",
-          "line": 18,
+          "line": 16,
           "column": 0,
           "depth": 2
         },
@@ -1040,7 +1016,7 @@
           "type": "header",
           "text": "开发记录（按时间）",
           "value": "开发记录按时间",
-          "line": 27,
+          "line": 25,
           "column": 0,
           "depth": 2
         },
@@ -1048,7 +1024,7 @@
           "type": "header",
           "text": "专题与指南",
           "value": "专题与指南",
-          "line": 46,
+          "line": 44,
           "column": 0,
           "depth": 2
         }
@@ -1057,13 +1033,13 @@
         "29688af9637cf23baf5a53",
         "b214abeb9f8f17aa994522",
         "9fd53d681f5e8043762252",
-        "mbdf67704o4svznedu4qpt9",
-        "fnwrltaypl2c41ovy6d6ldk"
+        "lo6380sffe7882xxcsgnwby",
+        "847relnusoxh7chgkhm5d4x"
       ],
       "parent": "projects",
       "data": {}
     },
-    "fnwrltaypl2c41ovy6d6ldk": {
+    "847relnusoxh7chgkhm5d4x": {
       "fname": "项目.BK7252N-AI打印机.芯片SDK相关",
       "stub": true,
       "vault": {
@@ -1072,9 +1048,9 @@
       },
       "schemaStub": false,
       "type": "note",
-      "updated": 1780470458570,
-      "created": 1780470458570,
-      "id": "fnwrltaypl2c41ovy6d6ldk",
+      "updated": 1780471848099,
+      "created": 1780471848099,
+      "id": "847relnusoxh7chgkhm5d4x",
       "desc": "",
       "links": [],
       "anchors": {},
@@ -1235,10 +1211,10 @@
         }
       },
       "children": [],
-      "parent": "fnwrltaypl2c41ovy6d6ldk",
+      "parent": "847relnusoxh7chgkhm5d4x",
       "data": {}
     },
-    "mbdf67704o4svznedu4qpt9": {
+    "lo6380sffe7882xxcsgnwby": {
       "fname": "项目.BK7252N-AI打印机.开发记录",
       "stub": true,
       "vault": {
@@ -1247,9 +1223,9 @@
       },
       "schemaStub": false,
       "type": "note",
-      "updated": 1780470458559,
-      "created": 1780470458559,
-      "id": "mbdf67704o4svznedu4qpt9",
+      "updated": 1780471848091,
+      "created": 1780471848091,
+      "id": "lo6380sffe7882xxcsgnwby",
       "desc": "",
       "links": [],
       "anchors": {},
@@ -1875,14 +1851,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 8,
+              "line": 6,
               "column": 3,
-              "offset": 103
+              "offset": 85
             },
             "end": {
-              "line": 8,
+              "line": 6,
               "column": 37,
-              "offset": 137
+              "offset": 119
             },
             "indent": []
           },
@@ -1992,7 +1968,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "6d428def14b8ffdc828f43": {
@@ -2478,14 +2454,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 9,
+              "line": 7,
               "column": 3,
-              "offset": 152
+              "offset": 134
             },
             "end": {
-              "line": 9,
+              "line": 7,
               "column": 35,
-              "offset": 184
+              "offset": 166
             },
             "indent": []
           },
@@ -2645,7 +2621,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "69fab073dcdd31f425755e": {
@@ -2672,14 +2648,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 46,
+              "line": 44,
               "column": 3,
-              "offset": 1627
+              "offset": 1609
             },
             "end": {
-              "line": 46,
+              "line": 44,
               "column": 40,
-              "offset": 1664
+              "offset": 1646
             },
             "indent": []
           },
@@ -3087,7 +3063,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "e219878f58bd997c455ca8": {
@@ -3168,14 +3144,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 45,
+              "line": 43,
               "column": 3,
-              "offset": 1584
+              "offset": 1566
             },
             "end": {
-              "line": 45,
+              "line": 43,
               "column": 43,
-              "offset": 1624
+              "offset": 1606
             },
             "indent": []
           },
@@ -3517,7 +3493,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "40a0c1d0224426bb0700ea": {
@@ -3544,14 +3520,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 44,
+              "line": 42,
               "column": 3,
-              "offset": 1543
+              "offset": 1525
             },
             "end": {
-              "line": 44,
+              "line": 42,
               "column": 41,
-              "offset": 1581
+              "offset": 1563
             },
             "indent": []
           },
@@ -3769,7 +3745,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "782168230f49885740b191": {
@@ -3796,14 +3772,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 48,
+              "line": 46,
               "column": 3,
-              "offset": 1724
+              "offset": 1706
             },
             "end": {
-              "line": 48,
+              "line": 46,
               "column": 58,
-              "offset": 1779
+              "offset": 1761
             },
             "indent": []
           },
@@ -3861,7 +3837,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "7e757dba3afa1d4361d951": {
@@ -3888,14 +3864,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 47,
+              "line": 45,
               "column": 3,
-              "offset": 1667
+              "offset": 1649
             },
             "end": {
-              "line": 47,
+              "line": 45,
               "column": 57,
-              "offset": 1721
+              "offset": 1703
             },
             "indent": []
           },
@@ -4079,7 +4055,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "86d6a17041618132f76abf": {
@@ -4106,14 +4082,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 43,
+              "line": 41,
               "column": 3,
-              "offset": 1495
+              "offset": 1477
             },
             "end": {
-              "line": 43,
+              "line": 41,
               "column": 48,
-              "offset": 1540
+              "offset": 1522
             },
             "indent": []
           },
@@ -4417,7 +4393,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "4b4a79d037a6f442a84233": {
@@ -4444,14 +4420,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 42,
+              "line": 40,
               "column": 3,
-              "offset": 1450
+              "offset": 1432
             },
             "end": {
-              "line": 42,
+              "line": 40,
               "column": 45,
-              "offset": 1492
+              "offset": 1474
             },
             "indent": []
           },
@@ -4625,7 +4601,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "8e26e8749bccd9d3739356": {
@@ -4679,14 +4655,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 38,
+              "line": 36,
               "column": 3,
-              "offset": 1377
+              "offset": 1359
             },
             "end": {
-              "line": 38,
+              "line": 36,
               "column": 62,
-              "offset": 1436
+              "offset": 1418
             },
             "indent": []
           },
@@ -4932,7 +4908,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "cebf2bd5cc8bb777ea20e6": {
@@ -4959,14 +4935,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 37,
+              "line": 35,
               "column": 3,
-              "offset": 1320
+              "offset": 1302
             },
             "end": {
-              "line": 37,
+              "line": 35,
               "column": 57,
-              "offset": 1374
+              "offset": 1356
             },
             "indent": []
           },
@@ -5150,7 +5126,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "5c0ce6ce26de9213ed1377": {
@@ -5177,14 +5153,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 36,
+              "line": 34,
               "column": 3,
-              "offset": 1264
+              "offset": 1246
             },
             "end": {
-              "line": 36,
+              "line": 34,
               "column": 56,
-              "offset": 1317
+              "offset": 1299
             },
             "indent": []
           },
@@ -5330,7 +5306,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "60bc7871dc2e4626e2aeb0": {
@@ -5357,14 +5333,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 35,
+              "line": 33,
               "column": 3,
-              "offset": 1200
+              "offset": 1182
             },
             "end": {
-              "line": 35,
+              "line": 33,
               "column": 64,
-              "offset": 1261
+              "offset": 1243
             },
             "indent": []
           },
@@ -5470,7 +5446,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "238cee9d6e5d3351d1562b": {
@@ -5497,14 +5473,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 34,
+              "line": 32,
               "column": 3,
-              "offset": 1145
+              "offset": 1127
             },
             "end": {
-              "line": 34,
+              "line": 32,
               "column": 55,
-              "offset": 1197
+              "offset": 1179
             },
             "indent": []
           },
@@ -5664,7 +5640,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "00fdb8e252ec8a7396bf8e": {
@@ -5691,14 +5667,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 33,
+              "line": 31,
               "column": 3,
-              "offset": 1092
+              "offset": 1074
             },
             "end": {
-              "line": 33,
+              "line": 31,
               "column": 53,
-              "offset": 1142
+              "offset": 1124
             },
             "indent": []
           },
@@ -5820,7 +5796,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "2207f5431c8c6bd7291f9f": {
@@ -5847,14 +5823,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 32,
+              "line": 30,
               "column": 3,
-              "offset": 1035
+              "offset": 1017
             },
             "end": {
-              "line": 32,
+              "line": 30,
               "column": 57,
-              "offset": 1089
+              "offset": 1071
             },
             "indent": []
           },
@@ -6056,7 +6032,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "ce0040cd0ceb63ee76fdd1": {
@@ -6083,14 +6059,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 31,
+              "line": 29,
               "column": 3,
-              "offset": 977
+              "offset": 959
             },
             "end": {
-              "line": 31,
+              "line": 29,
               "column": 58,
-              "offset": 1032
+              "offset": 1014
             },
             "indent": []
           },
@@ -6228,7 +6204,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "0a6f1fae03382ed23a61e4": {
@@ -6390,14 +6366,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 30,
+              "line": 28,
               "column": 3,
-              "offset": 921
+              "offset": 903
             },
             "end": {
-              "line": 30,
+              "line": 28,
               "column": 56,
-              "offset": 974
+              "offset": 956
             },
             "indent": []
           },
@@ -6617,7 +6593,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "0faf28cd9ea6b2133119c7": {
@@ -6644,14 +6620,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 29,
+              "line": 27,
               "column": 3,
-              "offset": 864
+              "offset": 846
             },
             "end": {
-              "line": 29,
+              "line": 27,
               "column": 57,
-              "offset": 918
+              "offset": 900
             },
             "indent": []
           },
@@ -6825,7 +6801,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "124fc2bd28f4ff32a71b93": {
@@ -6906,14 +6882,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 28,
+              "line": 26,
               "column": 3,
-              "offset": 804
+              "offset": 786
             },
             "end": {
-              "line": 28,
+              "line": 26,
               "column": 60,
-              "offset": 861
+              "offset": 843
             },
             "indent": []
           },
@@ -7087,7 +7063,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "f068cc85f553b7fa6f808b": {
@@ -7222,14 +7198,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 27,
+              "line": 25,
               "column": 3,
-              "offset": 751
+              "offset": 733
             },
             "end": {
-              "line": 27,
+              "line": 25,
               "column": 53,
-              "offset": 801
+              "offset": 783
             },
             "indent": []
           },
@@ -7387,7 +7363,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "6b99e0b40de02b4f011208": {
@@ -7414,14 +7390,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 26,
+              "line": 24,
               "column": 3,
-              "offset": 692
+              "offset": 674
             },
             "end": {
-              "line": 26,
+              "line": 24,
               "column": 59,
-              "offset": 748
+              "offset": 730
             },
             "indent": []
           },
@@ -7549,7 +7525,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "c82a45ea03c9396b83d2e6": {
@@ -7576,14 +7552,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 25,
+              "line": 23,
               "column": 3,
-              "offset": 631
+              "offset": 613
             },
             "end": {
-              "line": 25,
+              "line": 23,
               "column": 61,
-              "offset": 689
+              "offset": 671
             },
             "indent": []
           },
@@ -7805,7 +7781,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "4b9db1416687083f72ec72": {
@@ -7886,14 +7862,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 24,
+              "line": 22,
               "column": 3,
-              "offset": 578
+              "offset": 560
             },
             "end": {
-              "line": 24,
+              "line": 22,
               "column": 53,
-              "offset": 628
+              "offset": 610
             },
             "indent": []
           },
@@ -8013,7 +7989,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "795a1a96f9c620254c9633": {
@@ -8096,14 +8072,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 23,
+              "line": 21,
               "column": 3,
-              "offset": 522
+              "offset": 504
             },
             "end": {
-              "line": 23,
+              "line": 21,
               "column": 56,
-              "offset": 575
+              "offset": 557
             },
             "indent": []
           },
@@ -8291,7 +8267,7 @@
         }
       },
       "children": [],
-      "parent": "mbdf67704o4svznedu4qpt9",
+      "parent": "lo6380sffe7882xxcsgnwby",
       "data": {}
     },
     "9fd53d681f5e8043762252": {
@@ -8318,14 +8294,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 10,
+              "line": 8,
               "column": 3,
-              "offset": 199
+              "offset": 181
             },
             "end": {
-              "line": 10,
+              "line": 8,
               "column": 31,
-              "offset": 227
+              "offset": 209
             },
             "indent": []
           },
@@ -8962,14 +8938,14 @@
           "type": "backlink",
           "position": {
             "start": {
-              "line": 13,
+              "line": 11,
               "column": 3,
-              "offset": 138
+              "offset": 128
             },
             "end": {
-              "line": 13,
+              "line": 11,
               "column": 15,
-              "offset": 150
+              "offset": 140
             },
             "indent": []
           },
@@ -9072,7 +9048,7 @@
         "fsPath": "notes",
         "name": "Dendron"
       },
-      "contentHash": "d51a8f7f24bc2acc9ea8f5b1c7c06a7c",
+      "contentHash": "e7a2abab31fd5da92a5ad2e013605349",
       "links": [
         {
           "type": "wiki",
@@ -9084,14 +9060,14 @@
           "value": "项目",
           "position": {
             "start": {
-              "line": 8,
+              "line": 6,
               "column": 3,
-              "offset": 51
+              "offset": 41
             },
             "end": {
-              "line": 8,
+              "line": 6,
               "column": 9,
-              "offset": 57
+              "offset": 47
             },
             "indent": []
           },
@@ -9111,14 +9087,14 @@
           "value": "项目.BK7252N-AI打印机",
           "position": {
             "start": {
-              "line": 9,
+              "line": 7,
               "column": 3,
-              "offset": 69
+              "offset": 59
             },
             "end": {
-              "line": 9,
+              "line": 7,
               "column": 23,
-              "offset": 89
+              "offset": 79
             },
             "indent": []
           },
@@ -9138,14 +9114,14 @@
           "value": "tutorial",
           "position": {
             "start": {
-              "line": 13,
+              "line": 11,
               "column": 3,
-              "offset": 138
+              "offset": 128
             },
             "end": {
-              "line": 13,
+              "line": 11,
               "column": 15,
-              "offset": 150
+              "offset": 140
             },
             "indent": []
           },
@@ -9157,19 +9133,11 @@
         }
       ],
       "anchors": {
-        "个人开发笔记": {
-          "type": "header",
-          "text": "个人开发笔记",
-          "value": "个人开发笔记",
-          "line": 8,
-          "column": 0,
-          "depth": 1
-        },
         "项目": {
           "type": "header",
           "text": "项目",
           "value": "项目",
-          "line": 12,
+          "line": 10,
           "column": 0,
           "depth": 2
         },
@@ -9177,7 +9145,7 @@
           "type": "header",
           "text": "工作区",
           "value": "工作区",
-          "line": 17,
+          "line": 15,
           "column": 0,
           "depth": 2
         }
@@ -9188,7 +9156,7 @@
       ],
       "parent": null,
       "data": {},
-      "body": "\n# 个人开发笔记\n\n按**项目**组织的固件与软件开发文档（Dendron）。\n\n## 项目\n\n- [[项目]] — 全部项目索引\n- [[项目.BK7252N-AI打印机]] — BK7252N AI 打印机固件（RT-Thread + LVGL）\n\n## 工作区\n\n- [[tutorial]] — Dendron 使用教程\n"
+      "body": "\n按**项目**组织的固件与软件开发文档（Dendron）。\n\n## 项目\n\n- [[项目]] — 全部项目索引\n- [[项目.BK7252N-AI打印机]] — BK7252N AI 打印机固件（RT-Thread + LVGL）\n\n## 工作区\n\n- [[tutorial]] — Dendron 使用教程\n"
     }
   ],
   "noteIndex": {
@@ -9207,7 +9175,7 @@
       "fsPath": "notes",
       "name": "Dendron"
     },
-    "contentHash": "d51a8f7f24bc2acc9ea8f5b1c7c06a7c",
+    "contentHash": "e7a2abab31fd5da92a5ad2e013605349",
     "links": [
       {
         "type": "wiki",
@@ -9219,14 +9187,14 @@
         "value": "项目",
         "position": {
           "start": {
-            "line": 8,
+            "line": 6,
             "column": 3,
-            "offset": 51
+            "offset": 41
           },
           "end": {
-            "line": 8,
+            "line": 6,
             "column": 9,
-            "offset": 57
+            "offset": 47
           },
           "indent": []
         },
@@ -9246,14 +9214,14 @@
         "value": "项目.BK7252N-AI打印机",
         "position": {
           "start": {
-            "line": 9,
+            "line": 7,
             "column": 3,
-            "offset": 69
+            "offset": 59
           },
           "end": {
-            "line": 9,
+            "line": 7,
             "column": 23,
-            "offset": 89
+            "offset": 79
           },
           "indent": []
         },
@@ -9273,14 +9241,14 @@
         "value": "tutorial",
         "position": {
           "start": {
-            "line": 13,
+            "line": 11,
             "column": 3,
-            "offset": 138
+            "offset": 128
           },
           "end": {
-            "line": 13,
+            "line": 11,
             "column": 15,
-            "offset": 150
+            "offset": 140
           },
           "indent": []
         },
@@ -9292,19 +9260,11 @@
       }
     ],
     "anchors": {
-      "个人开发笔记": {
-        "type": "header",
-        "text": "个人开发笔记",
-        "value": "个人开发笔记",
-        "line": 8,
-        "column": 0,
-        "depth": 1
-      },
       "项目": {
         "type": "header",
         "text": "项目",
         "value": "项目",
-        "line": 12,
+        "line": 10,
         "column": 0,
         "depth": 2
       },
@@ -9312,7 +9272,7 @@
         "type": "header",
         "text": "工作区",
         "value": "工作区",
-        "line": 17,
+        "line": 15,
         "column": 0,
         "depth": 2
       }
@@ -9323,7 +9283,7 @@
     ],
     "parent": null,
     "data": {},
-    "body": "\n# 个人开发笔记\n\n按**项目**组织的固件与软件开发文档（Dendron）。\n\n## 项目\n\n- [[项目]] — 全部项目索引\n- [[项目.BK7252N-AI打印机]] — BK7252N AI 打印机固件（RT-Thread + LVGL）\n\n## 工作区\n\n- [[tutorial]] — Dendron 使用教程\n"
+    "body": "\n按**项目**组织的固件与软件开发文档（Dendron）。\n\n## 项目\n\n- [[项目]] — 全部项目索引\n- [[项目.BK7252N-AI打印机]] — BK7252N AI 打印机固件（RT-Thread + LVGL）\n\n## 工作区\n\n- [[tutorial]] — Dendron 使用教程\n"
   },
   "vaults": [
     {

@@ -1,0 +1,22 @@
+/* 取消宽屏居中留白，避免侧栏与正文之间出现大片空白 */
+.site-layout-sidebar {
+  padding-left: 0 !important;
+  width: 220px !important;
+  flex: 0 0 220px !important;
+  min-width: 220px !important;
+}
+
+.ant-layout-header .ant-row {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 24px !important;
+}
+
+.side-layout-main {
+  flex: 1 1 auto !important;
+  max-width: none !important;
+}
+
+.main-content {
+  max-width: 960px;
+}
