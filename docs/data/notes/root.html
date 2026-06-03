@@ -1,63 +1,63 @@
 <h1 id="root">root<a aria-hidden="true" class="anchor-heading icon-link" href="#root"></a></h1>
-<h1 id="bk7252n-ai-ӡ̼ĵ">BK7252N AI ��ӡ���̼��ĵ�<a aria-hidden="true" class="anchor-heading icon-link" href="#bk7252n-ai-ӡ̼ĵ"></a></h1>
-<p>BK7252N + RT-Thread + LVGL AI ��ӡ���̼���Ŀ�ĵ���Dendron����</p>
-<h2 id="">���<a aria-hidden="true" class="anchor-heading icon-link" href="#"></a></h2>
+<h1 id="bk7252n-ai-打印机固件文档">BK7252N AI 打印机固件文档<a aria-hidden="true" class="anchor-heading icon-link" href="#bk7252n-ai-打印机固件文档"></a></h1>
+<p>BK7252N + RT-Thread + LVGL AI 打印机固件项目文档（Dendron）。</p>
+<h2 id="入口">入口<a aria-hidden="true" class="anchor-heading icon-link" href="#入口"></a></h2>
 <ul>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.��Ŀ������¼�ܸ� (Private)</a> �� �ĵ����������ӳ��</li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.��Ŀ�������� (Private)</a> �� �����嵥��ģ���ٲ�</li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">�׶��Կ����ܽ� (Private)</a> �� �׶��Թ�ʶ��Ҫ</li>
-<li><a href="/notes/c1bs7wsjfbhb0zipaywqv1">Tutorial</a> �� Dendron ʹ�ý̳�</li>
+<li><a href="/notes/62ff4545e5f1373c5cfe01">AI 打印机固件 — 项目开发记录总纲</a> — 文档索引与代码映射</li>
+<li><a href="/notes/6d428def14b8ffdc828f43">AI 打印机固件 — 项目交接资料</a> — 接手清单与模块速查</li>
+<li><a href="/notes/9fd53d681f5e8043762252">阶段性开发总结：打印标定、驱动算法、多语言、UI 与 OTA</a> — 阶段性共识纪要</li>
+<li><a href="/notes/c1bs7wsjfbhb0zipaywqv1">Tutorial</a> — Dendron 使用教程</li>
 </ul>
-<h2 id="㼶">�㼶����<a aria-hidden="true" class="anchor-heading icon-link" href="#㼶"></a></h2>
-<h3 id="-1">������¼<a aria-hidden="true" class="anchor-heading icon-link" href="#-1"></a></h3>
+<h2 id="层级索引">层级索引<a aria-hidden="true" class="anchor-heading icon-link" href="#层级索引"></a></h2>
+<h3 id="开发记录">开发记录<a aria-hidden="true" class="anchor-heading icon-link" href="#开发记录"></a></h3>
 <ul>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-01_0234-AI��ӡ���̼�������¼ (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-03_������ӡ��MQTT������¼ (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-06_LVGL��������ģʽ��������ƬUI��ֲ�ܽ� (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-06_��������MP3¼���ϴ���ASR�Ų��ܽ� (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-07-�������ֿ����ȶ��Կ�����Ҫ (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-07_LVGL�����ά����WSԤ��UI�����ܽ� (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-07_LVGLģʽ��Ƭ��Դ�붯Ч�����ܽ� (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-07_������ӡ�������㷨�����빤����¼ (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-14_P36��ά��ҳ�̼��汾����ʾ������¼ (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-15_��������ҳ��������֡����������¼ (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-15_��ҳ��ģʽ���ع��ܿ�����¼ (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-18_��������������ȴ����ɿ�����¼ (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-18_ģʽͼ��BMP24תRGB565ѹ���Ż�������¼ (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-19_Flash���ѻ���ͼ��ӡ������¼ (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-19_WS����ͼԤ��ѹ�������Ż�������¼ (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.2026-05-27_��������MQTTЭͬ��TCM�ڴ��Ż�������¼ (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.AI��ӡ��Ӧ�üܹ��������Ż����� (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.BK7252n-LVGL�����Կ���ָ�� (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.BUG-001-����_Data_Abort_�������徺̬ (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.BUG-002-LVGL_�ڴ��ط���_Data_Abort (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.bk7252n-��¼�̳� (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.prn_tune���ڵ������� (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.��ӡ������������ϼ�¼ (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.��Ŀ�������� (Private)</a></li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">������¼.��Ŀ������¼�ܸ� (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-01_0234-AI打印机固件开发记录 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-03_热敏打印与MQTT开发记录 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-06_LVGL主桌面六模式与语音卡片UI移植总结 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-06_语音按键MP3录音上传与ASR排查总结 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-07-多语言字库与稳定性开发纪要 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-07_LVGL桌面二维码与WS预览UI开发总结 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-07_LVGL模式卡片资源与动效开发总结 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-07_热敏打印机驱动算法分析与工作记录 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-14_P36二维码页固件版本号显示开发记录 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-15_语音生成页陪伴机器人帧动画开发记录 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-15_首页六模式隐藏功能开发记录 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-18_按键发声蜂鸣与等待旋律开发记录 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-18_模式图标BMP24转RGB565压缩优化开发记录 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-19_Flash假脱机长图打印开发记录 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-19_WS热敏图预览压缩质量优化开发记录 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.2026-05-27_蜂鸣旋律MQTT协同与TCM内存优化开发记录 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.AI打印机应用架构评估与优化方向 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.BK7252n-LVGL多语言开发指南 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.BUG-001-按键_Data_Abort_共享缓冲竞态 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.BUG-002-LVGL_内存重分配_Data_Abort (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.bk7252n-烧录教程 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.prn_tune串口调参命令 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.打印机参数排列组合记录 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.项目交接资料 (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">开发记录.项目开发记录总纲 (Private)</a></li>
 </ul>
 <h3 id="bug-collector">bug-collector<a aria-hidden="true" class="anchor-heading icon-link" href="#bug-collector"></a></h3>
 <ul>
-<li><a href="/notes/29688af9637cf23baf5a53">Bug 收集器（BK7252n + LVGL 打印机固件）</a>��������</li>
+<li><a href="/notes/29688af9637cf23baf5a53">Bug 收集器（BK7252n + LVGL 打印机固件）</a>（索引）</li>
 </ul>
-<h3 id="оƭsdk">оƬSDK���<a aria-hidden="true" class="anchor-heading icon-link" href="#оƭsdk"></a></h3>
+<h3 id="芯片sdk相关">芯片SDK相关<a aria-hidden="true" class="anchor-heading icon-link" href="#芯片sdk相关"></a></h3>
 <ul>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">оƬSDK���.BK7252N-����˵�� (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">芯片SDK相关.BK7252N-编译说明 (Private)</a></li>
 </ul>
-<h3 id="ӡ">��ӡ����<a aria-hidden="true" class="anchor-heading icon-link" href="#ӡ"></a></h3>
+<h3 id="打印数据">打印数据<a aria-hidden="true" class="anchor-heading icon-link" href="#打印数据"></a></h3>
 <ul>
 <li>
-<p><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">��ӡ���� (Private)</a>��������</p>
+<p><a href="/notes/b214abeb9f8f17aa994522">打印数据归档说明</a>（索引）</p>
 </li>
 <li>
-<p><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">��ӡ����.01-��һ��-����ʼ����ʱ�� (Private)</a></p>
+<p><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">打印数据.01-上一版-仅开始结束时间 (Private)</a></p>
 </li>
 <li>
-<p><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">��ӡ����.02-����-��ģʽ״̬ (Private)</a></p>
+<p><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">打印数据.02-本版-含模式状态 (Private)</a></p>
 </li>
 <li>
-<p><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">�׶��Կ����ܽ� (Private)</a></p>
+<p><a href="/notes/9fd53d681f5e8043762252">阶段性开发总结：打印标定、驱动算法、多语言、UI 与 OTA</a></p>
 </li>
 </ul>
 <hr>
