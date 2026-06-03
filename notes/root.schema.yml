@@ -11,4 +11,21 @@
     stub: false
     custom: {}
     parent: root
-    children: []
+    children:
+        - 项目
+        - tutorial
+-
+    id: projects
+    title: 项目
+    desc: ""
+    type: schema
+    updated: 1780371367067
+    created: 1780371367067
+    body: ""
+    fname: 项目.schema
+    data: {}
+    stub: false
+    custom: {}
+    parent: root
+    children:
+        - 项目.BK7252N-AI打印机

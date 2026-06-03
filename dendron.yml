@@ -93,8 +93,8 @@ publishing:
     writeStubs: false
     siteRootDir: docs
     seo:
-        title: BK7252N AI 打印机固件文档
-        description: BK7252N + RT-Thread + LVGL 固件开发记录与交接资料
+        title: 个人开发笔记
+        description: 按项目组织的固件与软件开发文档（Dendron）
     github:
         enableEditLink: true
         editLinkText: Edit this page on GitHub
