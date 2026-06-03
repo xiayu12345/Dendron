@@ -1,6 +1,6 @@
 <h1 id="bk7252n-固件编译说明">BK7252N 固件编译说明<a aria-hidden="true" class="anchor-heading icon-link" href="#bk7252n-固件编译说明"></a></h1>
 <h1 id="bk7252n-固件编译说明-1">BK7252N 固件编译说明<a aria-hidden="true" class="anchor-heading icon-link" href="#bk7252n-固件编译说明-1"></a></h1>
-<p>本文档说明本仓库（<code>bk7252n_sdk-SDK_3.0.76.1_witch_lcd</code>，RT-Thread + Beken BK7252N）在 Linux 下的<strong>编译命令</strong>与<strong>从配置到产物</strong>的完整流程。烧录步骤见同仓库 <a href="/notes/40a0c1d0224426bb0700ea">BK7252N 烧录教程（基于当前工程产物）</a>。</p>
+<p>本文档说明本仓库（<code>bk7252n_sdk-SDK_3.0.76.1_witch_lcd</code>，RT-Thread + Beken BK7252N）在 Linux 下的<strong>编译命令</strong>与<strong>从配置到产物</strong>的完整流程。烧录步骤见同仓库 <a href="/Dendron/notes/40a0c1d0224426bb0700ea">BK7252N 烧录教程（基于当前工程产物）</a>。</p>
 <hr>
 <h2 id="1-环境准备">1. 环境准备<a aria-hidden="true" class="anchor-heading icon-link" href="#1-环境准备"></a></h2>
 <h3 id="11-必备软件">1.1 必备软件<a aria-hidden="true" class="anchor-heading icon-link" href="#11-必备软件"></a></h3>
@@ -27,7 +27,7 @@
 
 <table><thead><tr><th>项目</th><th>说明</th></tr></thead><tbody><tr><td><strong>SCons</strong></td><td>工程使用 SCons 作为构建系统</td></tr><tr><td><strong>Python</strong></td><td>SCons 与 <code>tools/scripts/post_action.py</code> 依赖 Python</td></tr><tr><td><strong>ARM GCC 工具链</strong></td><td><code>arm-none-eabi-gcc</code> 等，<strong>版本需与 <code>rtconfig.py</code> 中 <code>SDK_TOOLCHAIN</code>（当前为 <code>5.4.1</code>）一致</strong></td></tr></tbody></table></div>
 <h3 id="12-工具链路径">1.2 工具链路径<a aria-hidden="true" class="anchor-heading icon-link" href="#12-工具链路径"></a></h3>
-<p>根目录 <a href="/../../rtconfig.py"><code>rtconfig.py</code></a> 默认将 <code>EXEC_PATH</code> 设为：</p>
+<p>根目录 <a href="/Dendron/../../rtconfig.py"><code>rtconfig.py</code></a> 默认将 <code>EXEC_PATH</code> 设为：</p>
 <p><code>/opt/gcc-arm-none-eabi-5_4-2016q3/bin</code></p>
 <p>若工具链安装在其他目录，请设置环境变量 <strong><code>RTT_EXEC_PATH</code></strong> 指向该 <code>bin</code> 目录（末尾带不带 <code>/</code> 一般均可，以本机实测为准）。</p>
 <p>可选：</p>
@@ -55,10 +55,10 @@
 <h2 id="3-编译过程从头到尾">3. 编译过程（从头到尾）<a aria-hidden="true" class="anchor-heading icon-link" href="#3-编译过程从头到尾"></a></h2>
 <p>整体可概括为：<strong>按芯片切换 BSP 配置 → SCons 编译链接生成 ELF/_bin → 打包工具生成烧录镜像并整理到 <code>out/</code></strong>。</p>
 <h3 id="31-解析---beken-并生成平台配置">3.1 解析 <code>--beken</code> 并生成平台配置<a aria-hidden="true" class="anchor-heading icon-link" href="#31-解析---beken-并生成平台配置"></a></h3>
-<p>SCons 读取 <a href="/../../rt-thread/tools/building.py"><code>rt-thread/tools/building.py</code></a> 时，在常规固件编译路径下会执行：</p>
+<p>SCons 读取 <a href="/Dendron/../../rt-thread/tools/building.py"><code>rt-thread/tools/building.py</code></a> 时，在常规固件编译路径下会执行：</p>
 <ol>
 <li>
-<p><strong>调用 <code>generate_sys_config</code></strong>（Linux 为 <a href="/../../tools/scripts/generate_sys_config.sh"><code>tools/scripts/generate_sys_config.sh</code></a>）<br>
+<p><strong>调用 <code>generate_sys_config</code></strong>（Linux 为 <a href="/Dendron/../../tools/scripts/generate_sys_config.sh"><code>tools/scripts/generate_sys_config.sh</code></a>）<br>
 对 <code>bk7252n</code> 会：</p>
 <ul>
 <li>将 <code>beken378/app/config/sys_config_bk7252n.h</code> 同步为根目录 <code>config/sys_config.h</code>（内容变化时更新）；</li>
@@ -79,12 +79,12 @@
 </ol>
 <h3 id="32-scons-编译与链接">3.2 SCons 编译与链接<a aria-hidden="true" class="anchor-heading icon-link" href="#32-scons-编译与链接"></a></h3>
 <ul>
-<li>根 <a href="/../../SConstruct"><code>SConstruct</code></a> 使用 RT-Thread 的 <code>PrepareBuilding</code> / <code>DoBuilding</code> 收集各子目录 <code>SConscript</code>，编译得到目标 <strong><code>rtthread.elf</code></strong>。</li>
-<li><a href="/../../rtconfig.py"><code>rtconfig.py</code></a> 中 <code>POST_ACTION</code>（在 Beken 逻辑追加 pack 之前）包含：将 <code>rtthread.elf</code> 转为 <strong><code>rtthread.bin</code></strong>，并执行 <code>size</code> 等。</li>
+<li>根 <a href="/Dendron/../../SConstruct"><code>SConstruct</code></a> 使用 RT-Thread 的 <code>PrepareBuilding</code> / <code>DoBuilding</code> 收集各子目录 <code>SConscript</code>，编译得到目标 <strong><code>rtthread.elf</code></strong>。</li>
+<li><a href="/Dendron/../../rtconfig.py"><code>rtconfig.py</code></a> 中 <code>POST_ACTION</code>（在 Beken 逻辑追加 pack 之前）包含：将 <code>rtthread.elf</code> 转为 <strong><code>rtthread.bin</code></strong>，并执行 <code>size</code> 等。</li>
 </ul>
 <p>BK7252N 闭源/预编译库（如 <code>libip_7252n_*</code>、<code>libble_7252n_*</code> 等）由 Beken 侧 <code>SConscript</code> 按芯片型号选择，编译日志中会出现 <code>using ... libxxx_7252n.a</code> 一类提示。</p>
 <h3 id="33-打包与输出目录post_actionpy">3.3 打包与输出目录（<code>post_action.py</code>）<a aria-hidden="true" class="anchor-heading icon-link" href="#33-打包与输出目录post_actionpy"></a></h3>
-<p><a href="/../../tools/scripts/post_action.py"><code>tools/scripts/post_action.py</code></a> 根据 <strong>芯片名</strong> 与 <strong>Flash 大小</strong>：</p>
+<p><a href="/Dendron/../../tools/scripts/post_action.py"><code>tools/scripts/post_action.py</code></a> 根据 <strong>芯片名</strong> 与 <strong>Flash 大小</strong>：</p>
 <ol>
 <li>生成 <strong><code>config.json</code></strong>：bootloader 使用 <code>tools/beken_packager/bootloader_bk7252n_uart1_v1.0.14.bin</code>，app 段指向 <code>rtthread.bin</code>；</li>
 <li>调用 <strong><code>tools/beken_packager/beken_packager</code></strong>（Linux 下为 <code>./tools/beken_packager/beken_packager</code>）生成完整升级包与 UART 包等；</li>

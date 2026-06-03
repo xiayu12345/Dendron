@@ -10,8 +10,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1780451014564,
-      "created": 1780451014564,
+      "updated": 1780452006124,
+      "created": 1780452006124,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -1046,13 +1046,13 @@
         "c1bs7wsjfbhb0zipaywqv1",
         "b214abeb9f8f17aa994522",
         "9fd53d681f5e8043762252",
-        "w0x0z2descd3ztesnx5y6au",
-        "iavnwk4paxjpretttwfawte"
+        "mfc3cj2sri7qmdu2uucoh2h",
+        "hq3rpt2vy66l3mcyd3cwmr0"
       ],
       "parent": null,
       "data": {}
     },
-    "iavnwk4paxjpretttwfawte": {
+    "hq3rpt2vy66l3mcyd3cwmr0": {
       "fname": "芯片SDK相关",
       "stub": true,
       "vault": {
@@ -1061,9 +1061,9 @@
       },
       "schemaStub": false,
       "type": "note",
-      "updated": 1780451013003,
-      "created": 1780451013003,
-      "id": "iavnwk4paxjpretttwfawte",
+      "updated": 1780452004553,
+      "created": 1780452004553,
+      "id": "hq3rpt2vy66l3mcyd3cwmr0",
       "desc": "",
       "links": [],
       "anchors": {},
@@ -1246,10 +1246,10 @@
         }
       },
       "children": [],
-      "parent": "iavnwk4paxjpretttwfawte",
+      "parent": "hq3rpt2vy66l3mcyd3cwmr0",
       "data": {}
     },
-    "w0x0z2descd3ztesnx5y6au": {
+    "mfc3cj2sri7qmdu2uucoh2h": {
       "fname": "开发记录",
       "stub": true,
       "vault": {
@@ -1258,9 +1258,9 @@
       },
       "schemaStub": false,
       "type": "note",
-      "updated": 1780451012991,
-      "created": 1780451012991,
-      "id": "w0x0z2descd3ztesnx5y6au",
+      "updated": 1780452004532,
+      "created": 1780452004532,
+      "id": "mfc3cj2sri7qmdu2uucoh2h",
       "desc": "",
       "links": [],
       "anchors": {},
@@ -2025,7 +2025,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "6d428def14b8ffdc828f43": {
@@ -2700,7 +2700,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "69fab073dcdd31f425755e": {
@@ -3142,7 +3142,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "e219878f58bd997c455ca8": {
@@ -3572,7 +3572,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "40a0c1d0224426bb0700ea": {
@@ -3824,7 +3824,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "782168230f49885740b191": {
@@ -3916,7 +3916,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "7e757dba3afa1d4361d951": {
@@ -4134,7 +4134,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "86d6a17041618132f76abf": {
@@ -4472,7 +4472,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "4b4a79d037a6f442a84233": {
@@ -4680,7 +4680,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "8e26e8749bccd9d3739356": {
@@ -4987,7 +4987,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "cebf2bd5cc8bb777ea20e6": {
@@ -5205,7 +5205,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "5c0ce6ce26de9213ed1377": {
@@ -5385,7 +5385,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "60bc7871dc2e4626e2aeb0": {
@@ -5525,7 +5525,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "238cee9d6e5d3351d1562b": {
@@ -5719,7 +5719,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "00fdb8e252ec8a7396bf8e": {
@@ -5875,7 +5875,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "2207f5431c8c6bd7291f9f": {
@@ -6111,7 +6111,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "ce0040cd0ceb63ee76fdd1": {
@@ -6283,7 +6283,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "0a6f1fae03382ed23a61e4": {
@@ -6672,7 +6672,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "0faf28cd9ea6b2133119c7": {
@@ -6880,7 +6880,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "124fc2bd28f4ff32a71b93": {
@@ -7142,7 +7142,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "f068cc85f553b7fa6f808b": {
@@ -7442,7 +7442,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "6b99e0b40de02b4f011208": {
@@ -7604,7 +7604,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "c82a45ea03c9396b83d2e6": {
@@ -7860,7 +7860,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "4b9db1416687083f72ec72": {
@@ -8060,7 +8060,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "795a1a96f9c620254c9633": {
@@ -8338,7 +8338,7 @@
         }
       },
       "children": [],
-      "parent": "w0x0z2descd3ztesnx5y6au",
+      "parent": "mfc3cj2sri7qmdu2uucoh2h",
       "data": {}
     },
     "9fd53d681f5e8043762252": {
@@ -10242,8 +10242,8 @@
         "c1bs7wsjfbhb0zipaywqv1",
         "b214abeb9f8f17aa994522",
         "9fd53d681f5e8043762252",
-        "w0x0z2descd3ztesnx5y6au",
-        "iavnwk4paxjpretttwfawte"
+        "mfc3cj2sri7qmdu2uucoh2h",
+        "hq3rpt2vy66l3mcyd3cwmr0"
       ],
       "parent": null,
       "data": {},
@@ -11277,8 +11277,8 @@
       "c1bs7wsjfbhb0zipaywqv1",
       "b214abeb9f8f17aa994522",
       "9fd53d681f5e8043762252",
-      "w0x0z2descd3ztesnx5y6au",
-      "iavnwk4paxjpretttwfawte"
+      "mfc3cj2sri7qmdu2uucoh2h",
+      "hq3rpt2vy66l3mcyd3cwmr0"
     ],
     "parent": null,
     "data": {},

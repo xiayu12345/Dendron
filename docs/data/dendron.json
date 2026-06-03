@@ -127,7 +127,8 @@
     "enableTaskNotes": true,
     "enablePrettyLinks": true,
     "searchMode": "search",
-    "siteUrl": "https://xiayu12345.github.io/Dendron",
+    "siteUrl": "https://xiayu12345.github.io",
+    "assetsPrefix": "/Dendron",
     "siteFaviconPath": "favicon.ico",
     "siteIndex": "root"
   }

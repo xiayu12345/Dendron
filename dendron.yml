@@ -81,7 +81,8 @@ preview:
     enableKatex: true
     automaticallyShowPreview: false
 publishing:
-    siteUrl: https://xiayu12345.github.io/Dendron
+    siteUrl: https://xiayu12345.github.io
+    assetsPrefix: /Dendron
     enableFMTitle: true
     enableNoteTitleForLink: true
     enablePrettyRefs: true

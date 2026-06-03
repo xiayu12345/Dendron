@@ -17,9 +17,7 @@ if [[ ! -d .next ]]; then
   npx dendron publish init $WS_ARG --yes
 fi
 
-echo ">>> publish export"
-npx dendron publish export $WS_ARG --yes
-
-rm -rf docs && mkdir -p docs && cp -a .next/out/. docs/
+echo ">>> publish export (GitHub Pages: assetsPrefix=/Dendron)"
+npx dendron publish export $WS_ARG --target github --yes
 echo "Íê³É: $WS_ROOT/docs"
 echo "Õ¾µã: https://xiayu12345.github.io/Dendron/"

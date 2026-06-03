@@ -85,7 +85,7 @@ plain <code>scons</code> 可能选错芯片库，出现缺头文件等问题。<
 <h3 id="74-内存与主流程">7.4 内存与主流程<a aria-hidden="true" class="anchor-heading icon-link" href="#74-内存与主流程"></a></h3>
 <ul>
 <li>圆形底为 <strong>LVGL 样式绘制</strong>，不增加 <strong>245×245 全屏位图缓存</strong>；解码缓冲仍在 <code>thermal_happy_lv.c</code> 既有 <strong><code>PREVIEW_LV_BUF</code></strong> 路径内（按 384 规模预留），<strong>245×245</strong> 远低于上限。</li>
-<li><strong>MQTT / 打印主流程</strong>不因 UI 壳改变；需注意的仍是历史上讨论的 <strong><code>g_binary_shared_buf</code> 与异步预览指针生命周期</strong>（见 <a href="/notes/7e757dba3afa1d4361d951">BUG-001：按键极限操作触发 Data Abort / 意外重启</a>）。</li>
+<li><strong>MQTT / 打印主流程</strong>不因 UI 壳改变；需注意的仍是历史上讨论的 <strong><code>g_binary_shared_buf</code> 与异步预览指针生命周期</strong>（见 <a href="/Dendron/notes/7e757dba3afa1d4361d951">BUG-001：按键极限操作触发 Data Abort / 意外重启</a>）。</li>
 </ul>
 <hr>
 <h2 id="8-工具脚本资产与桌面图">8. 工具脚本（资产与桌面图）<a aria-hidden="true" class="anchor-heading icon-link" href="#8-工具脚本资产与桌面图"></a></h2>
@@ -128,7 +128,7 @@ plain <code>scons</code> 可能选错芯片库，出现缺头文件等问题。<
 
 
 
-<table><thead><tr><th>模块</th><th>路径</th></tr></thead><tbody><tr><td>桌面 / 状态栏 / 模式 / 语音 / 二维码 / WS 壳</td><td><code>applications/pages/lv_example_meter.c</code></td></tr><tr><td>WS &#x26; QR 预览尺寸宏、QR  Frame 高度</td><td><code>applications/images/thermal_happy_lv.h</code></td></tr><tr><td>1bpp 解码与 <code>lv_img_dsc</code></td><td><code>applications/images/thermal_happy_lv.c</code></td></tr><tr><td>OTA / FAL</td><td><code>config/fal_cfg.h</code>，<code>applications/OTA_Upgrade/</code></td></tr><tr><td>MQTT 后端与 WiFi 状态判断（参考）</td><td><code>applications/mqtt_backend/mqtt_backend_client.c</code></td></tr><tr><td>共享缓冲与预览竞态记录</td><td><a href="/notes/7e757dba3afa1d4361d951">BUG-001：按键极限操作触发 Data Abort / 意外重启</a></td></tr></tbody></table></div>
+<table><thead><tr><th>模块</th><th>路径</th></tr></thead><tbody><tr><td>桌面 / 状态栏 / 模式 / 语音 / 二维码 / WS 壳</td><td><code>applications/pages/lv_example_meter.c</code></td></tr><tr><td>WS &#x26; QR 预览尺寸宏、QR  Frame 高度</td><td><code>applications/images/thermal_happy_lv.h</code></td></tr><tr><td>1bpp 解码与 <code>lv_img_dsc</code></td><td><code>applications/images/thermal_happy_lv.c</code></td></tr><tr><td>OTA / FAL</td><td><code>config/fal_cfg.h</code>，<code>applications/OTA_Upgrade/</code></td></tr><tr><td>MQTT 后端与 WiFi 状态判断（参考）</td><td><code>applications/mqtt_backend/mqtt_backend_client.c</code></td></tr><tr><td>共享缓冲与预览竞态记录</td><td><a href="/Dendron/notes/7e757dba3afa1d4361d951">BUG-001：按键极限操作触发 Data Abort / 意外重启</a></td></tr></tbody></table></div>
 <hr>
 <h2 id="10-后续可选优化非本轮必做">10. 后续可选优化（非本轮必做）<a aria-hidden="true" class="anchor-heading icon-link" href="#10-后续可选优化非本轮必做"></a></h2>
 <ul>
@@ -141,6 +141,6 @@ plain <code>scons</code> 可能选错芯片库，出现缺头文件等问题。<
 <strong>Backlinks</strong>
 <ul>
 <li><a href="/">root</a></li>
-<li><a href="/notes/6d428def14b8ffdc828f43">AI 打印机固件 — 项目交接资料</a></li>
-<li><a href="/notes/62ff4545e5f1373c5cfe01">AI 打印机固件 — 项目开发记录总纲</a></li>
+<li><a href="/Dendron/notes/6d428def14b8ffdc828f43">AI 打印机固件 — 项目交接资料</a></li>
+<li><a href="/Dendron/notes/62ff4545e5f1373c5cfe01">AI 打印机固件 — 项目开发记录总纲</a></li>
 </ul>
