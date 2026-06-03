@@ -1,0 +1,16 @@
+-
+    id: dev-record-schema
+    title: 开发记录
+    desc: ""
+    type: schema
+    updated: 1780479775329
+    created: 1780479775329
+    body: ""
+    fname: 项目.BK7252N-AI打印机.开发记录.schema
+    data: {}
+    stub: false
+    custom: {}
+    parent: root
+    children:
+        - 项目.BK7252N-AI打印机.开发记录.日志
+        - 项目.BK7252N-AI打印机.开发记录.指南

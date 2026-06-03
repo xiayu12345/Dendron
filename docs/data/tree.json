@@ -20,159 +20,7 @@
               "icon": null,
               "hasTitleNumberOutlined": false,
               "vaultName": "Dendron",
-              "children": []
-            },
-            {
-              "key": "zmx8wls7euie0w9luupv18d",
-              "title": "开发记录",
-              "icon": "plusOutlined",
-              "hasTitleNumberOutlined": false,
-              "vaultName": "Dendron",
               "children": [
-                {
-                  "key": "795a1a96f9c620254c9633",
-                  "title": "AI 打印机固件开发记录",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "4b9db1416687083f72ec72",
-                  "title": "热敏打印与 MQTT 开发记录（BK7252N）",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "c82a45ea03c9396b83d2e6",
-                  "title": "LVGL 主桌面六模式与语音卡片 UI 移植总结",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "6b99e0b40de02b4f011208",
-                  "title": "语音按键、MP3 提示音、录音上传与 ASR 排查总结",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "f068cc85f553b7fa6f808b",
-                  "title": "多语言字库与稳定性开发纪要",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "124fc2bd28f4ff32a71b93",
-                  "title": "BK7252n LVGL：桌面、二维码页与 MQTT 图片预览 UI 开发总结",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "0faf28cd9ea6b2133119c7",
-                  "title": "LVGL 模式卡片、六模式图标资源与动效 — 开发总结",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "0a6f1fae03382ed23a61e4",
-                  "title": "热敏打印机驱动算法分析与工作记录",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "ce0040cd0ceb63ee76fdd1",
-                  "title": "P36 长按二维码页：固件版本号显示开发记录",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "2207f5431c8c6bd7291f9f",
-                  "title": "P?? 语音生成中页面：陪伴机器人帧动画开发记录",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "00fdb8e252ec8a7396bf8e",
-                  "title": "2026-05-15 首页六模式隐藏功能开发记录",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "238cee9d6e5d3351d1562b",
-                  "title": "按键发声蜂鸣与等待旋律开发记录",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "60bc7871dc2e4626e2aeb0",
-                  "title": "2026-05-18 模式图标 BMP24→RGB565 压缩优化开发记录",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "5c0ce6ce26de9213ed1377",
-                  "title": "2026-05-19 Flash 假脱机长图打印开发记录",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "cebf2bd5cc8bb777ea20e6",
-                  "title": "2026-05-19 WS热敏图预览压缩质量优化开发记录",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "8e26e8749bccd9d3739356",
-                  "title": "蜂鸣/旋律 MQTT 协同与 TCM 内存优化开发记录",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "4b4a79d037a6f442a84233",
-                  "title": "AI打印机应用架构评估与优化方向",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "86d6a17041618132f76abf",
-                  "title": "BK7252n 上 LVGL 多语言界面开发指南",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
                 {
                   "key": "7e757dba3afa1d4361d951",
                   "title": "BUG-001：按键极限操作触发 Data Abort / 意外重启",
@@ -188,42 +36,230 @@
                   "hasTitleNumberOutlined": false,
                   "vaultName": "Dendron",
                   "children": []
-                },
+                }
+              ]
+            },
+            {
+              "key": "dev-record-hub",
+              "title": "开发记录",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "Dendron",
+              "children": [
                 {
-                  "key": "40a0c1d0224426bb0700ea",
-                  "title": "BK7252N 烧录教程（基于当前工程产物）",
+                  "key": "dev-guide-index",
+                  "title": "开发指南与参考",
                   "icon": null,
                   "hasTitleNumberOutlined": false,
                   "vaultName": "Dendron",
-                  "children": []
+                  "children": [
+                    {
+                      "key": "4b4a79d037a6f442a84233",
+                      "title": "AI打印机应用架构评估与优化方向",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "86d6a17041618132f76abf",
+                      "title": "BK7252n 上 LVGL 多语言界面开发指南",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "40a0c1d0224426bb0700ea",
+                      "title": "BK7252N 烧录教程（基于当前工程产物）",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "e219878f58bd997c455ca8",
+                      "title": "prn_tune 串口调参命令说明",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "69fab073dcdd31f425755e",
+                      "title": "打印机参数排列组合记录",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "6d428def14b8ffdc828f43",
+                      "title": "AI 打印机固件 — 项目交接资料",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "62ff4545e5f1373c5cfe01",
+                      "title": "AI 打印机固件 — 项目开发记录总纲",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    }
+                  ]
                 },
                 {
-                  "key": "e219878f58bd997c455ca8",
-                  "title": "prn_tune 串口调参命令说明",
+                  "key": "dev-log-index",
+                  "title": "开发日志",
                   "icon": null,
                   "hasTitleNumberOutlined": false,
                   "vaultName": "Dendron",
-                  "children": []
-                },
+                  "children": [
+                    {
+                      "key": "795a1a96f9c620254c9633",
+                      "title": "AI 打印机固件开发记录",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "4b9db1416687083f72ec72",
+                      "title": "热敏打印与 MQTT 开发记录（BK7252N）",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "c82a45ea03c9396b83d2e6",
+                      "title": "LVGL 主桌面六模式与语音卡片 UI 移植总结",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "6b99e0b40de02b4f011208",
+                      "title": "语音按键、MP3 提示音、录音上传与 ASR 排查总结",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "f068cc85f553b7fa6f808b",
+                      "title": "多语言字库与稳定性开发纪要",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "124fc2bd28f4ff32a71b93",
+                      "title": "BK7252n LVGL：桌面、二维码页与 MQTT 图片预览 UI 开发总结",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "0faf28cd9ea6b2133119c7",
+                      "title": "LVGL 模式卡片、六模式图标资源与动效 — 开发总结",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "0a6f1fae03382ed23a61e4",
+                      "title": "热敏打印机驱动算法分析与工作记录",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "ce0040cd0ceb63ee76fdd1",
+                      "title": "P36 长按二维码页：固件版本号显示开发记录",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "2207f5431c8c6bd7291f9f",
+                      "title": "P?? 语音生成中页面：陪伴机器人帧动画开发记录",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "00fdb8e252ec8a7396bf8e",
+                      "title": "2026-05-15 首页六模式隐藏功能开发记录",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "238cee9d6e5d3351d1562b",
+                      "title": "按键发声蜂鸣与等待旋律开发记录",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "60bc7871dc2e4626e2aeb0",
+                      "title": "2026-05-18 模式图标 BMP24→RGB565 压缩优化开发记录",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "5c0ce6ce26de9213ed1377",
+                      "title": "2026-05-19 Flash 假脱机长图打印开发记录",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "cebf2bd5cc8bb777ea20e6",
+                      "title": "2026-05-19 WS热敏图预览压缩质量优化开发记录",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "8e26e8749bccd9d3739356",
+                      "title": "蜂鸣/旋律 MQTT 协同与 TCM 内存优化开发记录",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "summary-hub",
+              "title": "阶段性总结",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "Dendron",
+              "children": [
                 {
-                  "key": "69fab073dcdd31f425755e",
-                  "title": "打印机参数排列组合记录",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "6d428def14b8ffdc828f43",
-                  "title": "AI 打印机固件 — 项目交接资料",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
-                  "key": "62ff4545e5f1373c5cfe01",
-                  "title": "AI 打印机固件 — 项目开发记录总纲",
+                  "key": "9fd53d681f5e8043762252",
+                  "title": "阶段性开发总结：打印标定、驱动算法、多语言、UI 与 OTA",
                   "icon": null,
                   "hasTitleNumberOutlined": false,
                   "vaultName": "Dendron",
@@ -257,9 +293,9 @@
               ]
             },
             {
-              "key": "xs84cy6hkyc23hfk4sz5yzc",
-              "title": "芯片SDK相关",
-              "icon": "plusOutlined",
+              "key": "chip-sdk-hub",
+              "title": "芯片 SDK",
+              "icon": null,
               "hasTitleNumberOutlined": false,
               "vaultName": "Dendron",
               "children": [
@@ -272,14 +308,6 @@
                   "children": []
                 }
               ]
-            },
-            {
-              "key": "9fd53d681f5e8043762252",
-              "title": "阶段性开发总结：打印标定、驱动算法、多语言、UI 与 OTA",
-              "icon": null,
-              "hasTitleNumberOutlined": false,
-              "vaultName": "Dendron",
-              "children": []
             }
           ]
         }
@@ -290,44 +318,58 @@
     "projects": null,
     "bk7252n-ai-printer": "projects",
     "29688af9637cf23baf5a53": "bk7252n-ai-printer",
-    "zmx8wls7euie0w9luupv18d": "bk7252n-ai-printer",
-    "795a1a96f9c620254c9633": "zmx8wls7euie0w9luupv18d",
-    "4b9db1416687083f72ec72": "zmx8wls7euie0w9luupv18d",
-    "c82a45ea03c9396b83d2e6": "zmx8wls7euie0w9luupv18d",
-    "6b99e0b40de02b4f011208": "zmx8wls7euie0w9luupv18d",
-    "f068cc85f553b7fa6f808b": "zmx8wls7euie0w9luupv18d",
-    "124fc2bd28f4ff32a71b93": "zmx8wls7euie0w9luupv18d",
-    "0faf28cd9ea6b2133119c7": "zmx8wls7euie0w9luupv18d",
-    "0a6f1fae03382ed23a61e4": "zmx8wls7euie0w9luupv18d",
-    "ce0040cd0ceb63ee76fdd1": "zmx8wls7euie0w9luupv18d",
-    "2207f5431c8c6bd7291f9f": "zmx8wls7euie0w9luupv18d",
-    "00fdb8e252ec8a7396bf8e": "zmx8wls7euie0w9luupv18d",
-    "238cee9d6e5d3351d1562b": "zmx8wls7euie0w9luupv18d",
-    "60bc7871dc2e4626e2aeb0": "zmx8wls7euie0w9luupv18d",
-    "5c0ce6ce26de9213ed1377": "zmx8wls7euie0w9luupv18d",
-    "cebf2bd5cc8bb777ea20e6": "zmx8wls7euie0w9luupv18d",
-    "8e26e8749bccd9d3739356": "zmx8wls7euie0w9luupv18d",
-    "4b4a79d037a6f442a84233": "zmx8wls7euie0w9luupv18d",
-    "86d6a17041618132f76abf": "zmx8wls7euie0w9luupv18d",
-    "7e757dba3afa1d4361d951": "zmx8wls7euie0w9luupv18d",
-    "782168230f49885740b191": "zmx8wls7euie0w9luupv18d",
-    "40a0c1d0224426bb0700ea": "zmx8wls7euie0w9luupv18d",
-    "e219878f58bd997c455ca8": "zmx8wls7euie0w9luupv18d",
-    "69fab073dcdd31f425755e": "zmx8wls7euie0w9luupv18d",
-    "6d428def14b8ffdc828f43": "zmx8wls7euie0w9luupv18d",
-    "62ff4545e5f1373c5cfe01": "zmx8wls7euie0w9luupv18d",
+    "7e757dba3afa1d4361d951": "29688af9637cf23baf5a53",
+    "782168230f49885740b191": "29688af9637cf23baf5a53",
+    "dev-record-hub": "bk7252n-ai-printer",
+    "dev-guide-index": "dev-record-hub",
+    "4b4a79d037a6f442a84233": "dev-guide-index",
+    "86d6a17041618132f76abf": "dev-guide-index",
+    "40a0c1d0224426bb0700ea": "dev-guide-index",
+    "e219878f58bd997c455ca8": "dev-guide-index",
+    "69fab073dcdd31f425755e": "dev-guide-index",
+    "6d428def14b8ffdc828f43": "dev-guide-index",
+    "62ff4545e5f1373c5cfe01": "dev-guide-index",
+    "dev-log-index": "dev-record-hub",
+    "795a1a96f9c620254c9633": "dev-log-index",
+    "4b9db1416687083f72ec72": "dev-log-index",
+    "c82a45ea03c9396b83d2e6": "dev-log-index",
+    "6b99e0b40de02b4f011208": "dev-log-index",
+    "f068cc85f553b7fa6f808b": "dev-log-index",
+    "124fc2bd28f4ff32a71b93": "dev-log-index",
+    "0faf28cd9ea6b2133119c7": "dev-log-index",
+    "0a6f1fae03382ed23a61e4": "dev-log-index",
+    "ce0040cd0ceb63ee76fdd1": "dev-log-index",
+    "2207f5431c8c6bd7291f9f": "dev-log-index",
+    "00fdb8e252ec8a7396bf8e": "dev-log-index",
+    "238cee9d6e5d3351d1562b": "dev-log-index",
+    "60bc7871dc2e4626e2aeb0": "dev-log-index",
+    "5c0ce6ce26de9213ed1377": "dev-log-index",
+    "cebf2bd5cc8bb777ea20e6": "dev-log-index",
+    "8e26e8749bccd9d3739356": "dev-log-index",
+    "summary-hub": "bk7252n-ai-printer",
+    "9fd53d681f5e8043762252": "summary-hub",
     "b214abeb9f8f17aa994522": "bk7252n-ai-printer",
     "fb563cffdb15e70e500879": "b214abeb9f8f17aa994522",
     "c04453f117bc52e8bc6152": "b214abeb9f8f17aa994522",
-    "xs84cy6hkyc23hfk4sz5yzc": "bk7252n-ai-printer",
-    "b829f8956cb30987ca7cc4": "xs84cy6hkyc23hfk4sz5yzc",
-    "9fd53d681f5e8043762252": "bk7252n-ai-printer"
+    "chip-sdk-hub": "bk7252n-ai-printer",
+    "b829f8956cb30987ca7cc4": "chip-sdk-hub"
   },
   "notesLabelById": {
     "projects": "项目",
     "bk7252n-ai-printer": "BK7252N AI 打印机",
     "29688af9637cf23baf5a53": "Bug 收集器（BK7252n + LVGL 打印机固件）",
-    "zmx8wls7euie0w9luupv18d": "开发记录",
+    "7e757dba3afa1d4361d951": "BUG-001：按键极限操作触发 Data Abort / 意外重启",
+    "782168230f49885740b191": "BUG-002：LVGL 内存重分配触发 Data Abort (os_realloc 越界读取)",
+    "dev-record-hub": "开发记录",
+    "dev-guide-index": "开发指南与参考",
+    "4b4a79d037a6f442a84233": "AI打印机应用架构评估与优化方向",
+    "86d6a17041618132f76abf": "BK7252n 上 LVGL 多语言界面开发指南",
+    "40a0c1d0224426bb0700ea": "BK7252N 烧录教程（基于当前工程产物）",
+    "e219878f58bd997c455ca8": "prn_tune 串口调参命令说明",
+    "69fab073dcdd31f425755e": "打印机参数排列组合记录",
+    "6d428def14b8ffdc828f43": "AI 打印机固件 — 项目交接资料",
+    "62ff4545e5f1373c5cfe01": "AI 打印机固件 — 项目开发记录总纲",
+    "dev-log-index": "开发日志",
     "795a1a96f9c620254c9633": "AI 打印机固件开发记录",
     "4b9db1416687083f72ec72": "热敏打印与 MQTT 开发记录（BK7252N）",
     "c82a45ea03c9396b83d2e6": "LVGL 主桌面六模式与语音卡片 UI 移植总结",
@@ -344,20 +386,12 @@
     "5c0ce6ce26de9213ed1377": "2026-05-19 Flash 假脱机长图打印开发记录",
     "cebf2bd5cc8bb777ea20e6": "2026-05-19 WS热敏图预览压缩质量优化开发记录",
     "8e26e8749bccd9d3739356": "蜂鸣/旋律 MQTT 协同与 TCM 内存优化开发记录",
-    "4b4a79d037a6f442a84233": "AI打印机应用架构评估与优化方向",
-    "86d6a17041618132f76abf": "BK7252n 上 LVGL 多语言界面开发指南",
-    "7e757dba3afa1d4361d951": "BUG-001：按键极限操作触发 Data Abort / 意外重启",
-    "782168230f49885740b191": "BUG-002：LVGL 内存重分配触发 Data Abort (os_realloc 越界读取)",
-    "40a0c1d0224426bb0700ea": "BK7252N 烧录教程（基于当前工程产物）",
-    "e219878f58bd997c455ca8": "prn_tune 串口调参命令说明",
-    "69fab073dcdd31f425755e": "打印机参数排列组合记录",
-    "6d428def14b8ffdc828f43": "AI 打印机固件 — 项目交接资料",
-    "62ff4545e5f1373c5cfe01": "AI 打印机固件 — 项目开发记录总纲",
+    "summary-hub": "阶段性总结",
+    "9fd53d681f5e8043762252": "阶段性开发总结：打印标定、驱动算法、多语言、UI 与 OTA",
     "b214abeb9f8f17aa994522": "打印数据归档说明",
     "fb563cffdb15e70e500879": "组一：仅打印开始 / 结束时间（上一版全局参数）",
     "c04453f117bc52e8bc6152": "组二：时间戳 + 六种模式状态（本版全局参数）",
-    "xs84cy6hkyc23hfk4sz5yzc": "芯片SDK相关",
-    "b829f8956cb30987ca7cc4": "BK7252N 固件编译说明",
-    "9fd53d681f5e8043762252": "阶段性开发总结：打印标定、驱动算法、多语言、UI 与 OTA"
+    "chip-sdk-hub": "芯片 SDK",
+    "b829f8956cb30987ca7cc4": "BK7252N 固件编译说明"
   }
 }
